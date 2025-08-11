@@ -1,0 +1,213 @@
+.container {
+    background-image: url(../images/background.png);
+    background-size: 50%; /* Scale background image to half of container */
+    background-position: center right; /* Position background to right center */
+    background-repeat: repeat; /* Repeat background image */
+    backdrop-filter: blur(1px); /* Add slight blur for background */
+    margin-bottom: 20px; /* Add bottom margin to container */
+    padding: 20px; /* Add padding to ensure content isn't flush with edges */
+    background-color: antiquewhite;
+}
+
+/* Breadcrumb layout for navigation links */
+.breadcrumb {
+    padding: 10px 30px;
+    font-size: 14px;
+}
+
+.breadcrumb a {
+    text-decoration: none;
+    color: #999;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+    color: blueviolet;
+}
+
+.breadcrumb span {
+    color: #999;
+}
+
+.main-content {
+    margin-top: -11%;
+}
+
+.recipe-card img {
+    width: 100%; /* Ensure image fits card width */
+    height: auto; /* Maintain original aspect ratio */
+    display: block; /* Remove bottom gap in images */
+}
+
+.recipe-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease; /* Smooth animation on hover */
+}
+
+.recipe-card:hover {
+    transform: translateY(-5px); /* Slight lift effect on hover */
+}
+
+.recipe-info {
+    padding: 10px;
+    text-align: center;
+}
+
+.recipe-info h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.recipe-info p {
+    font-size: 14px;
+    color: #666;
+}
+
+.main-content {
+    padding-top: 10px; /* Adjust padding for alignment with navbar */
+}
+
+.category-title {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    margin-top: 40px;
+}
+
+.category-icon {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%; /* Circular icon */
+    margin-right: 10px;
+}
+
+.recipes-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 items per row */
+    gap: 20px; /* Space between recipe cards */
+}
+
+/* Sidebar styling */
+.sidebar {
+    position: sticky;
+    top: 50%; /* Keep sidebar vertically centered */
+    transform: translateY(-50%);
+    width: 150px;
+    padding: 20px;
+    border-right: 2px solid #b35000; /* Right border line */
+    border-radius: 10px;
+    font-family: 'Yatra One', sans-serif !important;
+}
+
+.sidebar nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar nav ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar nav ul li a {
+    text-decoration: none;
+    color: #5c5c5c;
+    font-size: 25px;
+    line-height: 40px;
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for color and transform */
+}
+
+.sidebar nav ul li a:hover {
+    color: #ff7f50; /* Hover color */
+    transform: scale(1.2); /* Slightly enlarge font on hover */
+}
+
+.sidebar nav ul li a.active {
+    font-weight: bold;
+    color: #ff7f50;
+    transform: scale(1.2); /* Slightly enlarge font on active state */
+}
+
+/* Space for main content beside sidebar */
+.main-content {
+    margin-left: 250px; /* Leave space for sidebar */
+    padding-top: 10px;
+}
+
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+    .breadcrumb {
+        padding: 5px 15px;
+        font-size: 12px;
+        text-align: center;
+    }
+
+    .sidebar {
+        display: none; /* Hide sidebar on small screens */
+    }
+
+    .sidebar-bottom {
+        display: flex;
+        justify-content: space-around;
+        padding: 10px;
+        font-size: 16px;
+        border-top: 1px solid #ccc;
+        background-color: #f9f9f9;
+        position: fixed; /* Fixed position at bottom */
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000; /* Ensure above other content */
+    }
+
+    .sidebar-bottom a {
+        text-decoration: none;
+        color: #5c5c5c;
+        padding: 5px 10px;
+        transition: color 0.3s;
+    }
+
+    .sidebar-bottom a:hover {
+        color: #ff7f50;
+    }
+
+    .main-content {
+        margin: 0;
+        padding-top: 20px;
+        padding-bottom: 60px; /* Extra space for bottom sidebar */
+    }
+
+    .category-title {
+        font-size: 20px;
+        margin-top: 20px;
+        margin-bottom: 15px;
+    }
+
+    .recipes-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 items per row on small screens */
+        gap: 10px;
+    }
+
+    .recipe-card {
+        font-size: 14px;
+        padding: 5px;
+    }
+
+    .recipe-info h3 {
+        font-size: 16px;
+    }
+
+    .recipe-info p {
+        font-size: 12px;
+    }
+}
+
+

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="images/egg-icon.png">
+    <title>Dough Kneading Skill</title>
+    <link rel="stylesheet" href="css/css_reset.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/skill1.css">
+    <link rel="stylesheet" href="css/navbar.css">
+
+</head>
+
+<body>
+    <header>
+        <div id="navbar-container"></div>
+    </header>
+
+    <div class="container">
+        <!-- Breadcrumb Navigation -->
+        <nav class="breadcrumb">
+            <a href="Homepage.html">Home</a> / <a href="Recipes_Library.html">Recipes</a> / <span>Dough Kneading Skill</span>
+        </nav>
+
+        <!-- Main Recipe Section -->
+        <main class="recipe-details-container">
+            <section class="recipe-header">
+                <div class="recipe-image">
+                    <img src="images/skill1.png" alt="Tartine Bread">
+                    <button class="add-collection" onclick="addToLikes('Dough Kneading', 'images/skill1.png')">Add to
+                        Likes</button>
+                </div>
+                <div class="vertical-line"></div>
+                <div class="recipe-info">
+                    <h1>Dough Kneading</h1>
+                    <p>Learning how to knead dough is essential in bread-making,
+                        as it develops gluten, giving the bread its structure.
+                        Proper kneading ensures a perfect, airy crumb and a tender
+                        texture. This page will guide you through various kneading
+                        techniques, tips, and best practices.</p>
+                </div>
+            </section>
+
+            <!-- Recipe Tabs for Videos, Ingredients, etc. -->
+            <section class="recipe-tabs">
+                <ul class="tabs">
+                    <li class="tab active"><a href="Skill1.html">Videos</a></li>
+                    <li class="tab"><a href="#">Ingredients & Steps</a></li>
+                    <li class="tab"><a href="#">Reviews (10)</a></li>
+                </ul>
+            </section>
+
+            <section class="recipe-content">
+                <div class="video-flex-container">
+                    <div class="video-card">
+                        <video controls>
+                            <source src="videos/video1.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <p>How to Mix Ingredients</p>
+                    </div>
+                    <div class="video-card">
+                        <video controls>
+                            <source src="videos/video2.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <p>How to Let the Dough Rest</p>
+                    </div>
+                    <div class="video-card">
+                        <video controls>
+                            <source src="videos/video3.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <p>How to Bake the Bread</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/navbar.js"></script>
+    <script src="js/user_likes.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,102 @@
+/* Basic body styles */
+body {
+    font-family: 'RoobertMedium', sans-serif;
+    color: #333;
+    line-height: 2.5;
+    font-weight: 500;
+}
+
+/* 导航栏字体样式 */
+.navbar ul li a {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 24px; /* 导航栏字体大小 */
+    color: #313131;
+    font-weight: 400;
+    text-transform: uppercase; /* 可选：将导航文字设为大写 */
+}
+
+/* 正文标题样式 */
+.content h1 {
+    font-family:sans-serif; /* 设置标题字体为 Playfair Display */
+    font-size: 50px; /* 设置标题字体大小 */
+    color: #232323; /* 设置标题颜色 */
+    font-weight: 800;
+    margin-bottom: 8px; /* 减少下边距 */
+    line-height: 1; /* 调整行距，值越小行距越紧凑 */
+    letter-spacing: 3px; /* 设置字间距，正值增大间距，负值缩小间距 */
+}
+
+.content h2 {
+    font-family: sans-serif; /* 设置标题字体为 Playfair Display */
+    font-size: 30px; /* 设置标题字体大小 */
+    color: #232323; /* 设置标题颜色 */
+    font-weight: 600;
+    margin-bottom: 3px; /* 减少下边距 */
+    line-height: 2; /* 调整行距，值越小行距越紧凑 */
+    letter-spacing: 3px; /* 设置字间距，正值增大间距，负值缩小间距 */
+}
+
+.content h3 {
+    font-family: sans-serif; /* 设置标题字体为 Playfair Display */
+    font-size: 25px; /* 设置标题字体大小 */
+    color: #232323; /* 设置标题颜色 */
+    font-weight: 600;
+    margin-bottom: 3px; /* 减少下边距 */
+    line-height: 2; /* 调整行距，值越小行距越紧凑 */
+    letter-spacing: 2.5px; /* 设置字间距，正值增大间距，负值缩小间距 */
+}
+
+/* 正文其他文字样式 */
+.content p {
+    font-family: 'RoobertMedium', sans-serif;; /* 设置正文字体为 Roboto */
+    font-size: 18px; /* 设置正文字体大小 */
+    font-weight: 400;
+    color: #272727; /* 设置正文颜色 */
+    line-height: 40px; /* 设置行间距 */
+    letter-spacing: 1.5px; /* 设置字间距，正值增大间距，负值缩小间距 */
+    text-align: justify;
+}
+
+.purple-text {
+    color: rgb(101, 1, 101); /* 你可以使用其他紫色的色值 */
+}
+
+img:not(.background):hover {
+    transform-origin: top center; /* 设置放大基点为顶部中心 */
+    transform: scale(1.03); /* 放大1.1倍 */
+    transition: transform 0.3s ease; /* 设置放大效果的平滑过渡 */
+}
+
+/* Additional changes for smaller screens */
+@media screen and (max-width: 480px) {
+    .navbar-icons img {
+        width: 20px;          /* Make the icons even smaller for small phones */
+        height: auto;
+    }
+
+    .navbar ul li a {
+        font-size: 14px;      /* Shrink text for smaller devices */
+    }
+
+    .slider {
+        margin-top: 70px;     /* Add a bit more space to avoid overlapping */
+    }
+}
+
+/* overlay 样式 */
+.lightbox-overlay {
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.8);
+  display: flex; justify-content: center; align-items: center;
+  opacity: 0; pointer-events: none;
+  transition: opacity .3s;
+  z-index: 2000;
+}
+.lightbox-overlay.visible {
+  opacity: 1; pointer-events: auto;
+}
+.lightbox-overlay img {
+  max-width: 80%; max-height: 80%;
+  box-shadow: 0 0 20px rgba(255,255,255,0.5);
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="images/egg-icon.png">
+    <title>Tartine Bread Recipe</title>
+    <link rel="stylesheet" href="css/css_reset.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/recipe1.css">
+    <link rel="stylesheet" href="css/navbar.css">
+</head>
+
+<body>
+    <header>
+        <div id="navbar-container"></div>
+    </header>
+
+    <div class="container">
+        <!-- Breadcrumb Navigation -->
+        <nav class="breadcrumb">
+            <a href="Homepage.html">Home</a> / <a href="Recipes_Library.html">Recipes</a> / <span>Tartine Bread</span>
+        </nav>
+        <!-- Main Recipe Section -->
+        <main class="recipe-details-container">
+            <section class="recipe-header">
+                <div class="recipe-image">
+                    <img src="images/recipe1.png" alt="Tartine Bread">
+                    <button class="add-collection" onclick="addToRecipes('Tartine Bread', 'images/recipe1.png')">Add to
+                        Collection</button>
+                </div>
+                <div class="vertical-line">
+                </div>
+                <div class="recipe-info">
+                    <h1>Tartine Bread</h1>
+                    <p>A deliciously crusty sourdough bread that requires minimal effort to make.</p>
+                </div>
+            </section>
+
+            <!-- Recipe Tabs for Videos, Ingredients, etc. -->
+            <section class="recipe-tabs">
+                <ul class="tabs">
+                    <li class="tab active"><a href="Video1.html">Videos</a></li>
+                    <li class="tab"><a href="Recipe1.html">Ingredients & Steps</a></li>
+                    <li class="tab"><a href="Nutrition1.html">Nutrition Information</a></li>
+                    <li class="tab"><a href="Review1.html">Reviews (23)</a></li>
+                </ul>
+            </section>
+
+            <!-- Ingredients and Steps Section -->
+            <section class="recipe-content">
+                <div class="recipe-flex-container">
+                    <div class="ingredients-section">
+                        <h3>Ingredients</h3>
+                        <ul>
+                            <li>350g Flour</li>
+                            <li>100g Active Sourdough</li>
+                            <li>1 Teaspoon Salt</li>
+                            <li>50g Whole Wheat Flour</li>
+                        </ul>
+                    </div>
+                    <div class="steps-section">
+                        <h3>Steps</h3>
+                        <h2>Step 1: Mix Ingredients</h2>
+                        <p>Combine 350g of flour, 100g of sourdough starter, and 250ml of water.</p>
+                        <h2>Step 2: Let it Rest</h2>
+                        <p>Cover the dough and let it rest for 4-6 hours.</p>
+                        <h2>Step 3: Bake</h2>
+                        <p>Bake at 220°C for 30 minutes.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/navbar.js"></script>
+    <script src="js/user_recipes.js"></script>
+</body>
+
+</html>

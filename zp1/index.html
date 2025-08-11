@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Health Band | Yanjie Bu</title>
+  <link rel="icon" type="image/png" href="images/smart-watch.png" />
+  <link rel="stylesheet" href="css/css_reset.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <a id="top"></a>
+
+  <!-- 导航栏 -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="index.html">
+          <img src="images/smart-watch.png" alt="FlavorFi Logo" />
+        </a>
+      </div>
+      <ul>
+        <li><a href="#overview">OVERVIEW</a></li>
+        <li><a href="#user-research">USER·RESEARCH</a></li>
+        <li><a href="#concept-dev">CONCEPT·DEV</a></li>
+        <li><a href="#evaluation">EVALUATION</a></li>
+        <li><a href="#outcome">OUTCOME</a></li>
+      </ul>
+      <div class="navbar-icons">
+        <a href="../works.html">
+          <img src="images/image.png" alt="me" class="me" />
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- 内容区域 -->
+  <div class="container">
+    <div class="background">
+      <img src="images/1.png" alt="background" class="background" />
+    </div>
+
+    <div class="text">
+      <!-- 侧边栏 -->
+      <div class="sidebar">
+        <h3>Sections</h3>
+        <ul>
+          <li><a href="#overview">OVERVIEW</a></li>
+          <li><a href="#user-research">USER·RESEARCH</a></li>
+          <li><a href="#concept-dev">CONCEPT·DEV</a></li>
+          <li><a href="#evaluation">EVALUATION</a></li>
+          <li><a href="#outcome">OUTCOME</a></li>
+        </ul>
+      </div>
+
+      <!-- 分割线 -->
+      <div class="divider"></div>
+
+      <!-- 主内容区域 -->
+      <div class="content">
+
+      <!-- Project Overview Section -->
+      <div id="overview" class="content-section content">
+        <h1>PROJECT OVERVIEW</h1>
+        <hr class="section-divider" />
+
+        <div class="overview-block">
+          <!-- 左侧文字 -->
+          <div class="overview-text">
+            <p>
+              This project explores how wearable technology can empower users to better manage their health and wellness in daily life. Our team conducted extensive user research through surveys and interviews to uncover genuine needs and behavior patterns. We focused particularly on stress levels, physical conditions, and emotional wellbeing, especially in aging populations and busy professionals.
+            </p>
+            <p>
+              Based on our findings, we proposed a smart ring paired with a mobile app that allows users to track key health indicators like heart rate and stress signals. It helps recognize unwell patterns and enables timely actions, such as resting or seeking help. The system is designed to promote proactive health management and emotional support.
+            </p>
+            <p>
+              I led the front-end development and contributed to the visual design and research synthesis. I translated our concept into an interactive web experience that clearly communicates the design logic and user benefits. This portfolio reflects the full journey from problem exploration to final interface.
+            </p>
+            <p>
+              The visualizations on the right present our survey results:
+              <strong>The first bar chart</strong> shows the age distribution of respondents, indicating most participants were aged 18–30.
+              <strong>The pie chart</strong> provides a percentage-based view of the same age groups, helping us better target our solution.
+              <strong>The final chart</strong> summarizes user behavior when feeling unwell — most chose to visit a doctor or take a break. These insights directly shaped our feature design.
+            </p>
+          </div>
+
+          <!-- 右侧图片 -->
+          <div class="overview-images">
+            <img src="images/01.png" alt="Age Group Bar Chart" />
+            <img src="images/02.png" alt="Age Group Pie Chart" />
+            <img src="images/03.png" alt="User Action Chart" />
+          </div>
+        </div>
+      </div>
+
+
+      <div id="user-research" class="content-section">
+        <h1>USER RESEARCH</h1>
+        <hr class="section-divider" />
+
+        <div class="ur-block">
+          <p>
+            To explore the challenges users face with wearable health devices, we conducted comprehensive user research, including semi-structured interviews, storyboards, and thematic synthesis workshops. Our participants ranged from young professionals to older adults, each sharing real-life experiences with sports watches and health tracking devices.
+          </p>
+          <p>
+            Common pain points quickly emerged. As illustrated in the first storyboard titled <em>"From Anticipation to Abandonment"</em>, one user hesitated to wear the watch due to overnight charging failures, found the data dull and uninformative, and gradually stopped using the device altogether. Another storyboard, <em>"Unreadable Insights"</em>, showed a user overwhelmed by unfamiliar metrics like HRV and REM, eventually abandoning the report due to conflicting online information and emotional frustration.
+          </p>
+        </div>
+
+        <!-- Storyboards: 04 & 05 -->
+        <div class="ur-image-row">
+          <img src="images/04.png" alt="Storyboard: From Anticipation to Abandonment" />
+          <img src="images/05.png" alt="Storyboard: Unreadable Insights" />
+        </div>
+
+        <div class="ur-block">
+          <p>
+            These emotional and cognitive barriers highlighted the need for a more intuitive and empathetic user experience. Based on the collected pain points, we built a problem-solution matrix to translate user frustrations into design opportunities. For instance, users’ difficulty understanding technical terms led to suggestions like plain-language reports, icon-based explanations, and even AI-assisted summaries. Others expressed concerns about inconsistent usage due to low motivation and battery-related frustrations, which informed features like long battery life and minimal required interaction.
+          </p>
+          <p>
+            In addition, users emphasized the lack of emotional support. Many wanted regular encouragement, feedback on their physical or emotional status, and assistance during stress or emergencies. These needs directly shaped suggestions such as check-in reminders, progress feedback, and emergency contact functions.
+          </p>
+        </div>
+
+        <!-- Table & Needs Diagram: 06 & 07 -->
+        <div class="ur-image-row">
+          <img src="images/06.png" alt="Pain Point Matrix" />
+          <img src="images/07.png" alt="User Needs Framework" />
+        </div>
+
+        <div class="ur-block">
+          <p>
+            To make sense of the wide range of interview responses, we first organized all the quotes and insights using an Affinity Diagram. This process allowed us to cluster similar ideas and identify recurring themes across different participants, such as confusion with health data, inconsistent usage behavior, or emotional disconnect.
+          </p>
+          <p>
+            Through this synthesis, we developed six overarching categories that captured the most important needs and concerns:
+          </p>
+          <ul class="ur-list">
+            <li><strong>Health Awareness:</strong> Users struggled with medical jargon and data interpretation.</li>
+            <li><strong>Habits & Experience:</strong> Discontinued use was often tied to overwhelming raw data and difficult interfaces.</li>
+            <li><strong>Safety & Emergency Needs:</strong> People feared unnoticed symptoms and wanted real-time alerts and stress reminders.</li>
+            <li><strong>Emotional Needs:</strong> Users desired validation, emotional check-ins, and support during low moments.</li>
+            <li><strong>Feature Expectations:</strong> There was a clear demand for personalization, central platforms, and exportable medical data.</li>
+            <li><strong>User Types:</strong> We identified groups such as active users, passive users, tech-averse users, and caregivers—each requiring tailored features.</li>
+          </ul>
+          <p>
+            These thematic clusters, visualized in the “People’s Needs” diagram, grounded our design direction in authentic user voices. By combining structured analysis with emotional insights, we ensured our final solution would be empathetic, inclusive, and responsive to diverse user scenarios.
+          </p>
+        </div>
+      </div>
+
+
+      <div id="concept-dev" class="content-section">
+        <h1>CONCEPT DEVELOPMENT</h1>
+        <hr class="section-divider" />
+
+        <!-- Group Story Point Estimation -->
+        <h2>Group Story Point Estimation</h2>
+        <div class="cd-row">
+          <div class="cd-text">
+            <p>
+              I began the concept development phase by organising and facilitating a story point estimation workshop.
+              Using this agile technique, I evaluated the relative effort and complexity of each proposed feature, considering technical feasibility, user value, and potential development risks.
+              I actively shared my own estimates and reasoning, and also guided discussions when discrepancies arose between team members, ensuring everyone’s understanding was aligned.
+            </p>
+            <p>
+              Through this process, I helped the team prioritise high-value, low-cost features at the top of the backlog while scheduling resource-intensive features for later iterations.
+              My input ensured the plan balanced ambitious ideas with practical constraints, creating a development roadmap that maximised user impact without overloading resources.
+            </p>
+          </div>
+          <div class="cd-image single-img">
+            <img src="images/08.png" alt="Story Point Estimation Results" class="special-img1" />
+          </div>
+        </div>
+
+        <!-- User Story Map -->
+        <h2>User Story Mapping</h2>
+        <p>
+          I created a detailed user story map to visualise the product’s structure and functionality.
+          Breaking down the user journey into essential tasks, I mapped features to different stages of interaction and identified dependencies between them.
+          This process allowed me to spot gaps that could disrupt the user experience, ensuring the flow would remain smooth and engaging.
+        </p>
+        <div class="cd-image-row">
+          <img src="images/09.png" alt="User Story Map Part 1" />
+          <img src="images/10.png" alt="User Story Map Part 2" />
+          <img src="images/11.png" alt="User Story Map Part 3" />
+          <img src="images/12.png" alt="User Story Map Part 4" />
+        </div>
+
+        <!-- User Flow -->
+        <h2>User Flow</h2>
+        <div class="cd-row">
+          <div class="cd-text">
+            <p>
+              Building on the prioritised stories, we designed a comprehensive user flow diagram to illustrate how users would navigate through the system.
+              Every key action, from initial entry points to task completion, was mapped to anticipate potential friction points and ensure a logical progression.
+            </p>
+            <p>
+              I made sure decision points, feedback loops, and fallback options were clearly integrated so that both new and returning users could navigate with ease.
+              This visual framework became a core reference for maintaining design consistency across different stages of development.
+            </p>
+          </div>
+          <div class="cd-image single-img">
+            <img src="images/13.png" alt="User Flow Diagram" class="special-img2" />
+          </div>
+        </div>
+
+        <!-- User Needs Mapping -->
+        <h2>User Needs Mapping</h2>
+        <div class="cd-row">
+          <div class="cd-text">
+            <p>
+              To ensure the solution addressed real-world problems, I developed a user needs mapping framework.
+              I linked validated pain points from research to specific design responses, making sure each feature supported a user goal or resolved a frustration.
+            </p>
+            <p>
+              For example, I replaced medical jargon with plain-language explanations, paired stress monitoring with timely alerts, and added supportive feedback mechanisms.
+              This mapping process kept my design grounded in empathy and usability while ensuring that no critical user requirement was overlooked.
+            </p>
+          </div>
+          <div class="cd-image single-img">
+            <img src="images/14.png" alt="User Needs Mapping Diagram" class="special-img3" />
+          </div>
+        </div>
+
+        <!-- Closing Summary -->
+        <p>
+          By leading these activities, I transformed early ideas into a concrete, user-focused design plan.
+          The story point estimation ensured feasibility, the user story mapping provided structure, the user flow defined interaction logic, and the user needs mapping anchored every decision in real needs.
+          This combination of analytical planning and empathetic thinking formed a strong foundation for the next development stages, reducing risks and increasing the likelihood of delivering a meaningful, user-centred product.
+        </p>
+      </div>
+
+
+      <div id="evaluation" class="content-section">
+        <h1>PROTOTYPE & EVALUATION</h1>
+        <hr class="section-divider" />
+
+        <!-- 第一段文字 -->
+        <div class="evaluation-text">
+          <p>
+            After confirming the user needs, I created a set of storyboards to visualise typical usage scenarios.
+            These helped me translate research insights into concrete interaction ideas and ensure that every feature was grounded in a real context.
+            Using these storyboards as a guide, I built a simple 3D model of the device to explore form, proportion, and how it might be worn in daily life.
+            This early modelling stage allowed me to quickly test ideas, spot practical issues, and prepare for the evaluation phase.
+          </p>
+        </div>
+
+        <!-- 第一行图片 -->
+        <div class="evaluation-image-row">
+          <img src="images/15.png" alt="Storyboard 1" />
+          <img src="images/16.png" alt="Storyboard 2" />
+          <img src="images/17.png" alt="Storyboard 3" />
+        </div>
+
+        <!-- 第二段文字 -->
+        <div class="evaluation-text">
+          <p>
+            For evaluation, I combined expert reviews with quick user feedback sessions.
+            I invited experts in usability and accessibility to review the design, looking for unclear interactions, possible accessibility barriers, and layout inconsistencies.
+            In parallel, I shared the model and storyboard scenarios with potential users to observe their reactions and gather insights on comfort, ease of use, and clarity of functions.
+            This approach revealed issues such as button placement, the need for clearer status indicators, and improvements to the emergency alert flow.
+          </p>
+        </div>
+
+        <!-- 第二行图片 -->
+        <div class="evaluation-image-row">
+          <img src="images/18.png" alt="3D Model 1" />
+          <img src="images/19.png" alt="3D Model 2" />
+          <img src="images/20.png" alt="3D Model 3" />
+        </div>
+
+        <!-- 第三段文字 -->
+        <div class="evaluation-text">
+          <p>
+            Based on this feedback, I refined the design by improving visual clarity, adjusting touch points for easier operation, and ensuring emergency functions were always accessible.
+            I simplified labels into plain language and kept iconography consistent across all screens.
+            These changes made the device more intuitive for first-time users while keeping it efficient for experienced ones.
+            By the end of this stage, the prototype was clear, accessible, and user-friendly—ready to move into the next development phase.
+          </p>
+        </div>
+      </div>
+
+      
+      <div id="outcome" class="content-section">
+        <h1>OUTCOME & REFLECTION</h1>
+        <hr class="section-divider" />
+
+        <!-- 第一段文字 + 图片 -->
+        <div class="outcome-row">
+          <div class="outcome-text">
+            <p>
+              The final interface design offers a clear and cohesive system with a simple layout,
+              consistent style, and smooth navigation. The main dashboard lets users quickly
+              check health status, view key data, and access personalized tips.
+              From here, they can enter modules such as reminders, activity tracking,
+              quick check-ups, and AI feedback.
+
+              The reminder feature supports custom alerts for hydration, sleep, eating habits,
+              and reducing sedentary time. The physical data section provides live monitoring
+              and history records, helping users track changes over time.
+              An SOS button is placed for fast emergency response.
+
+              The design evolved through iterations from expert reviews and user testing,
+              focusing on clearer labels, better one-handed button placement,
+              and unified icons.
+              The final interface is easy to navigate, meets user needs,
+              and delivers a reliable, reassuring experience.
+            </p>
+          </div>
+          <div class="outcome-image-single">
+            <img src="images/21.png" alt="Overall Interface Overview" />
+          </div>
+        </div>
+
+        <!-- 第二段文字 -->
+        <div class="outcome-text">
+          <p>
+            The following screens present the core interactions, including onboarding, check-up initiation,
+            results display, and emergency alert functions. Each screen was designed with clarity, accessibility,
+            and ease of use in mind, ensuring a seamless user journey.
+          </p>
+        </div>
+
+        <!-- 界面截图 1-9 带说明 -->
+        <div class="outcome-gallery">
+          <div class="outcome-item">
+            <img src="images/22.png" alt="Main Menu Screen" />
+            <p><strong>Main Menu:</strong> Central hub showing four core features — Quick Check, Physical Data, Set a Reminder, and Today’s Status — with clear icons and high-contrast labels. Designed for quick navigation and minimal cognitive load.</p>
+          </div>
+
+          <div class="outcome-item">
+            <img src="images/23.png" alt="Voice Interaction Screen" />
+            <p><strong>Voice Interaction:</strong> Enables hands-free operation by allowing users to ask health-related questions and receive AI-driven voice or text responses. This supports accessibility for elderly users or those with limited mobility.</p>
+          </div>
+
+          <div class="outcome-item">
+            <img src="images/24.png" alt="AI Feedback Screen" />
+            <p><strong>AI Feedback:</strong> Instantly interprets health readings, highlights abnormal results in color-coded formats, and offers clear guidance for next steps, reducing the need for medical jargon.</p>
+          </div>
+
+          <div class="outcome-item">
+            <img src="images/25.png" alt="Blood Pressure Screen" />
+            <p><strong>Blood Pressure:</strong> Shows real-time readings alongside reference ranges and trend indicators. Designed with large fonts and simple visuals for easy comprehension.</p>
+          </div>
+
+          <div class="outcome-item">
+            <img src="images/26.png" alt="Physical Data Chart Screen" />
+            <p><strong>Physical Data Chart:</strong> Presents historical data (heart rate, steps, blood pressure) in an interactive line chart, enabling users to identify patterns and track long-term progress.</p>
+          </div>
+
+          <div class="outcome-item">
+            <img src="images/27.png" alt="Fall Detection Screen" />
+            <p><strong>Fall Detection:</strong> Automatically detects falls, sends an alert, and shares the user’s location with pre-set emergency contacts if no response is received within 60 seconds.</p>
+          </div>
+
+          <div class="outcome-item">
+            <img src="images/28.png" alt="Professional Data Screen" />
+            <p><strong>Professional Data:</strong> Generates medical-grade results compatible with professional healthcare systems, supporting data sharing with doctors for further diagnosis.</p>
+          </div>
+
+          <div class="outcome-item">
+            <img src="images/29.png" alt="History Screen" />
+            <p><strong>History:</strong> Displays previous health check-up results in chronological order, allowing users to revisit details and observe progress over time.</p>
+          </div>
+
+          <div class="outcome-item">
+            <img src="images/30.png" alt="Sleep Tracking Screen" />
+            <p><strong>Sleep Tracking:</strong> Visualizes sleep cycles with intuitive moon and wave graphics, includes wake-up alarms, and offers tips for improving rest quality based on patterns.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 反思总结 -->
+      <div class="outcome-text">
+        <p>
+          This project highlighted the importance of aligning user needs with interface decisions, ensuring that every design choice directly contributes to usability and accessibility.
+          Through iterative prototyping and feedback integration, I realized that even small adjustments in layout, iconography, or terminology can significantly influence user comfort and task efficiency.
+          The process also reinforced the value of clear visual hierarchy and intuitive navigation, especially for users with varying levels of digital literacy.
+          Moving forward, I would explore more dynamic feedback mechanisms such as real-time alerts, personalized recommendations, and adaptive interfaces that respond to user behavior.
+          I would also conduct broader usability testing across different age groups, cultural backgrounds, and accessibility requirements to validate the design’s long-term effectiveness in diverse contexts.
+          Overall, the design outcome achieves a balance between technical feasibility and a user-centered approach, providing both functional reliability and an engaging, supportive user experience.
+        </p>
+      </div>
+
+    </div> <!-- .content -->
+  </div>   <!-- .text -->
+</div>     <!-- .container -->
+
+<!-- 页脚 -->
+<footer>
+  <p>Yanjie Bu 2025</p>
+  <a href="#top" class="back-to-top">Back to Top</a>
+</footer>
+
+<!-- 浮层图片查看 -->
+<div id="lightbox" class="lightbox-overlay">
+  <img src="" alt="" />
+</div>
+
+<!-- JavaScript -->
+<script src="js/navbar"></script>
+<script src="js/sidebar"></script>
+</body>
+</html>
+
+
+

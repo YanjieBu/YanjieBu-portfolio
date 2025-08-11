@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food & Cooking Platform | Yanjie Bu</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="images/egg-icon.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Loading Animation -->
+    <div id="loading" class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <p>Loading Portfolio...</p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="../works.html" class="logo-link">
+                    <span class="logo-text">Yanjie Bu</span>
+                </a>
+                <span class="logo-subtitle">UX Designer</span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#hero" class="nav-link">Home</a></li>
+                <li><a href="#overview" class="nav-link">Overview</a></li>
+                <li><a href="#research" class="nav-link">Research</a></li>
+                <li><a href="#design" class="nav-link">Design</a></li>
+                <li><a href="#implementation" class="nav-link">Development</a></li>
+                <li><a href="#reflection" class="nav-link">Reflection</a></li>
+            </ul>
+            <div class="mobile-menu" id="mobileMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="title-line">Food & Cooking</span>
+                    <span class="title-line highlight">Platform Design</span>
+                </h1>
+                <p class="hero-description">
+                    A beginner front-end project I created while learning web development — an inclusive UX/UI recipe platform designed to connect cooks of all levels through accessible design and community sharing.
+                </p>
+                
+                <div class="project-meta">
+                    <div class="meta-item">
+                        <span class="meta-label">Course</span>
+                        <span class="meta-value">DECO7140</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Duration</span>
+                        <span class="meta-value">12 Weeks</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Role</span>
+                        <span class="meta-value">UX/UI Designer</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Institution</span>
+                        <span class="meta-value">UQ EAIT</span>
+                    </div>
+                </div>
+                
+                <div class="hero-actions">
+                    <a href="website/index.html" class="btn-primary" id="liveSiteBtn" target="_blank" rel="noopener noreferrer">
+                        <span>View Live Site</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                    <a href="#overview" class="btn-secondary">
+                        <span>Explore Project</span>
+                    </a>
+                </div>
+            </div>
+            
+          <div class="hero-visual">
+              <div class="jerry-carousel">
+                  <img src="images/Jerry.gif" alt="Jerry 1" class="jerry-image active">
+                  <img src="images/Jerry2.gif" alt="Jerry 2" class="jerry-image">
+                  <img src="images/Jerry3.gif" alt="Jerry 3" class="jerry-image">
+              </div>
+          </div>
+        </div>
+        
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+            <span>Scroll to explore</span>
+        </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section id="overview" class="section overview-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Project Overview</h2>
+                <p class="section-subtitle">
+                    Floavorfi — a name blending “flavor” and “fi” (as in “simplify”) — reflects the project’s mission to make flavorful cooking simple and accessible. 
+                    This inclusive platform celebrates cultural diversity while offering practical solutions for cooks of all skill levels.
+                </p>
+
+            </div>
+            
+            <div class="overview-grid">
+                <div class="overview-card problem">
+                    <div class="card-icon">🎯</div>
+                    <h3>The Challenge</h3>
+                    <p>Create a web platform that promotes culinary inclusivity, supports diverse dietary needs, and provides practical cooking solutions while ensuring accessibility for all users.</p>
+                    
+                    <div class="challenge-list">
+                        <div class="challenge-item">Cultural sensitivity in recipe presentation</div>
+                        <div class="challenge-item">Accessibility compliance (WCAG 2.2)</div>
+                        <div class="challenge-item">Complex meal planning functionality</div>
+                        <div class="challenge-item">Community engagement features</div>
+                    </div>
+                </div>
+                
+                <div class="overview-card solution">
+                    <div class="card-icon">💡</div>
+                    <h3>The Solution</h3>
+                    <p>A user-centered design approach resulting in a comprehensive platform with structured recipe libraries, skill development sections, and community features.</p>
+                    
+                    <div class="solution-list">
+                        <div class="solution-item">
+                            <span class="solution-number">01</span>
+                            <span>Intuitive recipe discovery system</span>
+                        </div>
+                        <div class="solution-item">
+                            <span class="solution-number">02</span>
+                            <span>Separate skills learning section</span>
+                        </div>
+                        <div class="solution-item">
+                            <span class="solution-number">03</span>
+                            <span>Responsive & accessible design</span>
+                        </div>
+                        <div class="solution-item">
+                            <span class="solution-number">04</span>
+                            <span>Community engagement features</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="overview-card impact">
+                    <div class="card-icon">📊</div>
+                    <h3>Key Results</h3>
+                    <p>Successfully delivered core functionality while identifying opportunities for future enhancement and learning valuable lessons about user-centered design.</p>
+                    
+                    <div class="results-grid">
+                        <div class="result-item">
+                            <span class="result-number">9</span>
+                            <span class="result-label">User Themes</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-number">100%</span>
+                            <span class="result-label">WCAG Compliant</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-number">5</span>
+                            <span class="result-label">Core Features</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-number">12</span>
+                            <span class="result-label">Weeks Timeline</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Section -->
+    <section id="research" class="section research-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Research & Analysis</h2>
+                <p class="section-subtitle">
+                    Understanding user needs through comprehensive research and thematic analysis
+                </p>
+            </div>
+            
+            <div class="research-content">
+                <div class="research-text">
+                    <h3>User Research Methodology</h3>
+                    <p>I conducted extensive user research to understand the diverse needs of cooking enthusiasts. Through interviews, surveys, and affinity diagramming, I identified 9 key user themes that guided the design decisions.</p>
+                    
+                    <div class="research-highlights">
+                        <div class="highlight-item">
+                            <h4>Target Audience</h4>
+                            <p>Adults aged 18-80, from beginners to experienced cooks, including busy professionals, families, and those with diverse dietary needs.</p>
+                        </div>
+                        <div class="highlight-item">
+                            <h4>Key Insights</h4>
+                            <p>Users need efficient recipe discovery, skill development resources, and community engagement while maintaining cultural sensitivity.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="research-visual">
+                    <div class="image-showcase">
+                        <img src="images/01.png" alt="Affinity Diagram - User Research Analysis" class="main-image" />
+                        <div class="image-caption">
+                            <h4>Affinity Diagram</h4>
+                            <p>Thematic analysis of user needs and pain points</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- User Stories -->
+            <div class="user-stories">
+                <h3>User Stories & Personas</h3>
+                <div class="stories-grid">
+                    <div class="story-card">
+                        <div class="story-icon">👨‍💼</div>
+                        <h4>The Busy Professional</h4>
+                        <p>"I need to filter recipes by prep time and difficulty so I can quickly find meals that fit my schedule."</p>
+                    </div>
+                    <div class="story-card">
+                        <div class="story-icon">👩‍🍳</div>
+                        <h4>The Learning Cook</h4>
+                        <p>"I want step-by-step tutorials and videos to improve my cooking skills and gain confidence."</p>
+                    </div>
+                    <div class="story-card">
+                        <div class="story-icon">👪</div>
+                        <h4>The Family Planner</h4>
+                        <p>"I need meal planning tools that generate shopping lists and adjust for dietary restrictions."</p>
+                    </div>
+                    <div class="story-card">
+                        <div class="story-icon">🌍</div>
+                        <h4>The Cultural Explorer</h4>
+                        <p>"I want to discover authentic recipes from different cultures while sharing my own heritage."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Design Process Section -->
+    <section id="design" class="section design-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Design Process</h2>
+                <p class="section-subtitle">
+                    From information architecture to visual design system
+                </p>
+            </div>
+            
+            <!-- Site Architecture -->
+            <div class="design-phase">
+                <div class="phase-content">
+                    <div class="phase-text">
+                        <h3>Information Architecture</h3>
+                        <p>I developed a comprehensive site map to organize content effectively, ensuring intuitive navigation and logical information hierarchy. The structure supports both casual browsing and goal-directed tasks.</p>
+                        
+                        <div class="architecture-features">
+                            <div class="feature-item">
+                                <span class="feature-icon">🗂️</span>
+                                <span>Organized content hierarchy</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">🔍</span>
+                                <span>Intuitive navigation paths</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">📱</span>
+                                <span>Mobile-first structure</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="phase-visual">
+                        <img src="images/02.png" alt="Site Map and Information Architecture" />
+                        <div class="image-caption">Site Map & Navigation Structure</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Design System -->
+            <div class="design-system">
+                <h3>Visual Design System</h3>
+                <p>Created a comprehensive design system that ensures consistency across all touchpoints while maintaining accessibility and cultural sensitivity.</p>
+                
+                <div class="design-system-grid">
+                    <div class="system-card">
+                        <img src="images/03.png" alt="Brand Identity and Colors" />
+                        <h4>Brand Identity</h4>
+                        <p>Warm, inviting color palette with accessible contrast ratios</p>
+                    </div>
+                    <div class="system-card">
+                        <img src="images/04.png" alt="Typography System" />
+                        <h4>Typography</h4>
+                        <p>Clear hierarchy with readable fonts optimized for all devices</p>
+                    </div>
+                    <div class="system-card">
+                        <img src="images/05.png" alt="UI Components" />
+                        <h4>Components</h4>
+                        <p>Reusable interface elements with consistent interaction patterns</p>
+                    </div>
+                    <div class="system-card">
+                        <img src="images/06.png" alt="Layout System" />
+                        <h4>Layout Grid</h4>
+                        <p>Flexible grid system supporting responsive design principles</p>
+                    </div>
+                    <div class="system-card">
+                        <img src="images/07.png" alt="Interaction Design" />
+                        <h4>Interactions</h4>
+                        <p>Smooth animations and micro-interactions enhancing user experience</p>
+                    </div>
+                    <div class="system-card">
+                        <img src="images/08.png" alt="Accessibility Guidelines" />
+                        <h4>Accessibility</h4>
+                        <p>WCAG 2.2 compliant design ensuring inclusive user experience</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Implementation Section -->
+    <section id="implementation" class="section implementation-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Development & Implementation</h2>
+                <p class="section-subtitle">
+                    Technical solutions, challenges, and iterative improvements
+                </p>
+            </div>
+            
+            <!-- Implementation Showcase - 上2下2布局 -->
+            <div class="implementation-showcase">
+                <div class="implementation-grid">
+                    <!-- 第一行左侧 -->
+                    <div class="impl-card">
+                        <img src="images/09.png" alt="Original Design Concepts" />
+                        <div class="impl-content">
+                            <h4>Initial Concepts</h4>
+                            <p>Early wireframes and design explorations showing the evolution of ideas</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 第一行右侧 -->
+                    <div class="impl-card">
+                        <img src="images/10.png" alt="Tools Page Development" />
+                        <div class="impl-content">
+                            <h4>Feature Development</h4>
+                            <p>Complex meal planning tools requiring extensive data and calculations</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 第二行左侧 -->
+                    <div class="impl-card">
+                        <img src="images/11.png" alt="Recipe Organization" />
+                        <div class="impl-content">
+                            <h4>Content Structure</h4>
+                            <p>Organized recipe library with filtering and categorization systems</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 第二行右侧 -->
+                    <div class="impl-card">
+                        <img src="images/12.png" alt="Skills Section Design" />
+                        <div class="impl-content">
+                            <h4>Skills Library</h4>
+                            <p>Dedicated learning section for cooking techniques and tutorials</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technical Challenges -->
+            <div class="challenges-section">
+                <h3>Technical Challenges & Solutions</h3>
+                <div class="challenges-grid">
+                    <div class="challenge-card">
+                        <div class="challenge-header">
+                            <span class="challenge-icon">🎨</span>
+                            <h4>Animation & Interactivity</h4>
+                        </div>
+                        <div class="challenge-content">
+                            <div class="challenge-images">
+                                <img src="images/13.png" alt="Navbar Implementation" />
+                                <img src="images/14.png" alt="Search Page Animations" />
+                            </div>
+                            <p><strong>Challenge:</strong> Creating smooth carousel animations and rotating emojis on the search page while maintaining performance.</p>
+                            <p><strong>Solution:</strong> Utilized AI assistance to learn CSS animations and JavaScript techniques, implementing optimized transitions with careful timing controls.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="challenge-card">
+                        <div class="challenge-header">
+                            <span class="challenge-icon">📱</span>
+                            <h4>Responsive Design</h4>
+                        </div>
+                        <div class="challenge-content">
+                            <div class="challenge-images">
+                                <img src="images/15.png" alt="Mobile Navigation" />
+                                <img src="images/16.png" alt="Homepage Carousel" />
+                            </div>
+                            <p><strong>Challenge:</strong> Ensuring consistent navbar behavior across different devices and screen sizes.</p>
+                            <p><strong>Solution:</strong> Implemented floating-to-fixed navigation pattern with extensive cross-device testing and incremental improvements.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="challenge-card">
+                        <div class="challenge-header">
+                            <span class="challenge-icon">🔧</span>
+                            <h4>Feature Complexity</h4>
+                        </div>
+                        <div class="challenge-content">
+                            <div class="challenge-images">
+                                <img src="images/17.png" alt="Meal Planning Tools" />
+                                <img src="images/18.png" alt="Recipe Calculations" />
+                            </div>
+                            <p><strong>Challenge:</strong> Original meal planning tools required extensive recipe data and complex portion calculations.</p>
+                            <p><strong>Solution:</strong> Prioritized core functionality, postponed advanced features for future development while maintaining user value.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Development Process -->
+            <div class="development-process">
+                <h3>Iterative Development Process</h3>
+                <div class="process-timeline">
+                    <div class="process-step">
+                        <div class="process-visual">
+                            <img src="images/19.png" alt="Visual Design Evolution" />
+                        </div>
+                        <div class="process-content">
+                            <h4>Visual Design Refinement</h4>
+                            <p>Evolved from brown color scheme to warmer beige and orange tones based on user testing feedback, creating a more inviting and energetic experience.</p>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="process-visual">
+                            <img src="images/20.png" alt="Content Organization" />
+                        </div>
+                        <div class="process-content">
+                            <h4>Content Reorganization</h4>
+                            <p>Separated recipes and skills into distinct libraries after user feedback indicated the original horizontal scrolling felt cluttered.</p>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="process-visual">
+                            <img src="images/21.png" alt="Feature Prioritization" />
+                        </div>
+                        <div class="process-content">
+                            <h4>Feature Prioritization</h4>
+                            <p>Focused on core cooking education functionality rather than social features, ensuring primary goals were met within project constraints.</p>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="process-visual">
+                            <img src="images/22.png" alt="Final Implementation" />
+                        </div>
+                        <div class="process-content">
+                            <h4>Final Implementation</h4>
+                            <p>Delivered responsive recipe library, skills section, community features, and accessible design meeting most client requirements.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reflection Section -->
+    <section id="reflection" class="section reflection-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Project Reflection</h2>
+                <p class="section-subtitle">
+                    Key learnings, achievements, and future opportunities
+                </p>
+            </div>
+            
+            <div class="reflection-grid">
+                <div class="reflection-card success">
+                    <div class="card-header">
+                        <span class="card-icon">🌱</span>
+                        <h3>Learning Achievements</h3>
+                    </div>
+                    <ul class="achievement-list">
+                        <li>Successfully completed my first web development project</li>
+                        <li>Learned basic HTML, CSS, and JavaScript fundamentals</li>
+                        <li>Implemented responsive design with help from tutorials</li>
+                        <li>Attempted to follow accessibility best practices</li>
+                        <li>Explored modern web design trends and aesthetics</li>
+                        <li>Gained confidence in front-end development basics</li>
+                    </ul>
+                </div>
+                
+                <div class="reflection-card learnings">
+                    <div class="card-header">
+                        <span class="card-icon">🎓</span>
+                        <h3>Key Learnings</h3>
+                    </div>
+                    <ul class="learning-list">
+                        <li>Importance of user-centered design methodology</li>
+                        <li>Value of iterative testing and continuous feedback</li>
+                        <li>Technical skill development through AI-assisted learning</li>
+                        <li>Balancing project scope with timeline constraints</li>
+                        <li>Cultural sensitivity in inclusive design approaches</li>
+                        <li>Effective use of design systems for consistency</li>
+                    </ul>
+                </div>
+                
+                <div class="reflection-card future">
+                    <div class="card-header">
+                        <span class="card-icon">🚀</span>
+                        <h3>Future Opportunities</h3>
+                    </div>
+                    <ul class="future-list">
+                        <li>Advanced meal planning and shopping list integration</li>
+                        <li>Automated nutrition calculations and health insights</li>
+                        <li>Enhanced recipe categorization with AI recommendations</li>
+                        <li>User-generated content and recipe submission features</li>
+                        <li>Social sharing and community building enhancements</li>
+                        <li>Multi-language support for global accessibility</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="project-impact">
+                <h3>Project Impact & Metrics</h3>
+                <div class="impact-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">9</span>
+                        <span class="stat-label">User Themes Identified</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">WCAG Compliance</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">5</span>
+                        <span class="stat-label">Core Features Delivered</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">12</span>
+                        <span class="stat-label">Weeks Development Time</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-main">
+                    <h3>Let's Connect</h3>
+                    <p>Interested in discussing this project or exploring collaboration opportunities in UX/UI design?</p>
+                    
+                    <div class="contact-links">
+                        <a href="../contact.html" class="contact-link">
+                            <span class="link-icon">📧</span>
+                            <span>Get in touch</span>
+                        </a>
+                        <a href="website/index.html" class="contact-link" id="liveSiteFooter">
+                            <span class="link-icon">🔗</span>
+                            <span>View live site</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-details">
+                    <div class="detail-item">
+                        <span class="detail-label">Course</span>
+                        <span class="detail-value">DECO7140 - Introduction to Web Design</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Institution</span>
+                        <span class="detail-value">University of Queensland, EAIT</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Completed</span>
+                        <span class="detail-value">November 2024</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Yanjie Bu. All rights reserved. Created as part of DECO7140 coursework.</p>
+            </div>
+        </div>
+    </footer>
+
+<!-- 图片放大模态框 -->
+<div id="lightbox" class="lightbox-overlay">
+    <div class="lightbox-loading" id="lightboxLoading"></div>
+    <div class="lightbox-content">
+        <div class="lightbox-image-container" id="lightboxImageContainer">
+            <img id="lightboxImage" class="lightbox-image" src="" alt="">
+        </div>
+        
+        <!-- 控制栏 -->
+        <div class="lightbox-controls">
+            <button class="lightbox-btn" id="lightboxReset" title="重置视图">↻</button>
+            <button class="lightbox-btn lightbox-close" id="lightboxClose" title="关闭">&times;</button>
+        </div>
+        
+        <!-- 导航按钮 -->
+        <button class="lightbox-navigation lightbox-prev" id="lightboxPrev" title="上一张">&#8249;</button>
+        <button class="lightbox-navigation lightbox-next" id="lightboxNext" title="下一张">&#8250;</button>
+        
+        <!-- 缩放控制 -->
+        <div class="lightbox-zoom-controls">
+            <button class="zoom-btn" id="zoomOut" title="缩小">−</button>
+            <div class="zoom-level" id="zoomLevel">100%</div>
+            <button class="zoom-btn" id="zoomIn" title="放大">+</button>
+            <button class="zoom-btn" id="zoomFit" title="适应屏幕">⌂</button>
+        </div>
+        
+        <!-- 信息显示 -->
+        <div class="lightbox-info" id="lightboxCounter"></div>
+        <div class="lightbox-caption" id="lightboxCaption"></div>
+        
+        <!-- 缩放提示 -->
+        <div class="zoom-hint" id="zoomHint">Double-click the image or use your mouse wheel to zoom</div>
+    </div>
+</div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
+
+

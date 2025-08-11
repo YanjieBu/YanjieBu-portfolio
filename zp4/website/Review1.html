@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="images/egg-icon.png">
+    <title>Tartine Bread Recipe</title>
+    <link rel="stylesheet" href="css/css_reset.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/recipe1.css">
+    <link rel="stylesheet" href="css/navbar.css">
+</head>
+
+<body>
+    <header>
+        <div id="navbar-container"></div>
+    </header>
+
+    <div class="container">
+        <!-- Breadcrumb Navigation -->
+        <nav class="breadcrumb">
+            <a href="Homepage.html">Home</a> / <a href="Recipes_Library.html">Recipes</a> / <span>Tartine Bread</span>
+        </nav>
+
+        <!-- Main Recipe Section -->
+        <main class="recipe-details-container">
+            <section class="recipe-header">
+                <div class="recipe-image">
+                    <img src="images/recipe1.png" alt="Tartine Bread">
+                    <button class="add-collection">Add to Collection</button>
+                </div>
+                <div class="vertical-line"></div> <!-- Divider line -->
+                <div class="recipe-info">
+                    <h1>Tartine Bread</h1>
+                    <p>A deliciously crusty sourdough bread that requires minimal effort to make.</p>
+                </div>
+            </section>
+
+            <!-- Recipe Tabs -->
+            <section class="recipe-tabs">
+                <ul class="tabs">
+                    <li class="tab active"><a href="Video1.html">Videos</a></li>
+                    <li class="tab"><a href="Recipe1.html">Ingredients & Steps</a></li>
+                    <li class="tab"><a href="Nutrition1.html">Nutrition Information</a></li>
+                    <li class="tab"><a href="Review1.html">Reviews (23)</a></li>
+                </ul>
+            </section>
+        </main>
+
+        <!-- Review Form Section -->
+        <section class="review-form">
+            <h2>Leave Your Review</h2>
+            <form id="review-form">
+                <table>
+                    <tr>
+                        <td><label for="person_name">Your Name:</label></td>
+                        <td><input type="text" id="person_name" name="person_name" maxlength="255" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="chat_post_title">Review Title:</label></td>
+                        <td><input type="text" id="chat_post_title" name="chat_post_title" maxlength="255" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="chat_post_content">Your Review:</label></td>
+                        <td><textarea id="chat_post_content" name="chat_post_content" rows="4" required></textarea></td>
+                    </tr>
+                </table>
+                <div class="form-actions">
+                    <button type="submit">Post Your Review</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Reviews Display Section -->
+        <section class="user-reviews">
+            <h2>User Reviews</h2>
+            <div class="review-item">
+                <h3>John Doe</h3>
+                <h4>Great Bread Recipe!</h4>
+                <p>This recipe was easy to follow, and the bread turned out amazing!</p>
+                <p><small>Posted on: 2024-10-22</small></p>
+            </div>
+            <!-- Additional review items can go here -->
+        </section>
+    </div>
+
+    <script src="js/navbar.js"></script>
+    <script src="js/review.js"></script>
+    <script src="js/user_recipes.js"></script>
+</body>
+
+</html>

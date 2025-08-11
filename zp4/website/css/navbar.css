@@ -1,0 +1,137 @@
+/* Navbar styling */
+.navbar {
+    position: absolute; /* Float navbar over the slider */
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 180, 75, 0.9); /* Semi-transparent background */
+    padding: 5px 30px;
+    border-radius: 20px; /* Rounded corners */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000; /* Keep navbar on top */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Soft shadow */
+    transition: top 0.3s ease-in-out;
+    font-family: 'Yatra One', sans-serif;
+}
+
+/* Sticky navbar styling */
+.sticky {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 0; /* Remove rounded corners in sticky mode */
+    width: 100%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Shadow remains when sticky */
+}
+
+/* Navigation links styling */
+.navbar ul {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+    justify-content: center; /* Center-align menu */
+    flex-grow: 1; /* Expand to fill remaining space */
+}
+
+.navbar ul li {
+    display: inline-block;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #333; /* Text color */
+    font-size: 18px;
+    padding: 10px 20px;
+    transition: background-color 0.3s, color 0.3s; /* Smooth hover effect */
+}
+
+/* Hover effect for navigation links */
+.navbar ul li a:hover {
+    background-color: rgba(0, 0, 0, 0.1); /* Light background on hover */
+    color: #000;
+    border-radius: 8px; /* Rounded corners on hover */
+}
+
+/* Logo styling */
+.navbar .logo img {
+    height: 50px;
+    margin-right: 20px;
+}
+
+/* Navbar icons container */
+.navbar-icons {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-icons a {
+    margin-left: 30px;
+}
+
+.navbar-icons img {
+    height: 32px;
+    width: 32px;
+    margin-left: 20px;
+    cursor: pointer;
+    transition: transform 0.3s; /* Hover scale effect */
+}
+
+/* Icon hover effect */
+.navbar-icons img:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+/* Responsive styles for mobile view */
+@media (max-width: 768px) {
+    /* Navbar adapts to fixed position */
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: 50%;
+        width: 100%;
+        height: 50px;
+        padding: 10px 0; /* Reduce padding for smaller height */
+        background-color: rgba(255, 180, 75, 1); /* Fully opaque background */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: none; /* Remove shadow */
+        z-index: 1000;
+    }
+
+    /* Smaller logo for mobile */
+    .navbar .logo img {
+        height: 20px;
+        margin-left: 10px; /* Add margin for spacing */
+    }
+
+    /* Adjust spacing and size for nav links */
+    .navbar ul {
+        display: flex;
+        gap: 10px; /* Reduce gap between menu items */
+        padding: 0;
+        margin: 0 auto;
+    }
+
+    .navbar ul li a {
+        font-size: 12px; /* Smaller font size */
+        padding: 4px 6px; /* Reduce padding */
+    }
+
+    /* Icons styling for mobile */
+    .navbar-icons {
+        display: flex;
+        align-items: center;
+        margin-right: 10px; /* Add margin to icons */
+    }
+
+    .navbar-icons img {
+        height: 16px;
+        width: 16px;
+        margin-left: 0;
+        cursor: pointer;
+    }
+}

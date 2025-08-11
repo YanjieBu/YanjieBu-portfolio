@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" href="images/egg-icon.png">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Friends</title>
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/css_reset.css">
+    <link rel="stylesheet" href="css/profile.css" />
+    <link rel="stylesheet" href="css/navbar.css" />
+</head>
+<body>
+
+    <div id="navbar-container"></div>
+
+    <!-- Main content section -->
+    <div class="content">
+        <div id="profile-container">
+            <!-- Login form displayed before the user logs in -->
+            <div id="login-before">
+                <h2>Welcome Back</h2>
+                <hr />
+                <form id="loginForm">
+                    <label for="username">User name:</label>
+                    <input type="text" id="username" name="username" placeholder="Username" required />
+                    <br />
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" placeholder="Password" required />
+                    <br />
+                    <button type="submit">Log in / Sign up</button>
+                    <br />
+                    <a href="#" class="forgot-password">Forgot your password?</a>
+                </form>
+            </div>
+
+            <!-- Content section displayed after user login -->
+            <div id="login-after" style="display: none">
+                <div id="header-section">
+                    <!-- Logout button icon -->
+                    <img id="back-btn" src="images/back.png" alt="Back" onclick="logout()" />
+                    <h2>Hello, <span id="username-display"></span>!</h2>
+                </div>
+
+                <div id="header-icons">
+                    <!-- Settings and comments icons -->
+                    <button id="settings-btn" class="icon-btn">
+                        <span>Setting</span>
+                    </button>
+                    <img id="comments-icon" src="images/message.png" alt="Comments" />
+                </div>
+
+                <!-- Profile details section for displaying user avatar and info -->
+                <div class="profile-details">
+                    <div class="avatar-container">
+                        <img src="images/egg-icon.png" alt="User Avatar" class="user-avatar" />
+                    </div>
+                    <div class="follower-info">
+                        <span><strong>5</strong> Followers</span>
+                        <span><strong>10</strong> Following</span>
+                    </div>
+
+                    <!-- Displaying user bio -->
+                    <div class="personal-profile">
+                        <p>My name is 111. I love cooking!</p>
+                    </div>
+
+                    <!-- Buttons for accessing saved recipes and liked items -->
+                    <div class="recipes-like-container">
+                        <button class="profile-button" id="your-recipes-btn">Your Recipes</button>
+                        <button class="profile-button" id="your-likes-btn">Your Likes</button>
+                    </div>
+
+                    <!-- Containers for liked items and recipes, hidden initially -->
+                    <div class="recipes-like-container">
+                        <div class="likes-section">
+                            <div id="user-likes" class="likes-grid" style="display: none;"></div>
+                        </div>
+                        <div class="recipes-section">
+                            <div id="user-recipes" class="recipes-grid" style="display: none;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/userprofile.js"></script>
+    <script src="js/navbar.js"></script>
+
+    <script>
+        // JavaScript function to delete an image from the likes section
+        function deleteImage(button) {
+            const likeItem = button.parentElement; // Get the parent like item
+            likeItem.remove(); // Remove the selected like item from the DOM
+        }
+    </script>
+</body>
+</html>
+

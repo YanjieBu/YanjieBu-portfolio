@@ -1,0 +1,730 @@
+/* — 容器 & 顶部背景 — */
+.container {
+  background: url("../images/background3.png") repeat center right / 50%;
+  backdrop-filter: blur(1px);
+  z-index: -1;
+  /* backface-visibility 通常取值 visible/hidden，10% 无效，这里去掉 */
+}
+
+.background {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+  border-bottom-left-radius: 45px;
+  border-bottom-right-radius: 45px;
+}
+
+/* — 主内容区 (.text) — */
+.text {
+  display: flex;
+  align-items: flex-start;
+  margin: 50px auto 0 13%;
+  padding: 0;
+  max-width: 1300px;
+}
+
+/* — Navbar 样式 — */
+.navbar {
+  position: absolute;
+  top: 20px; left: 50%;
+  transform: translateX(-50%);
+  background: rgba(207,207,207,0.9);
+  padding: 4px 30px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: top 0.3s ease-in-out;
+}
+.sticky {
+  position: fixed;
+  top: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  border-radius: 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+.navbar ul li {
+  position: relative;
+  display: inline-block;
+}
+.navbar ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+  padding: 10px 20px;
+  transition: background-color 0.3s, color 0.3s;
+}
+.navbar ul li a:hover {
+  background: rgba(0,0,0,0.1);
+  color: #000;
+  border-radius: 8px;
+}
+.navbar .logo img,
+.me {
+  height: 45px;
+  margin-top: 8px;
+}
+.navbar .logo img { margin-right: 20px; }
+.me               { margin-left: 20px; }
+
+/* — 分割线 — */
+.divider {
+  width: 3px;
+  height: 1850vh;
+  margin: 80px 20px;
+  background-color: rgba(0,0,0,0.1);
+  box-shadow: 4px 0 8px rgba(0,0,0,0.1);
+}
+
+/* — 侧边栏 — */
+.sidebar {
+  position: sticky;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 200px 0 0 -90px;
+  width: 150px;
+  padding: 20px;
+  border-radius: 8px;
+}
+.sidebar h3 {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+.sidebar ul li {
+  margin: 10px 0;
+  color: #888;
+  cursor: pointer;
+}
+.sidebar ul li a {
+  font-size: 1em;
+  transition: font-size .3s;
+}
+.sidebar ul li a.active {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #044816;
+}
+
+/* — 主内容区域 — */
+.content {
+  flex: 1;
+  padding-left: 90px;
+  max-width: 1140px;
+}
+
+/* — "文字+头像" 布局 — */
+.text-with-avatar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+}
+.text-with-avatar p {
+  flex: 1;
+  margin-right: 20px;
+}
+.avatar {
+  width: 270px;
+  height: auto;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  margin-left: auto;
+}
+
+.content-section {
+    margin-bottom: 5em; /* 设置每个部分之间的间距，调整 em 值以获得所需间距 */
+}
+
+/* — "文字+GIF" 布局 & 公用间距 — */
+.text-with-gif,
+.image-container,
+.text-image-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 1em;
+}
+.text-with-gif { margin: 1.5em 0; }
+.image-container { margin: 0 0 1.7em; }
+.image-container + .image-container { margin-top: .8em; }
+
+/* — 一组 margin-bottom 统一设置 — */
+.text1, .text7, .text8, .text9,
+.text10, .text11, .text12, .text13,
+.text14, .text15 {
+  margin-bottom: 1.5em;
+}
+.text16, .text17, .text18, .text19,
+.text20, .text21, .text22, .text23,
+.text24, .text25 {
+  margin-bottom: 1em;
+}
+/* — 一组 margin-top 统一设置 — */
+.text2, .text3, .text4 {
+  margin-top: 1.5em;
+}
+
+/* — "文字+图片22" 布局 — */
+.text-image-container {
+  margin-bottom: 20px;
+}
+.text-image-container .text-content {
+  flex: 2;
+  padding-right: 50px;
+  margin-top: 13px;
+}
+.text-image-container .image-content {
+  flex: 1;
+}
+.text-image-container .image-content img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  margin-top: 20px;
+}
+
+/* — footer & 返回顶部 — */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #f2f2f2;
+  font-size: 14px;
+  margin-top: 20px;
+}
+footer p { margin: 0; }
+.back-to-top {
+  display: block;
+  margin-top: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #560058;
+}
+.back-to-top:hover {
+  color: #346daa;
+}
+
+/* — 其它零碎 — */
+.section-divider {
+  border: none;
+  border-top: 2px solid #0d0d0d;
+  margin: 3px 0 30px;
+  width: 1050px;
+}
+/* text-image-container */
+.text-image-container {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+.text-image-container .text-content {
+  flex: 2;
+  padding-right: 50px;
+  margin-top: 13px;
+}
+.text-image-container .image-content {
+  flex: 1;
+}
+.text-image-container .image-content img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+  margin-top: 20px;
+}
+
+
+/* — 公用：圆角 + 阴影 + 自适应高度 — */
+.gif1, .gif3,
+.image1, .image2, .image3, .image4, .image5, .image6, .image7,
+.image8, .image9, .image10, .image11, .image12,
+.image13, .image14, .image15, .image16, .image17,
+.image18, .image19, .image20, .image21,
+.poster {
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+}
+
+/* — 公用：图片容器布局 — */
+.image-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.7em;
+}
+/* 除第一个容器外，统一加顶边距 */
+.image-container + .image-container {
+  margin-top: 0.8em;
+}
+
+/* — 各元素各自宽度/最大宽度 — */
+.gif1 {
+    width: 220px; /* 设置 GIF 的宽度 */
+    height: auto;
+    /* 可以根据需要调整大小 */
+    border-radius: 8px; /* 可选：添加圆角 */
+}
+
+.gif3{
+    width: 1050px; ;
+    border-radius: 8px; /* 可选：添加圆角 */
+}
+
+.image1{
+    width: 1050px; ;
+    border-radius: 8px; /* 可选：添加圆角 */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* 可选：添加阴影 */
+}
+
+.image-container1 {
+    display: flex;
+    gap: 20px; /* 设置图片之间的间距 */
+    justify-content: center; /* 水平居中对齐 */
+    align-items: center; /* 垂直居中对齐 */
+    margin-bottom: 1.7em;
+}
+
+.image2 {
+    max-width: 53%; /* 控制图片宽度，确保它们并排显示 */
+    height: auto;
+    border-radius: 8px; /* 可选：添加圆角 */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* 可选：添加阴影 */
+}
+
+.poster {
+    max-width: 45%; /* 控制图片宽度，确保它们并排显示 */
+    height: auto;
+    border-radius: 8px; /* 可选：添加圆角 */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* 可选：添加阴影 */
+}
+
+.image-container2 {
+    display: flex;
+    gap: 20px; /* 设置图片之间的间距 */
+    justify-content: center; /* 水平居中对齐 */
+    align-items: center; /* 垂直居中对齐 */
+    margin-bottom: 1.7em;
+    margin-top: 0.8em;
+}
+
+.image3 {
+    max-width: 35%; /* 控制图片宽度，确保它们并排显示 */
+    height: auto;
+    border-radius: 8px; /* 可选：添加圆角 */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* 可选：添加阴影 */
+}
+
+.image4 {
+    max-width: 60%; /* 控制图片宽度，确保它们并排显示 */
+    height: auto;
+    border-radius: 8px; /* 可选：添加圆角 */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* 可选：添加阴影 */
+}
+
+.image-container3 {
+    display: flex;
+    gap: 20px; /* 设置图片之间的间距 */
+    justify-content: center; /* 水平居中对齐 */
+    align-items: center; /* 垂直居中对齐 */
+    margin-bottom: 1.7em;
+    margin-top: 0.8em;
+}
+
+.image5 {
+    max-width: 32%; /* 控制图片宽度，确保它们并排显示 */
+    height: auto;
+    border-radius: 8px; /* 可选：添加圆角 */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* 可选：添加阴影 */
+}
+
+.image6 {
+    max-width: 32%; /* 控制图片宽度，确保它们并排显示 */
+    height: auto;
+    border-radius: 8px; /* 可选：添加圆角 */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* 可选：添加阴影 */
+}
+
+.image7 {
+    max-width: 32%; /* 控制图片宽度，确保它们并排显示 */
+    height: auto;
+    border-radius: 8px; /* 可选：添加圆角 */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* 可选：添加阴影 */
+}
+
+.image-container4 {
+    display: flex;
+    gap: 20px; /* 设置图片之间的间距 */
+    justify-content: center; /* 水平居中对齐 */
+    align-items: center; /* 垂直居中对齐 */
+    margin-bottom: 1.7em;
+    margin-top: 0.8em;
+}
+
+.image8 {
+    max-width: 40%; /* 控制图片宽度，确保它们并排显示 */
+    height: auto;
+    border-radius: 8px; /* 可选：添加圆角 */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* 可选：添加阴影 */
+}
+
+.image9 {
+    max-width: 55%; /* 控制图片宽度，确保它们并排显示 */
+    height: auto;
+    border-radius: 8px; /* 可选：添加圆角 */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* 可选：添加阴影 */
+}
+
+.image-container5 {
+    display: flex;
+    gap: 20px; /* 设置图片之间的间距 */
+    justify-content: center; /* 水平居中对齐 */
+    align-items: center; /* 垂直居中对齐 */
+    margin-bottom: 1.7em;
+    margin-top: 0.8em;
+}
+
+.image10 {
+    max-width: 49%; /* 控制图片宽度，确保它们并排显示 */
+    height: auto;
+    border-radius: 8px; /* 可选：添加圆角 */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* 可选：添加阴影 */
+}
+
+.image11 {
+    max-width: 49%; /* 控制图片宽度，确保它们并排显示 */
+    height: auto;
+    border-radius: 8px; /* 可选：添加圆角 */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* 可选：添加阴影 */
+}
+
+.image12 {
+    width: 1050px; ;
+    border-radius: 8px; /* 可选：添加圆角 */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* 可选：添加阴影 */
+    margin-bottom: 1.7em;
+    margin-top: 0.8em;
+}
+
+.image-container6 {
+    display: flex;
+    gap: 20px; /* 设置图片之间的间距 */
+    justify-content: center; /* 水平居中对齐 */
+    align-items: center; /* 垂直居中对齐 */
+    margin-bottom: 1.7em;
+    margin-top: 0.8em;
+}
+
+.image13 {
+    max-width: 62%; /* 控制图片宽度，确保它们并排显示 */
+    height: auto;
+    border-radius: 8px; /* 可选：添加圆角 */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* 可选：添加阴影 */
+}
+
+.image14 {
+    max-width: 37%; /* 控制图片宽度，确保它们并排显示 */
+    height: auto;
+    border-radius: 8px; /* 可选：添加圆角 */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* 可选：添加阴影 */
+}
+
+.image15 {
+    width: 1050px; ;
+    border-radius: 8px; /* 可选：添加圆角 */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* 可选：添加阴影 */
+    margin-bottom: 1.7em;
+    margin-top: 0.8em;
+}
+
+.image-container7 {
+    display: flex;
+    gap: 20px; /* 设置图片之间的间距 */
+    justify-content: center; /* 水平居中对齐 */
+    align-items: center; /* 垂直居中对齐 */
+    margin-bottom: 1.7em;
+    margin-top: 0.8em;
+}
+
+.image16 {
+    max-width: 50%; /* 控制图片宽度，确保它们并排显示 */
+    height: auto;
+    border-radius: 8px; /* 可选：添加圆角 */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* 可选：添加阴影 */
+}
+
+.image17 {
+    max-width: 50%; /* 控制图片宽度，确保它们并排显示 */
+    height: auto;
+    border-radius: 8px; /* 可选：添加圆角 */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* 可选：添加阴影 */
+}
+
+.image-container8 {
+    display: flex;
+    gap: 20px; /* 设置图片之间的间距 */
+    justify-content: center; /* 水平居中对齐 */
+    align-items: center; /* 垂直居中对齐 */
+    margin-bottom: 1.7em;
+    margin-top: 0.8em;
+}
+
+.image18 {
+    max-width: 49%; /* 控制图片宽度，确保它们并排显示 */
+    height: auto;
+    border-radius: 8px; /* 可选：添加圆角 */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* 可选：添加阴影 */
+}
+
+.image19 {
+    max-width: 49%; /* 控制图片宽度，确保它们并排显示 */
+    height: auto;
+    border-radius: 8px; /* 可选：添加圆角 */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* 可选：添加阴影 */
+}
+
+.image-container9 {
+    display: flex;
+    gap: 20px; /* 设置图片之间的间距 */
+    justify-content: center; /* 水平居中对齐 */
+    align-items: center; /* 垂直居中对齐 */
+    margin-bottom: 1.7em;
+    margin-top: 0.8em;
+}
+
+.image20 {
+    max-width: 49%; /* 控制图片宽度，确保它们并排显示 */
+    height: auto;
+    border-radius: 8px; /* 可选：添加圆角 */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* 可选：添加阴影 */
+}
+
+.image21 {
+    max-width: 49%; /* 控制图片宽度，确保它们并排显示 */
+    height: auto;
+    border-radius: 8px; /* 可选：添加圆角 */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* 可选：添加阴影 */
+}
+
+/* ===============================================
+   以下是新增的小屏响应式样式，不影响大屏布局
+   =============================================== */
+
+/* 平板适配 (1024px 及以下) */
+@media screen and (max-width: 1024px) {
+    .text {
+        margin-left: 8%;
+        padding: 0 15px;
+    }
+    
+    .content {
+        padding-left: 60px;
+    }
+    
+    .sidebar {
+        margin-left: -70px;
+        width: 130px;
+    }
+    
+    .avatar {
+        width: 220px;
+    }
+    
+    .gif1 {
+        width: 180px;
+    }
+}
+
+/* 手机端适配 (768px 及以下) */
+@media screen and (max-width: 768px) {
+    /* 整体布局调整 */
+    .text {
+        flex-direction: column;
+        margin: 20px auto 0 2%;
+        padding: 0 15px;
+    }
+    
+    /* 侧边栏改为顶部导航 */
+    .sidebar {
+        position: static;
+        transform: none;
+        margin: 20px 0;
+        width: 100%;
+        background: rgba(255,255,255,0.9);
+        border-radius: 10px;
+        padding: 15px;
+        order: -1;
+    }
+    
+    .sidebar ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+    }
+    
+    .sidebar ul li a {
+        font-size: 0.9em !important;
+        padding: 8px 12px;
+        background: rgba(0,0,0,0.05);
+        border-radius: 15px;
+        display: block;
+        text-decoration: none;
+        color: #888;
+    }
+    
+    .sidebar ul li a.active {
+        font-size: 0.9em !important;
+        background: #044816;
+        color: white;
+    }
+    
+    /* 隐藏分割线 */
+    .divider {
+        display: none;
+    }
+    
+    /* 主内容区域调整 */
+    .content {
+        padding-left: 0;
+        width: 100%;
+    }
+    
+    /* 分割线宽度调整 */
+    .section-divider {
+        width: 100%;
+        margin: 20px 0 30px;
+    }
+    
+    /* 文字+头像布局调整 */
+    .text-with-avatar {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .text-with-avatar p {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    
+    .avatar {
+        width: 180px;
+        margin: 0 auto;
+    }
+    
+    /* 文字+GIF布局调整 */
+    .text-with-gif {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .gif1 {
+        width: 150px;
+        order: -1;
+        margin-bottom: 15px;
+    }
+    
+    /* 图片容器调整为垂直排列 */
+    .image-container1,
+    .image-container2,
+    .image-container3,
+    .image-container4,
+    .image-container5,
+    .image-container6,
+    .image-container7,
+    .image-container8,
+    .image-container9 {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    /* 所有图片在手机端都占满宽度 */
+    .gif3,
+    .image1,
+    .image12,
+    .image15 {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .image2, .poster,
+    .image3, .image4,
+    .image5, .image6, .image7,
+    .image8, .image9,
+    .image10, .image11,
+    .image13, .image14,
+    .image16, .image17,
+    .image18, .image19,
+    .image20, .image21 {
+        max-width: 100%;
+    }
+    
+    /* 文字+图片容器调整 */
+    .text-image-container {
+        flex-direction: column;
+    }
+    
+    .text-image-container .text-content {
+        padding-right: 0;
+        margin-top: 0;
+    }
+    
+    .text-image-container .image-content img {
+        margin-top: 10px;
+    }
+    
+    /* 间距调整 */
+    .content-section {
+        margin-bottom: 3em;
+    }
+}
+
+/* 小手机适配 (480px 及以下) */
+@media screen and (max-width: 480px) {
+    .text {
+        margin-left: 1%;
+        padding: 0 10px;
+    }
+    
+    .avatar {
+        width: 140px;
+    }
+    
+    .gif1 {
+        width: 120px;
+    }
+    
+    .sidebar {
+        padding: 10px;
+    }
+    
+    .sidebar ul li a {
+        font-size: 0.8em !important;
+        padding: 6px 10px;
+    }
+    
+    .sidebar ul li a.active {
+        font-size: 0.8em !important;
+    }
+}
+
+

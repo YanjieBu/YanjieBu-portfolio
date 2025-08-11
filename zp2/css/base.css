@@ -1,0 +1,2007 @@
+/* ============================================
+   COMPLETE INTEGRATED BASE.CSS 
+   Brisbane Lions Project - 保持原有效果 + 新增小屏适配
+   ============================================ */
+
+/* ============================================
+   CSS RESET
+   ============================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ============================================
+   BASE STYLES (原有base.css)
+   ============================================ */
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    line-height: 2.5;
+    font-weight: 500;
+}
+
+.navbar ul li a {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 24px;
+    color: #313131;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.content h1 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 50px;
+    color: #232323;
+    font-weight: 800;
+    margin-bottom: 3px;
+    line-height: 2;
+    letter-spacing: 3px;
+}
+
+.content h2 {
+    font-family: sans-serif;
+    font-size: 30px;
+    color: #232323;
+    font-weight: 600;
+    margin-bottom: 3px;
+    line-height: 2;
+    letter-spacing: 3px;
+}
+
+.content h3 {
+    font-family: sans-serif;
+    font-size: 25px;
+    color: #232323;
+    font-weight: 600;
+    margin-bottom: 3px;
+    line-height: 2;
+    letter-spacing: 2.5px;
+}
+
+.content p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: #272727;
+    line-height: 40px;
+    letter-spacing: 3px;
+    text-align: justify;
+}
+
+.purple-text {
+    color: rgb(101, 1, 101);
+}
+
+img:not(.background):hover {
+    transform-origin: top center;
+    transform: scale(1.2);
+    transition: transform 0.3s ease;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+}
+
+section {
+    scroll-snap-align: start;
+    width: 100vw;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 16px;
+}
+h1 { font-size: 2rem; }
+p  { font-size: 1rem; }
+
+/* ============================================
+   LAYOUT STYLES (原有layout.css)
+   ============================================ */
+.text {
+    display: flex;
+    margin: 0 auto;
+    padding: 0;
+    max-width: 1300px;
+    align-items: flex-start;
+}
+
+body.locked, html.locked {
+    overflow: hidden;
+    height: 100vh;
+}
+
+body.scrollable, html.scrollable {
+    overflow-y: auto;
+    height: 100vh;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+}
+
+section {
+    height: 100vh;
+    scroll-snap-align: start;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    scroll-behavior: smooth;
+}
+
+body.locked {
+    overflow: hidden;
+}
+
+body.scrollable {
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+}
+
+section {
+    scroll-snap-align: start;
+    height: 100vh;
+}
+
+/* ============================================
+   SECTION 1 STYLES (完整保留原有section1.css)
+   ============================================ */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 8%;
+    padding: 10px 40px;
+    background-color: #232b72;
+    border-bottom: 2px solid #7b0000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: none;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+#mainNavbar.hidden {
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1001;
+}
+
+.navbar ul {
+    list-style-type: none;
+    display: flex;
+    gap: 15px;
+}
+
+.navbar ul li {
+    position: relative;
+    display: inline-block;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 18px;
+    padding: 10px 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar ul li a:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: #ff8c00;
+    border-radius: 8px;
+}
+
+.navbar .logo img {
+    height: 45px;
+    margin-right: 20px;
+    margin-top: 8px;
+}
+
+.nav-image {
+    width: 24px;
+    height: auto;
+    vertical-align: middle;
+    display: inline-block;
+    margin: 0 2px;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    background-color: #5c1e1e;
+    color: white;
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    overflow: hidden;
+}
+
+.intro-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.text-section {
+    z-index: 10;
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4vw;
+}
+
+.slide-text {
+    font-size: 9vw;
+    font-weight: bold;
+    display: flex;
+    gap: 0.5vw;
+}
+
+.arrow {
+    font-size: 6vw;
+}
+
+.slide-in {
+    transform: translateX(-100%);
+    opacity: 0;
+    animation: slideIn 0.6s cubic-bezier(0.6, 0, 0.4, 1) forwards;
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.delay1 { animation-delay: 0.2s; }
+.delay2 { animation-delay: 0.25s; }
+.delay3 { animation-delay: 0.35s; }
+.delay4 { animation-delay: 0.5s; }
+.delay5 { animation-delay: 0.65s; }
+.delay6 { animation-delay: 0.9s; }
+.delay7 { animation-delay: 1.15s; }
+.delay8 { animation-delay: 1.2s; }
+.delay9 { animation-delay: 1.3s; }
+.delay10 { animation-delay: 1.45s; }
+.delay11 { animation-delay: 1.6s; }
+
+.split-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    z-index: 200;
+    pointer-events: none;
+}
+
+.split-left,
+.split-right {
+    width: 50%;
+    height: 100%;
+    background-color: #5c1e1e;
+    transition: transform 1.2s cubic-bezier(1, 0, 0.1, 0.8);
+}
+
+.split-left {
+    transform: translateX(0);
+}
+.split-right {
+    transform: translateX(0);
+}
+
+.split-mask.open .split-left {
+    transform: translateX(-100%);
+}
+.split-mask.open .split-right {
+    transform: translateX(100%);
+}
+
+.text-section {
+    z-index: 300;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4vw;
+    font-size: 9vw;
+    font-weight: bold;
+    transition: opacity 0.2s ease;
+}
+
+@keyframes fadeOutText {
+    to {
+        opacity: 0;
+    }
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../images/background1.gif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+    filter: brightness(80%) saturate(80%);
+}
+
+@keyframes growWithMask {
+    0% {
+        clip-path: inset(0 50% 0 50%);
+    }
+    100% {
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+.championship {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    font-weight: bold;
+    z-index: 220;
+    display: flex;
+    gap: 2vw;
+    opacity: 1;
+    pointer-events: none;
+    text-shadow: 2px 4px 6px rgb(45, 45, 45);
+}
+
+.championship span {
+    transform: translateX(0) scale(1);
+    opacity: 0;
+    display: inline-block;
+    transition: color 0.5s ease;
+}
+
+.championship.show span.left {
+    animation: slideLeftOut 1.2s ease forwards;
+    color: #2579ff;
+}
+
+.championship.show span.right {
+    animation: slideRightOut 1.2s ease forwards;
+    color: #ffba31;
+}
+
+@keyframes slideLeftOut {
+    0% { transform: translateX(0) scale(1); opacity: 0; }
+    20% { opacity: 1; transform: translateX(-2vw) scale(1.2); }
+    100% { transform: translateX(-20vw) scale(1.4); opacity: 1; }
+}
+
+@keyframes slideRightOut {
+    0% { transform: translateX(0) scale(1); opacity: 0; }
+    20% { opacity: 1; transform: translateX(2vw) scale(1.2); }
+    100% { transform: translateX(20vw) scale(1.4); opacity: 1; }
+}
+
+.background img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    z-index: 1;
+    text-shadow: 2px 2px 6px rgba(106, 106, 106, 0.6);
+}
+
+#bg2Caption {
+    display: none;
+    position: absolute;
+    top: 25%;
+    left: 10%;
+    z-index: 5;
+    color: white;
+    font-size: 3.5vw;
+    font-weight: 700;
+    line-height: 1.8;
+    text-shadow: 2px 2px 6px rgba(106, 106, 106, 0.6);
+}
+
+.bg2-line {
+    opacity: 0;
+    transform: translateX(50%) scale(0.97);
+    animation: lineReveal 1.2s cubic-bezier(0.6, 0, 0.3, 1) forwards;
+}
+
+.bg2-line.line1 { animation-delay: 0.4s; }
+.bg2-line.line2 { animation-delay: 1.1s; }
+.bg2-line.line3 { animation-delay: 1.8s; }
+.bg2-line.line4 { animation-delay: 2.5s; }
+
+@keyframes lineReveal {
+    0% {
+        opacity: 0;
+        transform: translateX(50%) scale(0.95);
+    }
+    60% {
+        opacity: 1;
+        transform: translateX(0%) scale(1.05);
+    }
+    100% {
+        transform: translateX(0%) scale(1);
+        opacity: 1;
+    }
+}
+
+.highlight-lions {
+    color: #ffcc33;
+    font-weight: 800;
+    text-shadow: 0 0 10px rgba(255, 191, 0, 0.6);
+}
+
+.highlight-gabba {
+    color: #3d58df;
+    font-weight: 800;
+    text-shadow: 0 0 10px rgba(20, 35, 103, 0.6);
+}
+
+.scroll-hint {
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-size: 1.3vw;
+    color: white;
+    font-weight: 600;
+    z-index: 500;
+    opacity: 0;
+    transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+.scroll-hint .arrow {
+    font-size: 2vw;
+    display: block;
+    margin-bottom: 10px;
+    animation: bounce 1.6s infinite;
+    color: #fff;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(8px); }
+}
+
+/* ============================================
+   SECTION 2 STYLES (完整保留原有section2.css)
+   ============================================ */
+#section2 {
+    --year-bg: url("../images/2024.jpg");
+    background-color: #1d2945;
+    background-image: 
+        linear-gradient(to left, rgba(16, 23, 98, 0.2), rgba(104, 140, 225, 0.005), rgba(29, 41, 69, 0)),
+        var(--year-bg);
+    background-repeat: no-repeat;
+    background-size: 50% 100%;
+    background-position: right top;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-panel {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    padding: 15px 25px;
+    box-sizing: border-box;
+}
+
+.year-list-title {
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 0px;
+    margin-left: 13px;
+}
+
+.year-list-title2 {
+    font-size: 35px;
+    font-weight: bold;
+    color: white;
+    margin-top: 0;
+    margin-bottom: 25px;
+    margin-left: 13px;
+    line-height: 1.1;
+}
+
+.ranking-box {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    height: 92%;
+    background: linear-gradient(to right, #0d182c 50%, rgba(62, 8, 8, 0.4) 50%);
+    overflow: hidden;
+    position: relative;
+    margin-top: 4%;
+}
+
+.year-list.two-columns {
+    display: flex;
+    flex-direction: row;
+    z-index: 2;
+}
+
+.year-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.year-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.year-column li {
+    background-color: #d2462a;
+    color: white;
+    padding: 10px 16px;
+    font-size: 18px;
+    cursor: pointer;
+    border-left: 4px solid transparent;
+    transition: all 0.3s ease;
+    margin: 8px 6px;
+}
+
+.year-column li:hover,
+.year-column li.active {
+    background-color: #252b63;
+    border-left: 4px solid #ffffff;
+}
+
+.year-details {
+    width: 50%;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 2;
+    background-color: rgba(142, 31, 31, 0.2);
+}
+
+.rank-main {
+    font-size: 130px;
+    font-weight: 900;
+    color: white;
+    line-height: 1;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+.rank-sub {
+    margin-top: 30px;
+}
+
+.rank-sub p {
+    font-size: 26px;
+    color: white;
+    font-weight: 500;
+    margin: 12px 0;
+}
+
+/* ============================================
+   SECTION 2-1 STYLES (完整保留原有section2-1.css)
+   ============================================ */
+#section2-1 {
+    background-color: #0d1b2a;
+    color: #e0e6f7;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+.section2-1-chart {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.section2-1-chart .flourish-embed {
+    transform: scale(0.8);
+    transform-origin: top center;
+    width: 15000px;
+    height: 600px;
+    margin-top: 5%;
+}
+
+.section2-1-explanation {
+    margin-top: 0;
+    background-color: #293f5c;
+    border-radius: 6px;
+    width: 100%;
+    margin-right: auto;
+    font-size: 16px;
+    line-height: 1.6;
+    bottom: 0;
+    height: 40%;
+}
+
+.section2-1-explanation h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+    color: #facc15;
+    font-weight: bold;
+}
+
+.explanation-inner {
+    text-align: center;
+}
+
+/* ============================================
+   SECTION 3 STYLES (完整保留原有section3.css)
+   ============================================ */
+#section3 {
+    height: 100vh;
+    background-color: #0d1b2a;
+    color: #1e40af;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-family: 'Roboto', sans-serif;
+    padding: 0 5%;
+}
+
+.lions-section3 {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.lions-section3 .flourish-embed {
+    width: 65%;
+    height: 90%;
+    margin-top: 15%;
+}
+
+.section3-text {
+    width: 26%;
+    color: #e0e6f7;
+    font-size: 18px;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 100px;
+    margin-top: 12%;
+}
+
+.section3-text h2 {
+    font-size: 24px;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.section3-text p {
+    margin-bottom: 12px;
+}
+
+/* ============================================
+   SECTION 4 STYLES (完整保留原有section4.css)
+   ============================================ */
+#section4 {
+    height: 100vh;
+    background-color: #0d1b2a;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Roboto', sans-serif;
+    padding: 0 5%;
+    position: relative;
+}
+
+.section4-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 140px;
+    background-color: #0d1b2a;
+    z-index: 900;
+}
+
+.lions-section4 {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.section4-content {
+    max-width: 1000px;
+    text-align: center;
+    margin-top: 5%;
+}
+
+.section4-content h2 {
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: #ff9009;
+}
+
+.section4-content p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #cdd4f2;
+    margin-bottom: 30px;
+}
+
+.section4-button {
+    display: inline-block;
+    background-color: #ff8c00df;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin-top: 40px;
+}
+
+.section4-button:hover {
+    background-color: #ffc477;
+}
+
+.hidden-on-load {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ============================================
+   SECTION 5 STYLES (完整保留原有section5.css)
+   ============================================ */
+#section5 {
+    background-color: #0d1b2a;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Roboto', sans-serif;
+    padding: 60px 5%;
+    box-sizing: border-box;
+}
+
+.section5-visuals {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    width: 100%;
+    max-width: 1400px;
+}
+
+.chart {
+    width: 50%;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+}
+
+#section5 .flourish-embed {
+    flex-grow: 1;
+    width: 100%;
+    height: 100%;
+    margin-top: 4%;
+}
+
+#section5 .flourish-embed iframe {
+    width: 100% !important;
+    height: 100% !important;
+    border: none;
+}
+
+.lions-section5 {
+    position: relative;
+}
+
+.section5-below {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: auto;
+    background-color: #293f5c;
+    color: #e0e6f7;
+    border-radius: 2px;
+    padding: 16px 40px;
+    z-index: 1000;
+    box-sizing: border-box;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    font-size: 13px;
+    line-height: 1.3;
+    text-align: left;
+}
+
+.below-left,
+.below-right {
+    flex: 1;
+}
+
+.section5-below h4 {
+    font-size: 15px;
+    margin-bottom: 6px;
+    color: #facc15;
+    font-weight: bold;
+}
+
+/* ============================================
+   SECTION 6 STYLES (完整保留原有section6.css)
+   ============================================ */
+.lions-section6 {
+    background-image: linear-gradient(to bottom, #0d1b2a 0%, #314e6e 40%, #f3e9d2 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #e0e6f7;
+    text-align: center;
+    padding: 60px 20px;
+    font-family: 'Roboto', sans-serif;
+    transition: background-image 1s ease-in-out;
+    position: relative;
+    z-index: 1;
+}
+
+.lions-section6::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/background3.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.3;
+    z-index: -1;
+}
+
+.funfacts-title {
+    font-size: 45px;
+    margin-bottom: 40px;
+    color: #facc15;
+    margin-top: 5%;
+    z-index: 100;
+}
+
+.funfacts-container {
+    display: flex;
+    justify-content: center;
+    gap: 160px;
+    flex-wrap: wrap;
+    margin-top: 6%;
+    align-items: flex-start;
+    margin-right: 6%;
+    z-index: 100;
+}
+
+.funfact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+}
+
+.digit-boxes {
+    display: flex;
+    gap: 4px;
+}
+
+.digit {
+    font-size: 64px;
+    font-weight: bold;
+    background-color: #1a2e45;
+    color: #ffffff;
+    width: 60px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid #e0e6f7;
+    box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.5);
+}
+
+.label {
+    margin-top: 12px;
+    font-size: 20px;
+    color: #fff9eb;
+    line-height: 1.4;
+    text-align: center;
+}
+
+.funfact-description {
+    margin-top: 10px;
+    font-size: 13.5px;
+    color: #eef5ff;
+    line-height: 1.5;
+    text-align: center;
+    max-width: 220px;
+}
+
+.funfacts-more {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 90px;
+    font-size: 20px;
+    color: #ffffffbf;
+    font-weight: bold;
+    animation: bounce 2s infinite;
+}
+
+.funfacts-more .arrow {
+    font-size: 24px;
+    animation: bounceArrow 2s infinite;
+}
+
+.funfacts-more .text {
+    font-size: 20px;
+}
+
+@keyframes bounceArrow {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(4px);
+    }
+}
+
+/* ============================================
+   SECTION 7 STYLES (完整保留原有section7.css)
+   ============================================ */
+#section7 .goal-left {
+    margin-top: -30px;
+}
+
+.lions-section7 {
+    background-color: #f8f0dc;
+    padding: 40px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.lions-section7 h2 {
+    text-align: center;
+    font-size: 32px;
+    color: #7b0000;
+    margin-top: 3%;
+}
+
+.goal-layout {
+    display: flex;
+    width: 100%;
+}
+
+.goal-left {
+    flex: 0 0 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.goal-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 40px;
+    gap: 60px;
+}
+
+.player-row {
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+}
+
+.player-img {
+    margin-right: 20px;
+}
+
+.track-wrapper {
+    position: relative;
+    width: 600px;
+}
+
+.track {
+    height: 3px;
+    background: #333;
+    position: relative;
+    margin-top: 10px;
+}
+
+.axis-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    font-size: 14px;
+    color: #333;
+}
+
+.ball {
+    width: 40px;
+    position: absolute;
+    bottom: 15px;
+    left: 0;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.ball-animate {
+    width: 40px;
+    height: auto;
+    position: fixed;
+    z-index: 999;
+    pointer-events: none;
+}
+
+.landed-ball {
+    transition: opacity 0.5s ease;
+}
+
+.goal-label {
+    transition: all 0.8s ease;
+}
+
+.ticks {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    width: 100%;
+    top: 8px;
+    font-size: 12px;
+    color: #444;
+}
+
+.player-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.player-name {
+    margin-top: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #1d2945;
+    text-align: center;
+    margin-right: 40px;
+}
+
+.info-headings {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 100px;
+    margin-top: 10px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.info-item {
+    font-size: 18px;
+    color: #4b1e1e;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.icon {
+    height: 22px;
+    width: auto;
+    vertical-align: middle;
+}
+
+.player-right-row {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 210px;
+    gap: 60px;
+    margin-left: -110px;
+}
+
+.right-img {
+    width: 150px;
+    margin-top: 15%;
+    height: auto;
+}
+
+.tooltip {
+    position: fixed;
+    background-color: #fff8e1;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 16px;
+    line-height: 1.6;
+    white-space: pre-line;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.info-kings {
+    margin-left: -50px;
+}
+
+/* ============================================
+   SECTION 8 STYLES (完整保留原有section8.css)
+   ============================================ */
+.lions-section8 {
+    background-color: #f8f0dc;
+    padding: 40px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.lions-section8 .goal-layout {
+    display: flex;
+    width: 100%;
+}
+
+.lions-section8 .goal-left {
+    flex: 0 0 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-top: 2%;
+}
+
+.lions-section8 .goal-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 40px;
+    gap: 60px;
+}
+
+.lions-section8 .player-row {
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+}
+
+.lions-section8 .player-img {
+    margin-right: 20px;
+    margin-top: -10%;
+}
+
+.lions-section8 .track-wrapper {
+    position: relative;
+    width: 600px;
+}
+
+.lions-section8 .track {
+    height: 3px;
+    background: #333;
+    position: relative;
+}
+
+.lions-section8 .axis-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    font-size: 14px;
+    color: #333;
+}
+
+.lions-section8 .ball {
+    width: 40px;
+    position: absolute;
+    bottom: 15px;
+    left: 0;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.lions-section8 .ball-animate {
+    width: 40px;
+    height: auto;
+    position: fixed;
+    z-index: 999;
+    pointer-events: none;
+}
+
+.lions-section8 .ticks {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    width: 100%;
+    top: 8px;
+    font-size: 12px;
+    color: #444;
+}
+
+.lions-section8 .player-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 20px;
+    margin-top: 4%;
+}
+
+.lions-section8 .player-name {
+    margin-top: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #1d2945;
+    text-align: center;
+    margin-right: 40px;
+}
+
+.lions-section8 .player-right-row {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 210px;
+    gap: 60px;
+    margin-left: -110px;
+}
+
+.lions-section8 .right-img {
+    width: 110px;
+    margin-top: 13%;
+    height: auto;
+}
+
+/* ============================================
+   SECTION 9 STYLES (完整保留原有section9.css)
+   ============================================ */
+#section9 {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    background-color: #f8f0dc;
+}
+
+.ending-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: opacity 3s ease;
+}
+
+.bg-base {
+    background-color: #f8f0dc;
+    z-index: 1;
+}
+
+.bg-fade {
+    opacity: 0;
+    z-index: 2;
+    margin-top: 2%;
+}
+
+.ending-text {
+    position: absolute;
+    z-index: 3;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 2.6;
+    opacity: 0;
+    transition: opacity 2s ease;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #7b0000;
+}
+
+.ending-text .gold {
+    color: #ffae00;
+}
+
+.ending-text .blue {
+    color: #1730c0;
+}
+
+.references {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    max-width: 1000px;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 2s ease;
+    font-size: 15px;
+    line-height: 1.9;
+    color: #3c3c3c;
+    background: transparent;
+}
+
+.references h2 {
+    color: #7b0000;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.references ul {
+    padding-left: 20px;
+}
+
+/* ============================================
+   SECTION 10 STYLES (完整保留原有section10.css)
+   ============================================ */
+#section10 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #f8f0dc;
+    overflow: hidden;
+}
+
+#section10 .photo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+#section10 .photo-container img {
+    position: static;
+    margin-top: 3.8%;
+    transform: none !important;
+    transition: none;
+    max-width: 52%;
+    height: auto;
+    display: block;
+}
+
+#section10 .photo-container img:hover {
+    transform: none !important;
+}
+
+/* ============================================
+   响应式设计 - 小屏适配
+   ============================================ */
+
+/* 平板适配 (768px - 1024px) */
+@media screen and (max-width: 1024px) {
+    /* 导航栏适配 */
+    .navbar {
+        padding: 8px 20px;
+        height: 10%;
+    }
+    
+    .navbar ul {
+        gap: 10px;
+    }
+    
+    .navbar ul li a {
+        font-size: 16px;
+        padding: 8px 15px;
+    }
+    
+    .navbar .logo img {
+        height: 35px;
+    }
+    
+    /* Section 1 适配 */
+    .slide-text {
+        font-size: 12vw;
+        gap: 1vw;
+    }
+    
+    .arrow {
+        font-size: 8vw;
+    }
+    
+    .championship {
+        font-size: 30px;
+        gap: 3vw;
+    }
+    
+    #bg2Caption {
+        font-size: 4vw;
+        left: 5%;
+    }
+    
+    .scroll-hint {
+        font-size: 2vw;
+    }
+    
+    /* Section 2 适配 */
+    #section2 {
+        padding: 20px;
+    }
+    
+    .ranking-box {
+        flex-direction: column;
+        height: auto;
+    }
+    
+    .left-panel {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    .year-details {
+        width: 100%;
+        padding: 30px;
+        text-align: center;
+    }
+    
+    .rank-main {
+        font-size: 80px;
+    }
+    
+    .rank-sub p {
+        font-size: 20px;
+    }
+    
+    /* Section 3 适配 */
+    .lions-section3 {
+        flex-direction: column;
+    }
+    
+    .lions-section3 .flourish-embed {
+        width: 100%;
+        height: 60%;
+        margin-top: 5%;
+    }
+    
+    .section3-text {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 5%;
+        text-align: center;
+    }
+    
+    /* Section 5 适配 */
+    .section5-visuals {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .chart {
+        width: 100%;
+        height: 500px;
+    }
+    
+    .section5-below {
+        flex-direction: column;
+        gap: 20px;
+        padding: 12px 20px;
+        font-size: 12px;
+    }
+    
+    /* Section 6 适配 */
+    .funfacts-container {
+        gap: 80px;
+        margin-right: 0;
+    }
+    
+    .funfacts-title {
+        font-size: 35px;
+    }
+    
+    .digit {
+        font-size: 48px;
+        width: 50px;
+        height: 70px;
+    }
+    
+    /* Sections 7&8 适配 */
+    .goal-layout {
+        flex-direction: column;
+    }
+    
+    .goal-left {
+        flex: none;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    .goal-right {
+        flex: none;
+        width: 100%;
+        margin-left: 0;
+        flex-direction: row;
+        justify-content: space-around;
+        gap: 20px;
+    }
+    
+    .track-wrapper {
+        width: 100%;
+    }
+    
+    .player-right-row {
+        flex-direction: column;
+        height: auto;
+        margin-left: 0;
+        gap: 20px;
+    }
+    
+    .info-headings {
+        flex-direction: column;
+        gap: 10px;
+        padding: 0 20px;
+        text-align: center;
+    }
+}
+
+/* 手机适配 (480px 及以下) */
+@media screen and (max-width: 480px) {
+    /* 基础调整 */
+    body {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+    
+    /* 导航栏 */
+    .navbar {
+        padding: 5px 15px;
+        height: 12%;
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .navbar ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+    }
+    
+    .navbar ul li a {
+        font-size: 12px;
+        padding: 5px 10px;
+    }
+    
+    .navbar .logo img {
+        height: 25px;
+        margin: 0;
+    }
+    
+    .nav-image {
+        width: 16px;
+    }
+    
+    /* Section 1 */
+    .slide-text {
+        font-size: 15vw;
+        gap: 1.5vw;
+    }
+    
+    .arrow {
+        font-size: 10vw;
+    }
+    
+    .championship {
+        font-size: 20px;
+        gap: 4vw;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    #bg2Caption {
+        font-size: 5vw;
+        left: 2%;
+        top: 20%;
+        line-height: 1.4;
+    }
+    
+    .scroll-hint {
+        font-size: 3vw;
+        bottom: 10px;
+    }
+    
+    .scroll-hint .arrow {
+        font-size: 4vw;
+    }
+    
+    /* Section 2 */
+    .year-list-title {
+        font-size: 18px;
+        margin-left: 0;
+        text-align: center;
+    }
+    
+    .year-list-title2 {
+        font-size: 24px;
+        margin-left: 0;
+        text-align: center;
+    }
+    
+    .year-list.two-columns {
+        flex-direction: column;
+    }
+    
+    .year-column li {
+        font-size: 14px;
+        padding: 8px 12px;
+        margin: 4px 3px;
+        text-align: center;
+    }
+    
+    .rank-main {
+        font-size: 60px;
+    }
+    
+    .rank-sub p {
+        font-size: 16px;
+    }
+    
+    /* Section 2-1 */
+    .section2-1-chart .flourish-embed {
+        transform: scale(0.6);
+        width: 100%;
+        height: 400px;
+    }
+    
+    .section2-1-explanation {
+        font-size: 14px;
+        height: 50%;
+    }
+    
+    .section2-1-explanation h3 {
+        font-size: 16px;
+    }
+    
+    /* Section 3 */
+    .section3-text h2 {
+        font-size: 20px;
+    }
+    
+    .section3-text {
+        font-size: 14px;
+        padding: 0 10px;
+    }
+    
+    /* Section 4 */
+    .section4-content h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+    
+    .section4-content p {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+    
+    .section4-button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+    
+    /* Section 5 */
+    .chart {
+        height: 350px;
+    }
+    
+    .section5-below {
+        position: relative;
+        transform: none;
+        left: auto;
+        margin-top: 20px;
+        padding: 10px 15px;
+        font-size: 11px;
+    }
+    
+    .section5-below h4 {
+        font-size: 13px;
+    }
+    
+    /* Section 6 */
+    .funfacts-title {
+        font-size: 28px;
+        margin-top: 10%;
+    }
+    
+    .funfacts-container {
+        flex-direction: column;
+        gap: 40px;
+        align-items: center;
+    }
+    
+    .digit {
+        font-size: 36px;
+        width: 40px;
+        height: 60px;
+        border-width: 2px;
+    }
+    
+    .label {
+        font-size: 16px;
+    }
+    
+    .funfact-description {
+        font-size: 12px;
+        max-width: 280px;
+    }
+    
+    /* Section 7&8 */
+    .lions-section7 h2 {
+        font-size: 24px;
+        margin-top: 8%;
+    }
+    
+    .info-headings {
+        flex-direction: column;
+        gap: 8px;
+        padding: 0 10px;
+    }
+    
+    .info-item {
+        font-size: 14px;
+        text-align: center;
+    }
+    
+    .player-row {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+    
+    .player-img {
+        margin-right: 0;
+        margin-bottom: 10px;
+        max-height: 120px;
+        width: auto;
+    }
+    
+    .track-wrapper {
+        width: 90%;
+    }
+    
+    .axis-labels {
+        font-size: 12px;
+    }
+    
+    .ball {
+        width: 30px;
+    }
+    
+    .player-name {
+        font-size: 14px;
+        margin-right: 0;
+        margin-top: 5px;
+    }
+    
+    .goal-right {
+        margin-top: 20px;
+    }
+    
+    .player-right-row {
+        justify-content: center;
+        gap: 15px;
+        margin-bottom: 20px;
+        margin-left: 0;
+    }
+    
+    .right-img {
+        width: 80px;
+        margin-top: 0;
+    }
+    
+    .tooltip {
+        font-size: 14px;
+        padding: 8px 12px;
+        max-width: 250px;
+    }
+    
+    /* Section 9 */
+    .ending-text {
+        font-size: 24px;
+        padding: 0 20px;
+        line-height: 1.8;
+    }
+    
+    .references {
+        top: 10%;
+        padding: 15px;
+        font-size: 12px;
+        max-width: 90%;
+    }
+    
+    .references h2 {
+        font-size: 18px;
+    }
+    
+    /* Section 10 */
+    #section10 .photo-container img {
+        max-width: 95%;
+        margin-top: 2%;
+    }
+}
+
+/* 超小屏适配 (320px 及以下) */
+@media screen and (max-width: 320px) {
+    .slide-text {
+        font-size: 18vw;
+    }
+    
+    .arrow {
+        font-size: 12vw;
+    }
+    
+    .championship {
+        font-size: 16px;
+    }
+    
+    #bg2Caption {
+        font-size: 6vw;
+    }
+    
+    .navbar ul li a {
+        font-size: 10px;
+        padding: 3px 6px;
+    }
+    
+    .year-column li {
+        font-size: 12px;
+        padding: 6px 8px;
+    }
+    
+    .rank-main {
+        font-size: 48px;
+    }
+    
+    .funfacts-title {
+        font-size: 24px;
+    }
+    
+    .digit {
+        font-size: 28px;
+        width: 35px;
+        height: 50px;
+    }
+    
+    .ending-text {
+        font-size: 20px;
+    }
+}
+
+/* ============================================
+   工具类和性能优化
+   ============================================ */
+
+/* 隐藏元素在小屏 */
+@media screen and (max-width: 768px) {
+    .desktop-only {
+        display: none !important;
+    }
+}
+
+/* 隐藏元素在大屏 */
+@media screen and (min-width: 769px) {
+    .mobile-only {
+        display: none !important;
+    }
+}
+
+/* 响应式文字 */
+.responsive-text {
+    font-size: clamp(14px, 2.5vw, 24px);
+}
+
+.responsive-heading {
+    font-size: clamp(20px, 4vw, 40px);
+}
+
+/* 响应式间距 */
+.responsive-padding {
+    padding: clamp(10px, 3vw, 40px);
+}
+
+.responsive-margin {
+    margin: clamp(5px, 2vw, 20px);
+}
+
+/* 性能优化 */
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* GPU 加速 */
+.slide-in,
+.ball,
+.ball-animate,
+.championship span {
+    will-change: transform;
+    transform: translateZ(0);
+}
+
+/* 背景图片优化 */
+.background,
+.ending-background {
+    background-attachment: scroll;
+}
+
+/* 打印样式 */
+@media print {
+    .navbar,
+    .scroll-hint,
+    .funfacts-more {
+        display: none;
+    }
+    
+    section {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+    
+    .references {
+        position: static;
+        transform: none;
+        opacity: 1;
+        max-width: 100%;
+    }
+}

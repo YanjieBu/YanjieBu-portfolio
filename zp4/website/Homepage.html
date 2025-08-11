@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlavorFi</title>
+    <link rel="icon" type="image/png" href="images/egg-icon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Slider</title>
+    <link rel="stylesheet" href="css/css_reset.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/homepage.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+
+<body>
+    <div id="navbar-container"></div>
+
+    <div class="slider">
+        <div class="slides">
+            <img src="images/slide1.png" alt="Slide 1" class="slide">
+            <img src="images/slide2.png" alt="Slide 2" class="slide">
+            <img src="images/slide3.png" alt="Slide 3" class="slide">
+        </div>
+        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="next" onclick="moveSlide(1)">&#10095;</button>
+        <div class="dots">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+    </div>
+
+    <div class="text_container">
+        <section class="recipes">
+            <h2>Recipes Library <a href="Recipes_Library.html">more</a></h2>
+            <div class="recipe-gallery">
+                <div class="recipe-card">
+                    <a href="Recipe1.html">
+                        <img src="images/recipe1.png" alt="Recipe 1">
+                        <p>Tartine Bread</p>
+                    </a>
+                </div>
+                <div class="recipe-card">
+                    <a href="Recipe2.html">
+                        <img src="images/recipe2.png" alt="Recipe 2">
+                        <p>Stir-fried Chicken with Soy Sauce</p>
+                    </a>
+                </div>
+                <div class="recipe-card">
+                    <a href="Recipe3.html">
+                        <img src="images/recipe3.png" alt="Recipe 3">
+                        <p>Small Wontons</p>
+                    </a>
+                </div>
+                <div class="recipe-card">
+                    <a href="Recipe4.html">
+                        <img src="images/recipe4.png" alt="Recipe 4">
+                        <p>Boiling Fish</p>
+                    </a>
+                </div>
+                <div class="recipe-card">
+                    <a href="Recipe5.html">
+                        <img src="images/recipe5.png" alt="Recipe 5">
+                        <p>Fried Rice Vermicelli</p>
+                    </a>
+                </div>
+                <div class="recipe-card">
+                    <a href="Recipe6.html">
+                        <img src="images/recipe6.png" alt="Recipe 6">
+                        <p>Crab Pot</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="skills">
+            <h2>Cooking Skills <a href="Skills_Library.html">more</a></h2>
+            <div class="skills-gallery">
+                <div class="skill-card">
+                    <a href="Skill1.html">
+                        <img src="images/skill1.png" alt="Skill 1">
+                        <p>Dough Kneading</p>
+                    </a>
+                </div>
+                <div class="skill-card">
+                    <a href="Skill2.html">
+                        <img src="images/skill2.png" alt="Skill 2">
+                        <p>Prepare the Sauce</p>
+                    </a>
+                </div>
+                <div class="skill-card">
+                    <a href="Skill3.html">
+                        <img src="images/skill3.png" alt="Skill 3">
+                        <p>Deboning Chicken</p>
+                    </a>
+                </div>
+                <div class="skill-card">
+                    <a href="Skill4.html">
+                        <img src="images/skill4.png" alt="Skill 4">
+                        <p>Steak Doneness</p>
+                    </a>
+                </div>
+                <div class="skill-card">
+                    <a href="Skill5.html">
+                        <img src="images/skill5.png" alt="Skill 5">
+                        <p>Oil Temperature</p>
+                    </a>
+                </div>
+                <div class="skill-card">
+                    <a href="Skill6.html">
+                        <img src="images/skill6.png" alt="Skill 6">
+                        <p>Cutting Skills</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="footer-container"></div>
+
+    <script src="js/navbar.js"></script>
+    <script src="js/showSlides.js"></script>
+    <script src="js/footer.js"></script>
+</body>
+
+</html>

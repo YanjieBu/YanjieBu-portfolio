@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yanjie Bu - Works</title>
+  <link rel="icon" type="image/png" href="images/working.gif" />
+  <link rel="stylesheet" href="css/works.css" />
+  <link rel="stylesheet" href="css/base.css" />
+</head>
+
+<body>
+  <!-- 背景左右两侧装饰 -->
+  <div class="background-left"></div>
+  <div class="background-right"></div>
+
+  <!-- 页面主区域 -->
+  <main>
+    <!-- 背景大文字 -->
+    <img class="name-bg" src="images/NAME.png" alt="Name Graphic" />
+
+    <!-- 顶部Logo -->
+    <div class="logo-mask">
+      <a href="index.html" class="logo-link">
+        <img src="images/logo2.png" class="logo-slide" alt="Logo" />
+      </a>
+    </div>
+
+<div class="hero-text">
+  <div class="text-line">
+    <!-- 静态主标题 -->
+    <h1 class="hero-title">My Works.</h1>
+    <!-- 动态作品名挂载点 -->
+    <div class="hover-titles"></div>
+  </div>
+</div>
+
+
+    <!-- 两侧文字直接放在 main 中，脱离 hero-text 限制 -->
+    <div class="side-caption left-caption">selected works I<br>have done since 2023</div>
+    <div class="side-caption right-caption">hold and drag<br>to discover</div>
+
+    <!-- 首页背景遮罩与文字 -->
+    <div class="home-bg-bottom"></div>
+    <div class="home-overlay">
+      <div class="home-text"><span class="overlay-font">H</span>OME</div>
+    </div>
+
+    <!-- 导航栏 -->
+    <div class="nav-mask">
+      <nav class="nav-slide">
+        <div class="nav-item static">
+          <div class="nav-number"></div>
+          <div class="nav-label">JERRY'S FOLIO</div>
+        </div>
+
+        <div class="nav-item">
+          <div class="nav-number">01</div>
+          <div class="nav-cylinder">
+            <div class="nav-cylinder-inner">
+              <div class="face front">ABOUT</div>
+              <div class="face back"><span class="alt-font">A</span>BOUT</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <div class="nav-number">02</div>
+          <div class="nav-cylinder">
+            <div class="nav-cylinder-inner">
+              <div class="face front">WORKS</div>
+              <div class="face back"><span class="alt-font">W</span>ORKS</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <div class="nav-number">03</div>
+          <div class="nav-cylinder">
+            <div class="nav-cylinder-inner">
+              <div class="face front">CONTACT</div>
+              <div class="face back"><span class="alt-font">C</span>ONTACT</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="nav-item static">
+          <div class="nav-number"></div>
+          <div class="nav-label">@2025</div>
+        </div>
+      </nav>
+    </div>
+
+<section class="horizontal-gallery">
+  <div class="year-block">
+    <div class="year-info">
+      <h2 class="year-title">2<span class="year-zero">0</span>25</h2>
+      <p class="project-count">2 PROJECTS</p>
+    </div>
+    <div class="projects">
+      <a href="zp1/index.html" target="_blank" rel="noopener noreferrer">
+        <img src="images/zp1.png" alt="zp1" class="img-zp1">
+      </a>
+      <a href="zp2/index.html" target="_blank" rel="noopener noreferrer">
+        <img src="images/zp2.png" alt="zp2" class="img-zp2">
+      </a>
+    </div>
+  </div>
+
+  <div class="year-block">
+    <div class="year-info">
+      <h2 class="year-title">2<span class="year-zero">0</span>24</h2>
+      <p class="project-count">2 PROJECTS</p>
+    </div>
+    <div class="projects">
+      <a href="zp3/index.html" target="_blank" rel="noopener noreferrer">
+        <img src="images/zp3.png" alt="zp3" class="img-zp3">
+      </a>
+      <a href="zp4/index.html" target="_blank" rel="noopener noreferrer">
+        <img src="images/zp4.png" alt="zp4" class="img-zp4">
+      </a>
+    </div>
+  </div>
+
+  <div class="year-block">
+    <div class="year-info">
+      <h2 class="year-title">2<span class="year-zero">0</span>23</h2>
+      <p class="project-count">1 PROJECT</p>
+    </div>
+    <div class="projects">
+      <a href="zp5/index.html" target="_blank" rel="noopener noreferrer">
+        <img src="images/zp5.png" alt="zp5" class="img-zp5">
+      </a>
+    </div>
+  </div>
+
+  <!-- ✅ 缓冲区：让最后一项不会被遮挡 -->
+  <div class="projects-buffer"></div>
+</section>
+
+
+  
+</section>
+
+
+  <!-- 可继续添加更多年份 -->
+</section>
+
+
+
+  </main>
+
+  <footer>
+    <!-- 可添加页脚内容 -->
+  </footer>
+
+  <!-- 页面脚本 -->
+  <script src="js/works.js"></script>
+</body>
+</html>

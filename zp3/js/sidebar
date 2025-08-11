@@ -1,0 +1,43 @@
+// sidebar.js - 更新的侧边栏脚本
+
+document.addEventListener("DOMContentLoaded", function() {
+    // 获取所有的锚链接
+    const links = document.querySelectorAll(".sidebar ul li a");
+    const sections = document.querySelectorAll(".content-section");
+
+    function activateLink() {
+        let index = sections.length;
+
+        while (--index && window.scrollY + 50 < sections[index].offsetTop) {}
+        
+        // 移除所有链接的 active 类
+        links.forEach(link => link.classList.remove("active"));
+        // 为当前部分的链接添加 active 类
+        if (links[index]) {
+            links[index].classList.add("active");
+        }
+    }
+
+    // 监听滚动事件
+    window.addEventListener("scroll", activateLink);
+    
+    // 初始调用一次，确保页面加载时正确设置active状态
+    activateLink();
+    
+    // 平滑滚动到对应部分
+    links.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetSection = document.getElementById(targetId);
+            
+            if (targetSection) {
+                const offsetTop = targetSection.offsetTop - 100; // 预留导航栏空间
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+});

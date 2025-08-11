@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lions & Gabba | Yanjie Bu</title>
+  <link rel="icon" type="image/png" href="images/lionslogo.png">
+
+  <!-- 只保留一个整合后的CSS文件 -->
+  <link rel="stylesheet" href="css/base.css">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body class="locked">
+  <a id="top"></a>
+
+  <!-- Navigation Bar -->
+  <header>
+    <nav class="navbar" id="mainNavbar">
+      <div class="logo">
+        <a href="index.html">
+          <img src="images/lionslogo.png" alt="FlavorFi Logo">
+        </a>
+      </div>
+      <ul>
+        <li><a href="#section2">Yearly Performance</a></li>
+        <li><a href="#section4">Behind Games</a></li>
+        <li><a href="#section6">Fun Facts</a></li>
+        <li><a href="#section7">Gabba Kings</a></li>
+        <li><a href="#section9">Legacy</a></li>
+        <li><a href="#section10">Poster</a></li>
+        <li>
+          <a href="../works.html">
+            <img src="images/image.png" alt="Works" class="nav-image">
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Section 1: Intro animation with text + background transition -->
+  <section class="intro-container" id="section1">
+    <div class="text-section">
+      <div class="slide-text">
+        <span class="slide-in delay1">L</span>
+        <span class="slide-in delay2">I</span>
+        <span class="slide-in delay3">O</span>
+        <span class="slide-in delay4">N</span>
+        <span class="slide-in delay5">S</span>
+      </div>
+      <div class="slide-text arrow slide-in delay6">&</div>
+      <div class="slide-text">
+        <span class="slide-in delay7">G</span>
+        <span class="slide-in delay8">A</span>
+        <span class="slide-in delay9">B</span>
+        <span class="slide-in delay10">B</span>
+        <span class="slide-in delay11">A</span>
+      </div>
+    </div>
+
+    <div class="championship" id="championText">
+<span class="left">DATA PROJECT 2024</span>
+<span class="right">VISUALIZING AFL !!</span>
+
+    </div>
+
+    <!-- Static background layer -->
+    <div class="background"></div>
+
+    <!-- Split mask transition effect -->
+    <div class="split-mask">
+      <div class="split-left"></div>
+      <div class="split-right"></div>
+    </div>
+
+    <!-- Replaceable background (GIF layers) -->
+    <div class="background" id="background">
+      <img id="bgImage" src="images/background1.gif" alt="background" />
+    </div>
+
+    <!-- Caption over background (lines fade in) -->
+    <div id="bg2Caption">
+      <div class="bg2-line line1">Let's see</div>
+      <div class="bg2-line line2">the rise of the <span class="highlight-lions">Brisbane Lions</span></div>
+      <div class="bg2-line line3">& Fascinating Facts</div>
+      <div class="bg2-line line4">from the <span class="highlight-gabba">Gabba Stadium</span></div>
+    </div>
+
+    <!-- Scroll hint below -->
+    <a href="#section2" class="scroll-hint" id="scrollHint">
+      <p>Scroll down to see more</p>
+      <div class="arrow">&#x2B07;</div>
+    </a>
+  </section>
+
+  <!-- Section 2: Yearly performance data layout -->
+  <section id="section2">
+    <div class="ranking-box">
+      <div class="left-panel">
+        <h1 class="year-list-title">Brisbane Lions</h1>
+        <h1 class="year-list-title2">Yearly Performance</h1>
+
+        <!-- Year buttons (left side, two columns) -->
+        <div class="year-list two-columns">
+          <div class="year-column">
+            <ul>
+              <li class="year-button" data-year="2012">2012&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;13th</li>
+              <li class="year-button" data-year="2013">2013&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;12th</li>
+              <li class="year-button" data-year="2014">2014&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;15th</li>
+              <li class="year-button" data-year="2015">2015&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;17th</li>
+              <li class="year-button" data-year="2016">2016&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;17th</li>
+              <li class="year-button" data-year="2017">2017&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;18th</li>
+              <li class="year-button" data-year="2018">2018&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;15th</li>
+            </ul>
+          </div>
+          <div class="year-column">
+            <ul>
+              <li class="year-button" data-year="2019">2019&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5th</li>
+              <li class="year-button" data-year="2020">2020&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3rd</li>
+              <li class="year-button" data-year="2021">2021&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5th</li>
+              <li class="year-button" data-year="2022">2022&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4th</li>
+              <li class="year-button" data-year="2023">2023&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2nd</li>
+              <li class="year-button active" data-year="2024">2024&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1st</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Year detail display (image background on right side) -->
+      <div class="year-details" id="rankingDetail">
+        <div class="rank-main" id="yearFinal">1st</div>
+        <div class="rank-sub">
+          <p id="yearRegular">Regular Season: 5th</p>
+          <p id="yearPlayoffs">AFL Playoffs: Championship!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2-1: Line chart tracking performance -->
+  <section id="section2-1" class="lions-section2-1">
+    <div class="section2-1-chart">
+      <div class="flourish-embed flourish-chart" data-src="visualisation/23424190">
+        <script src="https://public.flourish.studio/resources/embed.js"></script>
+        <noscript><img src="https://public.flourish.studio/visualisation/23424190/thumbnail" width="100%" alt="chart visualization" /></noscript></div>
+    </div>
+
+    <div class="section2-1-explanation">
+      <div class="explanation-inner">
+        <h3>From the Bottom to the Top: Tracking the Lions' Climb</h3>
+        <p>This chart shows Brisbane Lions' regular season rankings from 2012 to 2024 — and their remarkable transformation.</p>
+        <p>From 2012 to 2018, the team hovered near the bottom of the ladder. But starting in 2019, the tide turned.</p>
+        <p>Since then, they've consistently remained in the top 5, proving their strength and resilience. By 2024, they not only climbed to 4th but finished the season as <strong>AFL Premiers</strong>.</p>
+        <p>Every point on the line reflects a season of effort, growth, and belief — this is the story of a true comeback.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Bar chart race - home wins vs total -->
+  <section id="section3" class="lions-section3">
+    <div class="flourish-embed flourish-bar-chart-race" data-src="visualisation/23415718">
+      <script src="https://public.flourish.studio/resources/embed.js"></script>
+      <noscript><img src="https://public.flourish.studio/visualisation/23415718/thumbnail" width="100%" alt="bar-chart-race visualization" /></noscript>
+    </div>    
+    
+    <div class="section3-text">
+      <h2>🏟️ Home Wins, Total Impact</h2>
+      <p>
+        From 2012 to 2024, Brisbane Lions' total wins have closely mirrored their Gabba victories—highlighting a consistent and powerful home field advantage.
+      </p>
+      <p>
+        After 2019, the team began a remarkable upward climb. Win counts surged, losses declined, and performance at home reached new highs.
+      </p>
+    </div>
+  </section>
+
+  <!-- Section 4: Transition screen into full match map -->
+  <section id="section4" class="lions-section4">
+    <div class="section4-mask"></div>
+    <div class="section4-content hidden-on-load">
+      <h2>"See What's Behind Each Game at Gabba"</h2>
+      <p>
+        Each bubble here represents a match—colored by result and sized by attendance.<br> 
+        But beyond win/loss patterns, every game holds more: opponent, weather, location, crowd size, and round info.
+      </p>
+      <p>
+        In the next section, you can explore these details.<br>Use filters and search to uncover trends, big crowds, rainy-day records, and rival histories.
+      </p>
+      <a href="#section5" class="section4-button">Explore More</a>
+    </div>
+  </section>
+
+  <!-- Section 5: Interactive filters and full game survey -->
+  <section id="section5" class="lions-section5">
+    <div class="flourish-embed flourish-survey" data-src="visualisation/23401909">
+      <script src="https://public.flourish.studio/resources/embed.js"></script>
+      <noscript><img src="https://public.flourish.studio/visualisation/23401909/thumbnail" width="100%" alt="survey visualization" /></noscript>
+    </div>
+    
+    <div class="flourish-embed flourish-survey" data-src="visualisation/23408529">
+      <script src="https://public.flourish.studio/resources/embed.js"></script>
+      <noscript><img src="https://public.flourish.studio/visualisation/23408529/thumbnail" width="100%" alt="survey visualization" /></noscript>
+    </div> 
+    
+    <div class="section5-below">
+      <div class="below-left">
+        <h4>Explore with Filters: See the Lions Rise & Fascinating Facts</h4>
+        <p>
+          Use the filters to explore how the Brisbane Lions improved over the years. Let's try:<br><br>
+          • Filtering by result to see how wins increased from 2017 to 2023.<br>
+          • Scale by attendance or weather to spot performance differences...<br><br>
+          As the Lions rise, they are no longer afraid of rainy days and become more and more courageous.<br>
+          Back in the earlier seasons, big crowds didn't always mean big wins for the Lions.
+        </p>
+      </div>
+      <div class="below-right">
+        <h4>See the Bigger Picture: Win vs Loss</h4>
+        <p>
+          This view shows all of Brisbane Lions' matches, grouped by result.<br><br>
+          Try filtering by year to see how the ratio of wins has grown over time.<br><br>
+          You'll notice early seasons had more losses. But in recent years, wins outnumber losses — a clear sign of the Lions' rise.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 6: Fun facts and records -->
+  <section id="section6" class="lions-section6">
+    <h2 class="funfacts-title">Lions @ Gabba: Did You Know?</h2>
+    <div class="funfacts-container">
+
+      <div class="funfact" data-value="28500">
+        <div class="digit-boxes"></div>
+        <div class="label">Average Attendance<br>(Last 5 Seasons)</div>
+        <div class="funfact-description">
+          Highest crowd: 37,478 vs Collingwood (2023)<br>
+          Lowest: 13,452 vs GWS (2017)<br>
+          Median crowd: 26,770
+        </div>
+      </div>
+
+      <div class="funfact" data-value="15">
+        <div class="digit-boxes"></div>
+        <div class="label">Consecutive Wins at Gabba<br>(2022–2023)</div>
+        <div class="funfact-description">
+          Longest losing streak: 6 games (2016–2017)<br>
+          Longest unbeaten streak: 18 games (2022–2024)<br>
+          Most thrilling win: 1-point vs Richmond (2022)
+        </div>
+      </div>
+
+      <div class="funfact" data-value="70" data-suffix="%">
+        <div class="digit-boxes"></div>
+        <div class="label">Home Win Rate (%)</div>
+        <div class="funfact-description">
+          Rainy game win rate: 62% (10W–6L)<br>
+          Highest-scoring win: 129 pts vs West Coast (2023)<br>
+          Avg margin of victory: +24 pts
+        </div>
+      </div>
+    </div>
+
+    <div class="funfacts-more">
+      <span>Explore More</span>
+      <span class="arrow">↓</span>
+    </div>
+  </section>
+
+  <!-- Section 7: Gabba Kings - Goal Toss interaction -->
+  <section id="section7" class="lions-section7">
+    <h2>Stat Showdown: Kings of the Gabba</h2>
+
+    <div class="info-headings">
+      <div class="info-item info-kings">Kings</div>
+        <div class="info-item" style="flex-direction: column; align-items: flex-start;">
+          <div>
+            Goals <img src="images/ball.png" class="icon" /> = 10 Goals
+          </div>
+          <div>Click the football & hand icon !!  ╰(○'◡'○)╮</div>
+        </div>
+
+      <div class="info-item">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Disposals<img src="images/hand.png" class="icon" /> = 200 Disposals
+      </div>
+      <div class="info-item">Impact Score</div>
+    </div>
+
+    <div class="goal-layout">
+      <div class="goal-left">
+        <!-- Player: Dayne Zorko -->
+        <div class="player-row" data-goals="129">
+          <div class="player-column">
+            <img src="images/222.png" class="player-img" style="height: 210px;" />
+            <div class="player-name">Dayne Zorko</div>
+          </div>
+          <div class="track-wrapper">
+            <img src="images/ball.png" class="ball" onclick="shootBall(this)" />
+            <div class="track">
+              <div class="axis-labels">
+                <span>0</span><span>20</span><span>40</span><span>60</span>
+                <span>80</span><span>100</span><span>120</span><span>140</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Player: Daniel Rich -->
+        <div class="player-row" data-goals="52">
+          <div class="player-column">
+            <img src="images/333.png" class="player-img" style="height: 180px;" />
+            <div class="player-name">Daniel Rich</div>
+          </div>
+          <div class="track-wrapper">
+            <img src="images/ball.png" class="ball" onclick="shootBall(this)" />
+            <div class="track">
+              <div class="axis-labels">
+                <span>0</span><span>20</span><span>40</span><span>60</span>
+                <span>80</span><span>100</span><span>120</span><span>140</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right side: Image tooltips and visual stats -->
+      <div class="goal-right">
+        <!-- Matched with Zorko -->
+        <div class="player-right-row">
+          <img src="images/HAND1.png" class="right-img hand-icon"
+            data-tooltip="Zorko: Five-time best and fairest.<br>Elite disposal efficiency.<br>Former captain and midfield leader." />
+          <img src="images/SCORE1.png" class="right-img" />
+        </div>
+
+        <!-- Matched with Rich -->
+        <div class="player-right-row">
+          <img src="images/HAND2.png" class="right-img hand-icon"
+            data-tooltip="Rich: Rising Star winner.<br>Long-range left foot kicks.<br>Reliable defensive playmaker." />
+          <img src="images/SCORE2.png" class="right-img" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 8: More players with extended goal range -->
+  <section id="section8" class="lions-section7">
+    <div class="goal-layout">
+      <div class="goal-left">
+        <!-- Player: Hugh McCluggage -->
+        <div class="player-row" data-goals="98">
+          <div class="player-column">
+            <img src="images/444.png" class="player-img" style="height: 140px;" />
+            <div class="player-name">Hugh McCluggage</div>
+          </div>
+          <div class="track-wrapper">
+            <img src="images/ball.png" class="ball" onclick="shootBall(this, 160)" />
+            <div class="track">
+              <div class="axis-labels">
+                <span>0</span><span>20</span><span>40</span><span>60</span>
+                <span>80</span><span>100</span><span>120</span><span>140</span><span>160</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Player: Lachie Neale -->
+        <div class="player-row" data-goals="85">
+          <div class="player-column">
+            <img src="images/555.png" class="player-img" style="height: 150px;" />
+            <div class="player-name">Lachie Neale</div>
+          </div>
+          <div class="track-wrapper">
+            <img src="images/ball.png" class="ball" onclick="shootBall(this, 160)" />
+            <div class="track">
+              <div class="axis-labels">
+                <span>0</span><span>20</span><span>40</span><span>60</span>
+                <span>80</span><span>100</span><span>120</span><span>140</span><span>160</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Player: Charlie Cameron -->
+        <div class="player-row" data-goals="145">
+          <div class="player-column">
+            <img src="images/666.png" class="player-img" style="height: 150px;" />
+            <div class="player-name">Charlie Cameron</div>
+          </div>
+          <div class="track-wrapper">
+            <img src="images/ball.png" class="ball" onclick="shootBall(this, 160)" />
+            <div class="track">
+              <div class="axis-labels">
+                <span>0</span><span>20</span><span>40</span><span>60</span>
+                <span>80</span><span>100</span><span>120</span><span>140</span><span>160</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right stats for Section 8 players -->
+      <div class="goal-right">
+        <div class="player-right-row">
+          <img src="images/HAND3.png" class="right-img hand-icon"
+            data-tooltip="McCluggage: Elite ball-user.<br>Known for precision disposals.<br>Midfield engine and rising leader." />
+          <img src="images/SCORE3.png" class="right-img" />
+        </div>
+
+        <div class="player-right-row">
+          <img src="images/HAND4.png" class="right-img hand-icon"
+            data-tooltip="Neale: Brownlow Medallist.<br>High-disposal clearance machine.<br>Core to Lions' midfield dominance." />
+          <img src="images/SCORE4.png" class="right-img" />
+        </div>
+
+        <div class="player-right-row">
+          <img src="images/HAND5.png" class="right-img hand-icon"
+            data-tooltip="Cameron: Electrifying forward.<br>Elite speed and pressure.<br>Top-tier goal scorer at Gabba." />
+          <img src="images/SCORE5.png" class="right-img" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 9: Ending animation and APA 7 references -->
+  <section id="section9">
+    <div class="ending-background bg-base" id="bgBase"></div>
+    <div class="ending-background bg-fade" id="bgFade"></div>
+
+    <div class="ending-text" id="endingText">
+      Witness the legacy of the <span class="gold">Brisbane Lions</span><br>
+      Echoing from the heart of <span class="blue">the Gabba</span>.
+    </div>
+
+    <!-- APA References -->
+    <div class="references" id="referenceBlock">
+      <h2>References</h2>
+
+      <p><strong>Data Source:</strong></p>
+      <p>Stoney, M. (n.d.). <i>Australian Football League (AFL) Database</i>. Kaggle. Retrieved from https://www.kaggle.com/datasets/stoney71/aflstats</p>
+
+      <p><strong>Image Sources:</strong></p>
+      <ul>
+        <li>Fox Sports. (n.d.). <i>Live AFL Round 1: Brisbane Lions v West Coast Eagles</i>. Retrieved from foxsports.com.au</li>
+        <li>SportsMatt. (2013, May). <i>Brisbane Lions: Young guns and Gabba games</i>. Retrieved from wordpress.com</li>
+        <li>WeekendNotes. (n.d.). <i>Brisbane Lions Home Games</i>. Retrieved from weekendnotes.com</li>
+        <li>CourierMail. (2015). <i>Richmond defeats Brisbane by 79 points at Gabba</i>. Retrieved from couriermail.com.au</li>
+        <li>WeekendNotes. (2016). <i>Brisbane Lions Gabba 2016</i>. Retrieved from weekendnotes.com</li>
+        <li>Brisbane Lions. (2017). <i>22 Memorable Moments</i>. Retrieved from lions.com.au</li>
+        <li>The Roar. (2017, December). <i>2018 AFL Season Preview</i>. Retrieved from theroar.com.au</li>
+        <li>Brisbane Lions. (2019). <i>Who's Our Best 22 in 2019?</i>. Retrieved from lions.com.au</li>
+        <li>University of Queensland. (2020). <i>Queensland's Moment in the Sun</i>. Retrieved from stories.uq.edu.au</li>
+        <li>Fox Sports. (n.d.). <i>Titans Collide – Brisbane vs Port</i>. Retrieved from foxsports.com.au</li>
+        <li>Fox Sports. (2022). <i>Brisbane Lions Season Preview</i>. Retrieved from foxsports.com.au</li>
+        <li>Fox Sports. (2023). <i>2023 Predictions – Will Ashcroft</i>. Retrieved from foxsports.com.au</li>
+        <li>Nine News. (2024, September 28). <i>Brisbane Ends 21-Year Flag Drought</i>. Retrieved from nine.com.au</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Section 10: Single Photo -->
+  <section id="section10">
+    <div class="photo-container">
+      <img
+        src="images/Poster_Yanjie_Bu.png"
+        alt="Section 10 Photo"
+        id="zoomableImg"
+      >
+    </div>
+  </section>
+
+  <!-- JavaScript Imports - 保持所有原有的JS文件 -->
+  <script src="js/navbar.js"></script>
+  <script src="js/background.js"></script>
+  <script src="js/background2.js"></script>
+  <script src="js/scrolldown1.js"></script>
+  <script src="js/section2.js"></script>
+  <script src="js/section2button.js"></script>
+  <script src="js/section4.js"></script>
+  <script src="js/section6.js"></script>
+  <script src="js/section7.js"></script>
+  <script src="js/section9.js"></script>
+  <script src="js/section10.js"></script>
+</body>
+</html>

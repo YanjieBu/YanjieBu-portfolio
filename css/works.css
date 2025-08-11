@@ -1,0 +1,728 @@
+/* === 页面基础设置 === */
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-color: rgb(233, 233, 233); /* 背景灰色 */
+  font-family: "Roobert", sans-serif;   /* 默认字体 */
+  overflow: hidden;                     /* 禁止滚动条 */
+  position: relative;
+}
+
+/* === 中心大标题 NAME 图像 === */
+.name-bg {
+  position: absolute;
+  top: 51%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 900px;
+  height: auto;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.2; /* 默认半透明 */
+}
+
+/* NAME 图像延迟淡入动画 */
+.name-bg {
+  animation: fadeIn 2s ease 0.5s forwards; /* 4s后淡入 */
+  opacity: 0; /* 起始隐藏 */
+}
+
+/* 淡入动画关键帧 */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* === Logo 滑动遮罩 === */
+.logo-mask {
+  position: absolute;
+  top: 4%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 250px;
+  height: 40px;
+  overflow: hidden;
+  z-index: 2;
+}
+
+/* Logo 图片本体 */
+.logo-slide {
+  width: 250px;
+  transform: translateY(200%); /* 初始在底下 */
+  animation: slideUpFromLine 1s ease-out 1s forwards;
+  opacity: 1;
+}
+
+/* === HOME 黑色横条背景 === */
+.home-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 0;
+  background-color: black;
+  overflow: hidden;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: height 0.3s ease;
+}
+
+/* HOME 文字样式 */
+.home-text {
+  display: flex;
+  color: rgba(219, 219, 219, 0.274);
+  font-size: 200px;
+  font-weight: 500;
+  line-height: 0.70;
+  padding: 0;
+  transform: translateY(100%);
+  opacity: 0;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+/* 黑色横条展开（点击后） */
+.home-overlay.expand {
+  height: 100vh !important;
+  transition: height 0.5s ease-in;
+  z-index: 1000;
+}
+
+/* 文字变白 + 上移显示 */
+.home-text.show-white {
+  color: white !important;
+  transform: translateY(0) !important;
+  opacity: 1 !important;
+  transition: all 0.5s ease;
+  z-index: 1001;
+}
+
+/* 立即显示白字（无动画） */
+.home-text.instant-white {
+  color: white !important;
+  transform: translateY(0) !important;
+  opacity: 1 !important;
+  transition: all 0.5s ease;
+  z-index: 1001;
+}
+
+/* HOME 整体向上滑出动画 */
+.home-overlay.slide-up {
+  animation: slideUpOverlay 1.4s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+
+/* 上滑关键帧 */
+@keyframes slideUpOverlay {
+  0% {
+    transform: translate(-50%, -50%);
+  }
+  100% {
+    transform: translate(-50%, -150%);
+  }
+}
+
+/* 切换过渡时的临时背景遮罩 */
+.temporary-gray-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(233, 233, 233);
+  z-index: 999;
+  pointer-events: none;
+}
+
+/* 上滑公共动画 */
+@keyframes slideUpFromLine {
+  0% {
+    transform: translateY(100%);
+  }
+  60% {
+    transform: translateY(-8%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+
+/* === 导航整体遮罩容器（防止动画时内容溢出） === */
+.nav-mask {
+  position: absolute;
+  top: 47.5%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 40px;
+  overflow: hidden;
+  z-index: 2;
+}
+
+/* === 导航条（nav）本体：初始隐藏，4.2s 后滑出 === */
+.nav-slide {
+  position: relative;
+  width: 100%;
+  height: 40px;
+  font-weight: 500;
+  font-size: 14px;
+  color: black;
+  transform: translateY(100%);
+  opacity: 0;
+  animation: navSlideUp 0.6s ease-out 1.2s forwards;
+}
+
+/* === 单个导航项通用样式 === */
+.nav-item {
+  position: absolute;
+  top: 47.5%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 13px;
+  line-height: 1.3;
+  cursor: pointer;
+}
+
+/* 静态项禁用手型光标 */
+.nav-item.static {
+  cursor: default;
+}
+
+/* === 设置导航项左右分布位置（共 5 项）=== */
+.nav-item:nth-child(1) { left: 6%; }
+.nav-item:nth-child(2) { left: 28%; }
+.nav-item:nth-child(3) { left: 50%; }
+.nav-item:nth-child(4) { left: 72%; }
+.nav-item:nth-child(5) { left: 94%; }
+
+/* === 导航条滑入关键帧动画 === */
+@keyframes navSlideUp {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(-8%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+/* === 导航项编号（如 01、02）样式 === */
+.nav-number {
+  font-size: 11px;
+  color: #888;
+  margin-bottom: 2px;
+  letter-spacing: 0.5px;
+}
+
+/* 静态项隐藏编号 */
+.nav-item.static .nav-number {
+  display: none;
+}
+
+/* === 导航 cylinder 外壳容器，提供 3D 翻转效果 === */
+.nav-cylinder {
+  position: relative;
+  height: 18px;
+  perspective: 600px;
+  transform-style: preserve-3d;
+}
+
+/* === 导航 cylinder 的两个面（正面 + 背面）=== */
+.nav-cylinder .face {
+  position: absolute;
+  width: max-content;
+  left: 50%;
+  transform: translateX(-50%) translateZ(9px);
+  height: 100%;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  line-height: 18px;
+  backface-visibility: hidden;
+  transition: transform 0.6s ease, color 0.6s ease;
+}
+
+/* 正面默认黑色文字 */
+.nav-cylinder .front {
+  color: black;
+  transform: translateX(-50%) rotateX(0deg) translateZ(9px);
+  transition: color 0.3s ease;
+}
+
+/* 悬停变成灰色 */
+.nav-item:hover .nav-cylinder .front {
+  color: gray;
+}
+
+/* 背面设置白色文字（翻转后显示） */
+.nav-cylinder .back {
+  color: white;
+  transform: translateX(-50%) rotateX(-90deg) translateZ(9px);
+}
+
+/* === cylinder 内层容器，负责旋转 === */
+.nav-cylinder-inner {
+  transition: transform 0.6s ease;
+  transform-style: preserve-3d;
+}
+
+/* 悬停触发翻转动画 */
+.nav-item:hover .nav-cylinder-inner {
+  transform: rotateX(90deg);
+}
+
+@font-face {
+  font-family: "Harmond";
+  src: url("../fonts/Harmond-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.alt-font {
+  font-family: "Harmond", serif;
+  font-weight: normal;
+  font-size: 1em;         
+  display: inline-block;
+  transform: translateY(-0.5px);
+  letter-spacing: 0.05em;   /* 微调间距 */
+}
+
+.overlay-font {
+  font-family: "Harmond", serif;
+  font-weight: 500;
+  font-size: 1em;         
+  letter-spacing: 0em;   /* 微调间距 */
+  display: inline-block;
+  transform: translateY(10.3px);
+}
+
+/* === hero 段落文字整体容器 === */
+.hero-text {
+  position: absolute;
+  top: 17%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* 默认隐藏主标题和副标题，等待 JS 显示 */
+.hero-title,
+.hero-subtitle {
+  visibility: hidden;
+}
+
+/* === 主标题样式 === */
+.hero-title {
+  font-size: 125px;
+  font-family: "Roxborough", serif;
+  font-weight: 100;
+  font-style: italic;
+  letter-spacing: -5px;
+  color: #141414;
+  margin: 0;
+  line-height: 1.2;
+  white-space: nowrap;
+  padding: 0 0.3em; /* 左右各加一点空隙 */
+}
+
+/* === 副标题样式 === */
+.hero-subtitle {
+  font-size: 95px;
+  font-family: "Roobert", serif;
+  font-weight: 400;
+  color: #141414;
+  margin: 0;
+  line-height: 1.1;
+  white-space: nowrap;
+  letter-spacing: -6px;
+}
+
+/* 显示字符动画触发类 */
+.line-reveal.visible {
+  transform: translateY(0%);
+  opacity: 1;
+}
+
+/* 延迟类：可用于文字逐行浮现 */
+.delay-1 {
+  transition-delay: 0.25s;
+}
+.delay-2 {
+  transition-delay: 0.25s;
+}
+
+/* === 字符浮现动画通用样式 === */
+.char {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(100%);
+  animation: riseUp 0.9s ease-out forwards;
+}
+
+/* 字符浮现关键帧动画 */
+@keyframes riseUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes riseUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.delay-char-0  { animation-delay: 0.00s; }
+.delay-char-1  { animation-delay: 0.03s; }
+.delay-char-2  { animation-delay: 0.06s; }
+.delay-char-3  { animation-delay: 0.09s; }
+.delay-char-4  { animation-delay: 0.12s; }
+.delay-char-5  { animation-delay: 0.15s; }
+.delay-char-6  { animation-delay: 0.18s; }
+.delay-char-7  { animation-delay: 0.21s; }
+.delay-char-8  { animation-delay: 0.24s; }
+.delay-char-9  { animation-delay: 0.27s; }
+.delay-char-10 { animation-delay: 0.30s; }
+.delay-char-11 { animation-delay: 0.33s; }
+.delay-char-12 { animation-delay: 0.36s; }
+.delay-char-13 { animation-delay: 0.39s; }
+.delay-char-14 { animation-delay: 0.42s; }
+.delay-char-15 { animation-delay: 0.45s; }
+.delay-char-16 { animation-delay: 0.48s; }
+.delay-char-17 { animation-delay: 0.51s; }
+.delay-char-18 { animation-delay: 0.54s; }
+.delay-char-19 { animation-delay: 0.57s; }
+.delay-char-20 { animation-delay: 0.60s; }
+.delay-char-21 { animation-delay: 0.63s; }
+.delay-char-22 { animation-delay: 0.66s; }
+.delay-char-23 { animation-delay: 0.69s; }
+.delay-char-24 { animation-delay: 0.72s; }
+.delay-char-25 { animation-delay: 0.75s; }
+.delay-char-26 { animation-delay: 0.78s; }
+.delay-char-27 { animation-delay: 0.81s; }
+.delay-char-28 { animation-delay: 0.84s; }
+.delay-char-29 { animation-delay: 0.87s; }
+.delay-char-30 { animation-delay: 0.90s; }
+.delay-char-31 { animation-delay: 0.93s; }
+.delay-char-32 { animation-delay: 0.96s; }
+.delay-char-33 { animation-delay: 0.99s; }
+.delay-char-34 { animation-delay: 1.02s; }
+.delay-char-35 { animation-delay: 1.05s; }
+.delay-char-36 { animation-delay: 1.08s; }
+.delay-char-37 { animation-delay: 1.11s; }
+.delay-char-38 { animation-delay: 1.14s; }
+.delay-char-39 { animation-delay: 1.17s; }
+.delay-char-40 { animation-delay: 1.20s; }
+.delay-char-41 { animation-delay: 1.23s; }
+.delay-char-42 { animation-delay: 1.26s; }
+.delay-char-43 { animation-delay: 1.29s; }
+.delay-char-44 { animation-delay: 1.32s; }
+.delay-char-45 { animation-delay: 1.35s; }
+.delay-char-46 { animation-delay: 1.38s; }
+.delay-char-47 { animation-delay: 1.41s; }
+.delay-char-48 { animation-delay: 1.44s; }
+.delay-char-49 { animation-delay: 1.47s; }
+.delay-char-50 { animation-delay: 1.50s; }
+.delay-char-51 { animation-delay: 1.53s; }
+.delay-char-52 { animation-delay: 1.56s; }
+.delay-char-53 { animation-delay: 1.59s; }
+.delay-char-54 { animation-delay: 1.62s; }
+.delay-char-55 { animation-delay: 1.65s; }
+.delay-char-56 { animation-delay: 1.68s; }
+.delay-char-57 { animation-delay: 1.71s; }
+.delay-char-58 { animation-delay: 1.74s; }
+.delay-char-59 { animation-delay: 1.77s; }
+.delay-char-60 { animation-delay: 1.80s; }
+
+.text-line {
+  display: inline-block;
+  overflow: hidden; /*关键：裁切没浮上来的字母 */
+  line-height: 1.2;
+}
+
+/* === 动画关键帧：向上滑入并逐渐显现 === */
+@keyframes slideUpFromLine {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(-8%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+/* === 透明度显现动画（用于遮罩）=== */
+@keyframes showWorkingMask {
+  to {
+    opacity: 1;
+  }
+}
+
+/* === 左右侧说明文字样式 === */
+.side-caption {
+  position: absolute;
+  top: 25%;
+  font-size: 16px;
+  font-family: "Roobert", sans-serif;
+  color: #444;
+  line-height: 1.3;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeSlideInAdvanced 0.5s ease-out forwards;
+  white-space: pre-line;
+  text-align: center;
+  pointer-events: none;
+  z-index: 10;
+}
+
+
+.left-caption {
+  left: 14.5%;
+  animation-delay: 1.3s;
+  letter-spacing: -0.5px;
+}
+
+.right-caption {
+  right: 15%;
+  animation-delay: 1.3s;
+}
+
+@keyframes fadeSlideInAdvanced {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.96);
+    filter: blur(4px);
+  }
+  60% {
+    opacity: 0.6;
+    transform: translateY(10px) scale(1.02);
+    filter: blur(2px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@media (max-width: 900px) {
+  .side-caption {
+    display: none;
+  }
+}
+
+.horizontal-gallery {
+  position: absolute;
+  top: 60%;
+  left: 0;
+  width: 100%;
+  display: flex;
+  gap: 120px;
+  overflow-x: auto;
+  padding: 60px 5vw 60px 5vw; /* 保留内边距 */
+  box-sizing: content-box; /* ✅ 关键：防止 padding 占据可滚动空间 */
+  scroll-behavior: smooth;
+  padding: 60px 5vw;
+  scroll-behavior: smooth;
+  z-index: 10;
+  /* 初始状态 */
+  opacity: 0;
+  transform: translateY(100px);
+  animation: slideUpFadeIn 0.8s ease-out 1s forwards;
+}
+
+@keyframes slideUpFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 每个年份块：左边 info + 右边 projects */
+.year-block {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: flex-start; /* ✅ 改为顶部对齐 */
+  gap: 40px;
+}
+
+/* 左边的年份信息区 */
+.year-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* 顶部是年份，底部是 projects 文字 */
+  min-width: 100px;
+  height: 100%; /* 填满和右侧图片一致的高度 */
+}
+
+.year-title {
+  font-size: 28px;
+  font-weight: 500;
+  font-family: "Roobert", sans-serif;
+  color: #111;
+  margin: 0;
+}
+
+.year-zero {
+  font-family: "Roxborough", serif;
+}
+.project-count {
+  font-size: 12px;
+  color: #888;
+  margin: 0;
+}
+
+/* 右边的作品图区域 */
+.projects {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start; /* ✅ 改为顶部对齐 */
+}
+
+.projects a img {
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.projects a:hover img {
+  transform: scale(1.05);
+}
+
+.img-zp1 {
+  width: 190px;
+  height: auto;
+}
+
+.img-zp2 {
+  width: 240px;
+  height: auto;
+}
+
+.img-zp3 {
+  height: 190px;
+  width: auto;
+}
+
+.img-zp4 {
+  width: 240px;
+  height: auto;
+}
+
+.img-zp5 {
+  width: 240px;
+  height: auto;
+}
+
+.horizontal-gallery {
+  user-select: none; /* 拖动时避免文字选中 */
+  cursor: grab;
+}
+
+.horizontal-gallery:active {
+  cursor: grabbing;
+}
+
+.projects-buffer {
+  flex: 100px 0 20vw; /* 或 60px */
+}
+
+
+
+/* —— hero 文本容器 —— */
+.hero-text {
+  position: absolute;
+  top: 18.5%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  pointer-events: none;
+  width: 80vw;           /* 占视口宽度的 80% */
+  max-width: 1200px;     /* 最宽不超过 1200px */
+}
+
+/* —— 裁切并相对定位 —— */
+.text-line {
+  position: relative;
+  display: inline-block;
+  width: 60vw;           /* 调整这行宽度 */
+  max-width: 1000px;
+  padding: 0 10vw;       /* 左右留白 */
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* —— 静态标题 —— */
+.hero-title {
+  font-family: "Roxborough", serif;
+  /* 最小 2rem，首选 8vw，最大 7rem */
+  font-size: clamp(2rem, 8vw, 7rem);
+  font-weight: 100;
+  font-style: italic;
+  letter-spacing: -2px;
+  color: #141414;
+  margin: 0;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+.hero-title.hidden {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+/* —— 动态作品名容器 —— */
+.hover-titles {
+  position: absolute;
+  top: 18%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* —— 单个作品名 —— */
+.hover-title {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 100%);
+  opacity: 0;
+  font-family: "Roxborough", serif;
+  font-weight: 400;
+  /* 最小 2rem，首选 6vw，最大 5.5rem */
+  font-size: clamp(2rem, 6vw, 5.5rem);
+  color: #141414;
+  letter-spacing: -2px;
+  white-space: nowrap;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+/* 从下方浮现到中间 */
+.hover-title.show {
+  transform: translate(-50%, 0%);
+  opacity: 1;
+}
+/* 继续向上消失 */
+.hover-title.hide {
+  transform: translate(-50%, -100%);
+  opacity: 0;
+}

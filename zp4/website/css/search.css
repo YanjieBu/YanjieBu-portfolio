@@ -1,0 +1,173 @@
+.background-gif {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Ensures the background appears behind content */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    transition: opacity 2s ease-in-out; /* Fade-in/out transition */
+    opacity: 0; /* Default is hidden */
+}
+
+#background1 {
+    opacity: 1; /* Initially display the first GIF */
+}
+
+/* Breadcrumb Navigation Styling */
+.breadcrumb {
+    margin: 0;
+    padding: 10px 20px; /* Consistent padding with navbar */
+    font-size: 14px;
+    color: #ffffff;
+    text-align: left;
+    font-family: Arial, sans-serif;
+    position: relative;
+    left: 0; /* Left-aligned */
+    width: fit-content; /* Adjusts width to content */
+}
+
+.breadcrumb a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+    color: blueviolet;
+}
+
+/* Centered Search Container */
+.search-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 10;
+    width: 100%;
+    max-width: 500px; /* Limits max width */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Search bar styling */
+.search-bar {
+    width: 500px;
+    padding: 15px;
+    border-radius: 25px;
+    border: none;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    font-size: 18px;
+    outline: none;
+}
+
+/* Search button styling */
+.search-button {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.search-button img {
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+}
+
+/* Emoji container for rotating emojis */
+.emoji-container {
+    position: absolute;
+    margin-top: 130px;
+    left: 53%;
+    width: 600px;
+    height: 300px;
+    margin-left: -350px;
+    pointer-events: none;
+    animation: rotate 15s linear infinite;
+    z-index: 0; /* Positioned behind search bar */
+}
+
+/* Individual emoji styles with unique animations */
+.emoji {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+}
+
+/* Assign each emoji a unique orbit animation */
+.emoji1 { animation: orbit1 8s linear infinite; }
+.emoji2 { animation: orbit2 12s linear infinite; }
+.emoji3 { animation: orbit3 10s linear infinite; }
+.emoji4 { animation: orbit4 14s linear infinite; }
+.emoji5 { animation: orbit5 16s linear infinite; }
+.emoji6 { animation: orbit6 9s linear infinite; }
+.emoji7 { animation: orbit7 11s linear infinite; }
+.emoji8 { animation: orbit8 13s linear infinite; }
+
+/* Keyframes defining unique orbit paths for each emoji */
+@keyframes orbit1 {
+    0% { transform: rotate(0deg) translate(300px, 120px) rotate(0deg); }
+    100% { transform: rotate(360deg) translate(300px, 120px) rotate(-360deg); }
+}
+
+@keyframes orbit2 {
+    0% { transform: rotate(0deg) translate(400px, 160px) rotate(0deg); }
+    100% { transform: rotate(360deg) translate(400px, 160px) rotate(-360deg); }
+}
+
+@keyframes orbit3 {
+    0% { transform: rotate(0deg) translate(350px, 140px) rotate(0deg); }
+    100% { transform: rotate(360deg) translate(350px, 140px) rotate(-360deg); }
+}
+
+@keyframes orbit4 {
+    0% { transform: rotate(0deg) translate(450px, 180px) rotate(0deg); }
+    100% { transform: rotate(360deg) translate(450px, 180px) rotate(-360deg); }
+}
+
+@keyframes orbit5 {
+    0% { transform: rotate(0deg) translate(500px, 190px) rotate(0deg); }
+    100% { transform: rotate(360deg) translate(500px, 190px) rotate(-360deg); }
+}
+
+@keyframes orbit6 {
+    0% { transform: rotate(0deg) translate(380px, 150px) rotate(0deg); }
+    100% { transform: rotate(360deg) translate(380px, 150px) rotate(-360deg); }
+}
+
+@keyframes orbit7 {
+    0% { transform: rotate(0deg) translate(430px, 170px) rotate(0deg); }
+    100% { transform: rotate(360deg) translate(430px, 170px) rotate(-360deg); }
+}
+
+@keyframes orbit8 {
+    0% { transform: rotate(0deg) translate(470px, 190px) rotate(0deg); }
+    100% { transform: rotate(360deg) translate(470px, 190px) rotate(-360deg); }
+}
+
+/* Responsive styling for smaller screens */
+@media (max-width: 768px) {
+    .search-bar {
+        width: 90%;
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    .emoji-container {
+        max-width: 250px;
+        height: auto;
+    }
+
+    .emoji {
+        width: 25px;
+        height: 25px;
+    }
+}

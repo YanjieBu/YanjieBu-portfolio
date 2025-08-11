@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intelligent Toothbrush Design | Yanjie Bu</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/png" href="images/icon.png" />
+</head>
+<body>
+    <!-- Image Viewer Modal -->
+    <div id="imageViewer" class="image-viewer">
+        <span class="close-viewer">&times;</span>
+        <div class="viewer-controls">
+            <button id="zoomIn" class="control-btn">🔍+</button>
+            <button id="zoomOut" class="control-btn">🔍-</button>
+            <button id="resetZoom" class="control-btn">Reset</button>
+            <span class="zoom-level">100%</span>
+        </div>
+        <div class="viewer-container">
+            <img id="viewerImage" src="" alt="">
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+              <a href="../works.html">YanjieBu's Project</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#design">Design</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#prototype">Prototype</a></li>
+                <li><a href="#interface">Interface</a></li>
+            </ul>
+            <div class="mobile-menu-toggle">☰</div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Intelligent Toothbrush Design</h1>
+            <p>A revolutionary approach to oral healthcare combining AI, IoT, and ergonomic design</p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number" data-target="6">0</span>
+                    <span class="stat-label">Months Development</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" data-target="54">0</span>
+                    <span class="stat-label">User Surveys</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" data-target="12">0</span>
+                    <span class="stat-label">Smart Features</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Overview -->
+    <section id="overview" class="section fade-in">
+        <h2 class="section-title">Project Overview</h2>
+        <p class="section-subtitle">Revolutionizing oral healthcare through intelligent design and technology integration</p>
+        
+        <div class="grid grid-2">
+            <div class="card">
+                <h3>Background</h3>
+                <p>With the increasing awareness of oral health and rapid technological advancement, traditional toothbrushes are no longer meeting modern consumer needs. This project addresses the gap between user expectations and current market offerings through innovative smart toothbrush design.</p>
+            </div>
+            <div class="card">
+                <h3>Objective</h3>
+                <p>Design an intelligent toothbrush that combines artificial intelligence, IoT connectivity, and ergonomic principles to provide personalized oral care, real-time health monitoring, and an enhanced user experience through data-driven insights.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research & Analysis -->
+    <section id="research" class="section fade-in">
+        <h2 class="section-title">User Research & Analysis</h2>
+        <p class="section-subtitle">Data-driven design decisions based on Kano Model analysis</p>
+
+        <!-- Kano Analysis Section -->
+        <div class="kano-analysis">
+            <h3>Kano Model Implementation</h3>
+            <p>Applied the Kano Model to categorize user requirements and prioritize features based on their impact on satisfaction.</p>
+            
+            <!-- Better-Worse Analysis Image -->
+            <div class="chart-container">
+                <img src="images/01.png" alt="Better-Worse Coefficient Analysis" class="clickable-image analysis-chart">
+                <p class="image-caption">Better-Worse Coefficient Analysis Chart</p>
+            </div>
+        </div>
+
+        <!-- Satisfaction Analysis Table -->
+        <div class="data-table">
+            <h3>Table 1: Satisfaction Analysis</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>KANO Attribute</th>
+                        <th>Better Coefficient</th>
+                        <th>Worse Coefficient</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Waterproof wireless charging base</td>
+                        <td>Expected</td>
+                        <td>66.67%</td>
+                        <td>-50%</td>
+                    </tr>
+                    <tr>
+                        <td>Ergonomic grip design</td>
+                        <td>Expected</td>
+                        <td>64%</td>
+                        <td>-36%</td>
+                    </tr>
+                    <tr>
+                        <td>LED indicators with app visualization</td>
+                        <td>Attractive</td>
+                        <td>84.44%</td>
+                        <td>-26.67%</td>
+                    </tr>
+                    <tr>
+                        <td>Customizable brush material and hardness</td>
+                        <td>Attractive</td>
+                        <td>77.55%</td>
+                        <td>-32.65%</td>
+                    </tr>
+                    <tr>
+                        <td>App-based personalization settings</td>
+                        <td>Attractive</td>
+                        <td>73.47%</td>
+                        <td>-14.29%</td>
+                    </tr>
+                    <tr>
+                        <td>Ultrasonic sensor for monitoring</td>
+                        <td>Attractive</td>
+                        <td>70%</td>
+                        <td>-10%</td>
+                    </tr>
+                    <tr>
+                        <td>Auto-generated health reports</td>
+                        <td>Attractive</td>
+                        <td>66.67%</td>
+                        <td>-20.83%</td>
+                    </tr>
+                    <tr>
+                        <td>Micro-camera for visual monitoring</td>
+                        <td>Attractive</td>
+                        <td>63.27%</td>
+                        <td>-8.16%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Final Requirements Table -->
+        <div class="data-table">
+            <h3>Table 2: Final Requirements Analysis</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>KANO Type</th>
+                        <th>Analysis & Implementation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Waterproof Charging Base</td>
+                        <td>Expected</td>
+                        <td>Essential feature - users expect this as standard. High Better coefficient indicates strong user preference.</td>
+                    </tr>
+                    <tr>
+                        <td>Ergonomic Design</td>
+                        <td>Expected</td>
+                        <td>Basic requirement for comfort. Must be implemented to meet user expectations.</td>
+                    </tr>
+                    <tr>
+                        <td>Smart LED Indicators</td>
+                        <td>Attractive</td>
+                        <td>Delighter feature - provides additional convenience and modern appeal.</td>
+                    </tr>
+                    <tr>
+                        <td>Customizable Brush Heads</td>
+                        <td>Attractive</td>
+                        <td>High satisfaction driver - allows personalization based on individual needs.</td>
+                    </tr>
+                    <tr>
+                        <td>AI Health Analysis</td>
+                        <td>Attractive</td>
+                        <td>Innovative feature providing personalized oral health insights through AI.</td>
+                    </tr>
+                    <tr>
+                        <td>Visual Monitoring System</td>
+                        <td>Attractive</td>
+                        <td>Cutting-edge technology for real-time oral health visualization.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Design Process -->
+    <section id="design" class="section fade-in">
+        <h2 class="section-title">Design Evolution</h2>
+        <p class="section-subtitle">From concept sketches to final prototype</p>
+
+        <!-- Design Sketches -->
+        <div class="sketch-gallery">
+            <div class="sketch-row-top">
+                <div class="gallery-item">
+                    <img src="images/02.png" alt="Design Sketch 1" class="clickable-image">
+                    <div class="gallery-caption">Initial Concept - Modern Minimalist</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/03.png" alt="Design Sketch 2" class="clickable-image">
+                    <div class="gallery-caption">Alternative Design - Tech Forward</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/04.png" alt="Design Sketch 3" class="clickable-image">
+                    <div class="gallery-caption">Kids Version - Giraffe Theme</div>
+                </div>
+            </div>
+            <div class="sketch-row-bottom">
+                <div class="gallery-item">
+                    <img src="images/05.png" alt="Design Sketch 4" class="clickable-image">
+                    <div class="gallery-caption">Kids Version - Elephant Theme</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/06.png" alt="Final Design Sketch" class="clickable-image">
+                    <div class="gallery-caption">Final Selected Design</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3D Modeling -->
+        <h3 class="subsection-title">3D Modeling & Technical Drawings</h3>
+        <div class="image-gallery">
+            <div class="gallery-item">
+                <img src="images/07.png" alt="3D Model View 1" class="clickable-image">
+                <div class="gallery-caption">Top View</div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/08.png" alt="3D Model View 2" class="clickable-image">
+                <div class="gallery-caption">Front View</div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/09.png" alt="3D Model View 3" class="clickable-image">
+                <div class="gallery-caption">Side View</div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/10.png" alt="3D Model View 4" class="clickable-image">
+                <div class="gallery-caption">Perspective View</div>
+            </div>
+        </div>
+
+        <!-- Engineering Drawing -->
+        <div class="technical-drawing">
+            <img src="images/15.png" alt="Engineering Drawing" class="clickable-image engineering-drawing">
+            <p class="image-caption">Technical Engineering Drawing</p>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="section fade-in">
+        <h2 class="section-title">Smart Features</h2>
+        <p class="section-subtitle">Innovative technology integration for superior oral care</p>
+
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon">🦷</div>
+                <h3>Teeth Visualization</h3>
+                <p>Micro-camera and sensors provide real-time visual monitoring of oral health status</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔄</div>
+                <h3>Replaceable Heads</h3>
+                <p>Multiple brush head options for different cleaning needs and personal preferences</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📡</div>
+                <h3>Ultrasonic Sensors</h3>
+                <p>Advanced monitoring and analysis of teeth condition during brushing</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>Wireless Charging</h3>
+                <p>Convenient waterproof charging base with smart power management</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>Health Reports</h3>
+                <p>AI-generated comprehensive oral health reports after each brushing session</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⚙️</div>
+                <h3>Personalization</h3>
+                <p>Customizable settings for vibration frequency and brushing modes</p>
+            </div>
+        </div>
+
+        <!-- Teeth Visualization Demo -->
+        <div class="visualization-demo">
+            <img src="images/26.png" alt="Teeth Visualization" class="clickable-image viz-image">
+            <p class="image-caption">Real-time Teeth Visualization Technology</p>
+        </div>
+    </section>
+
+    <!-- Prototype Section -->
+    <section id="prototype" class="section fade-in">
+        <h2 class="section-title">Product Visualization</h2>
+        <p class="section-subtitle">High-quality renders and physical prototype</p>
+
+        <!-- Product Renders -->
+        <div class="image-gallery">
+            <div class="gallery-item">
+                <img src="images/11.png" alt="Product Render 1" class="clickable-image">
+                <div class="gallery-caption">Keyshot rendering1</div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/12.png" alt="Product Render 2" class="clickable-image">
+                <div class="gallery-caption">Keyshot rendering2</div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/13.png" alt="Product Render 3" class="clickable-image">
+                <div class="gallery-caption">Keyshot rendering3</div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/14.png" alt="Product Render 4" class="clickable-image">
+                <div class="gallery-caption">Keyshot rendering4</div>
+            </div>
+        </div>
+
+        <!-- Physical Model -->
+        <h3 class="subsection-title">Physical Prototype</h3>
+        <div class="prototype-images">
+            <img src="images/16.png" alt="Physical Model 1" class="clickable-image prototype-img">
+            <img src="images/16.1.png" alt="Physical Model 2" class="clickable-image prototype-img">
+        </div>
+    </section>
+
+    <!-- App Interface Section -->
+    <section id="interface" class="section fade-in">
+        <h2 class="section-title">Mobile App Interface</h2>
+        <p class="section-subtitle">Intuitive companion app for comprehensive oral health management</p>
+
+        <div class="app-showcase">
+            <h3>App Design Highlights</h3>
+            <p>The companion app provides real-time monitoring, personalized recommendations, and comprehensive health tracking through an elegant and user-friendly interface.</p>
+
+            <!-- App Screens Gallery -->
+            <div class="app-screens-grid">
+                <div class="app-screen-item">
+                    <img src="images/17.png" alt="App Onboarding" class="clickable-image">
+                    <div class="screen-info">
+                        <h4>Onboarding Flow</h4>
+                        <p>Intuitive introduction to key features and setup process</p>
+                    </div>
+                </div>
+                <div class="app-screen-item">
+                    <img src="images/18.png" alt="App Home Dashboard" class="clickable-image">
+                    <div class="screen-info">
+                        <h4>Home Dashboard</h4>
+                        <p>Central hub displaying daily progress and quick access to main features</p>
+                    </div>
+                </div>
+                <div class="app-screen-item">
+                    <img src="images/19.png" alt="App Health Overview" class="clickable-image">
+                    <div class="screen-info">
+                        <h4>Health Overview</h4>
+                        <p>Comprehensive view of oral health metrics and trends over time</p>
+                    </div>
+                </div>
+                <div class="app-screen-item">
+                    <img src="images/20.png" alt="App Settings" class="clickable-image">
+                    <div class="screen-info">
+                        <h4>Personalization</h4>
+                        <p>Customizable settings for brushing modes and user preferences</p>
+                    </div>
+                </div>
+                <div class="app-screen-item">
+                    <img src="images/21.png" alt="App Statistics" class="clickable-image">
+                    <div class="screen-info">
+                        <h4>Statistics View</h4>
+                        <p>Detailed analytics and progress tracking with visual insights</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- App Features Grid - 四个等大方框 -->
+        <div class="app-features-uniform">
+            <div class="feature-box">
+                <div class="feature-icon-img">
+                    <img src="images/22.png" alt="Brushing Report" class="clickable-image">
+                </div>
+                <h3>Brushing Report</h3>
+                <p>Detailed analysis of brushing patterns, coverage areas, and improvement suggestions with AI-powered insights</p>
+            </div>
+            <div class="feature-box">
+                <div class="feature-icon-img">
+                    <img src="images/23.png" alt="Oral Detection" class="clickable-image">
+                </div>
+                <h3>Oral Detection</h3>
+                <p>AI-powered real-time oral health detection and monitoring system using advanced image recognition</p>
+            </div>
+            <div class="feature-box">
+                <div class="feature-icon-img">
+                    <img src="images/24.png" alt="Quick Consultation" class="clickable-image">
+                </div>
+                <h3>Quick Consultation</h3>
+                <p>Connect with dental professionals for instant advice and personalized recommendations</p>
+            </div>
+            <div class="feature-box">
+                <div class="feature-icon-img">
+                    <img src="images/25.png" alt="Smart Reminders" class="clickable-image">
+                </div>
+                <h3>Smart Reminder System</h3>
+                <p>Intelligent notifications that adapt to your schedule, ensuring consistent oral care habits</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Design Process Timeline -->
+    <section class="section fade-in">
+        <h2 class="section-title">Design Process</h2>
+        <p class="section-subtitle">Six-month journey from concept to prototype</p>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Research & Analysis</h3>
+                    <p>Market research, user interviews, and Kano model implementation to identify key requirements</p>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Conceptualization</h3>
+                    <p>Ideation, sketching, and development of multiple design concepts</p>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>3D Modeling</h3>
+                    <p>Digital modeling using Rhino and KeyShot for visualization</p>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Prototyping</h3>
+                    <p>3D printing and assembly of physical prototype with functional components</p>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>App Development</h3>
+                    <p>UI/UX design and feature implementation for companion mobile application</p>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Exhibition Boards -->
+    <section class="section fade-in">
+        <h2 class="section-title">Exhibition Design</h2>
+        <p class="section-subtitle">Professional presentation boards showcasing the complete project</p>
+
+        <div class="image-gallery">
+            <div class="gallery-item">
+                <img src="images/27.png" alt="Exhibition Board 1" class="clickable-image">
+                <div class="gallery-caption">Exhibition Board - Overview</div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/28.png" alt="Exhibition Board 2" class="clickable-image">
+                <div class="gallery-caption">Exhibition Board - Design Process</div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/29.png" alt="Exhibition Board 3" class="clickable-image">
+                <div class="gallery-caption">Exhibition Board - Final Product</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Achievements -->
+    <section class="section achievements-section fade-in">
+        <h2 class="section-title">Key Achievements</h2>
+        <p class="section-subtitle">Innovation highlights and project outcomes</p>
+
+        <div class="grid grid-3">
+            <div class="achievement-card">
+                <h3>AI Integration</h3>
+                <p>Successfully integrated artificial intelligence for real-time oral health analysis and personalized recommendations</p>
+            </div>
+            <div class="achievement-card">
+                <h3>User-Centered Design</h3>
+                <p>Applied Kano Model to prioritize features based on user satisfaction impact, resulting in optimal feature selection</p>
+            </div>
+            <div class="achievement-card">
+                <h3>Technical Innovation</h3>
+                <p>Implemented ultrasonic sensors and micro-camera technology for comprehensive oral monitoring</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <h3>Intelligent Toothbrush Design Project</h3>
+        <p>Industrial Design | Jiangsu Normal University | 2023</p>
+        <p class="copyright">© 2023 All rights reserved</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
+
