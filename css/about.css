@@ -348,7 +348,7 @@ body {
   font-weight: 100;
   font-style: italic;
   letter-spacing: clamp(-2px, -0.4vw, -5px);
-  color: #141414;
+  color: #ebebeb;
   margin: 0;
   line-height: 1.2;
   white-space: nowrap;
@@ -359,7 +359,7 @@ body {
   font-size: clamp(45px, 6vw, 95px);
   font-family: "Roobert", serif;
   font-weight: 400;
-  color: #141414;
+  color: #ebebeb;
   margin: 0;
   line-height: 1.1;
   white-space: nowrap;

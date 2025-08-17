@@ -428,7 +428,7 @@ body {
   margin: 0;
   line-height: 1.2;
   white-space: nowrap;
-  padding: 0 0.3em;
+  letter-spacing: 0.01em;   /* 微调间距 */
 }
 
 .hero-subtitle {
@@ -731,37 +731,12 @@ body {
 /* 1200px断点：开始缩小 */
 @media (max-width: 1200px) {
   .working-mask {
-    width: clamp(180px, 20vw, 250px);
-    height: clamp(180px, 20vw, 250px);
+    width: clamp(150px, 18vw, 220px);
+    height: clamp(150px, 18vw, 220px);
   }
   
   .working-slide {
-    width: clamp(180px, 20vw, 250px);
-  }
-  
-  .intro-slide p,
-  .intro-slide2 p {
-    font-size: clamp(10px, 1.2vw, 14px);
-  }
-  
-  .intro-lightbulb {
-    width: clamp(25px, 3vw, 35px);
-  }
-  
-  .gif-caption-slide {
-    font-size: clamp(10px, 1.2vw, 14px);
-  }
-}
-
-/* 900px断点：继续缩小 */
-@media (max-width: 900px) {
-  .working-mask {
-    width: clamp(150px, 18vw, 200px);
-    height: clamp(150px, 18vw, 200px);
-  }
-  
-  .working-slide {
-    width: clamp(150px, 18vw, 200px);
+    width: clamp(150px, 18vw, 220px);
   }
   
   .intro-slide p,
@@ -774,49 +749,24 @@ body {
   }
   
   .gif-caption-slide {
-    font-size: clamp(9px, 1vw, 12px);
+    font-size: clamp(8px, 1vw, 12px);
   }
 }
 
-/* 768px断点：进一步缩小 */
-@media (max-width: 768px) {
+/* 900px断点：继续缩小 */
+@media (max-width: 900px) {
   .working-mask {
-    width: clamp(130px, 16vw, 180px);
-    height: clamp(130px, 16vw, 180px);
+    width: clamp(120px, 15vw, 170px);
+    height: clamp(120px, 15vw, 170px);
   }
   
   .working-slide {
-    width: clamp(130px, 16vw, 180px);
+    width: clamp(120px, 15vw, 170px);
   }
   
   .intro-slide p,
   .intro-slide2 p {
-    font-size: clamp(7px, 0.9vw, 10px);
-  }
-  
-  .intro-lightbulb {
-    width: clamp(20px, 2.2vw, 28px);
-  }
-  
-  .gif-caption-slide {
-    font-size: clamp(8px, 0.9vw, 11px);
-  }
-}
-
-/* 600px断点：接近手机尺寸 */
-@media (max-width: 600px) {
-  .working-mask {
-    width: clamp(110px, 15vw, 150px);
-    height: clamp(110px, 15vw, 150px);
-  }
-  
-  .working-slide {
-    width: clamp(110px, 15vw, 150px);
-  }
-  
-  .intro-slide p,
-  .intro-slide2 p {
-    font-size: clamp(6px, 0.8vw, 9px);
+    font-size: clamp(7px, 0.8vw, 10px);
   }
   
   .intro-lightbulb {
@@ -825,6 +775,56 @@ body {
   
   .gif-caption-slide {
     font-size: clamp(7px, 0.8vw, 10px);
+  }
+}
+
+/* 768px断点：进一步缩小 */
+@media (max-width: 768px) {
+  .working-mask {
+    width: clamp(100px, 13vw, 140px);
+    height: clamp(100px, 13vw, 140px);
+  }
+  
+  .working-slide {
+    width: clamp(100px, 13vw, 140px);
+  }
+  
+  .intro-slide p,
+  .intro-slide2 p {
+    font-size: clamp(6px, 0.7vw, 8px);
+  }
+  
+  .intro-lightbulb {
+    width: clamp(15px, 1.8vw, 22px);
+  }
+  
+  .gif-caption-slide {
+    font-size: clamp(6px, 0.7vw, 9px);
+  }
+}
+
+/* 600px断点：接近手机尺寸 */
+@media (max-width: 600px) {
+  .working-mask {
+    width: clamp(90px, 12vw, 120px);
+    height: clamp(90px, 12vw, 120px);
+  }
+  
+  .working-slide {
+    width: clamp(90px, 12vw, 120px);
+  }
+  
+  .intro-slide p,
+  .intro-slide2 p {
+    font-size: clamp(5px, 0.6vw, 7px);
+  }
+  
+  .intro-lightbulb {
+    width: clamp(12px, 1.5vw, 18px);
+  }
+  
+  .gif-caption-slide {
+    font-size: clamp(5px, 0.6vw, 8px);
   }
 }
 
@@ -922,3 +922,5 @@ body {
     display: none;
   }
 }
+
+
