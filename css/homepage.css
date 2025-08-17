@@ -427,7 +427,7 @@ body {
   margin: 0;
   line-height: 1.2;
   white-space: nowrap;
-  letter-spacing: clamp(-3px, -0.5vw, -6px); /* 响应式字符间距 */
+  letter-spacing: clamp(-2px, -0.3vw, -4px); /* 响应式字符间距 */
 }
 
 .hero-subtitle {
@@ -827,8 +827,55 @@ body {
   }
 }
 
-/* === 手机端专用响应式（只修改手机端）=== */
+/* === 改进的手机端专用响应式 === */
 @media (max-width: 480px) {
+  /* 页面基础设置 */
+  body {
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  /* 背景图片调整 */
+  .name-bg {
+    width: 500px;
+    top: 35%;
+    opacity: 0.1;
+  }
+
+  /* Logo调整 */
+  .logo-mask {
+    top: 5%;
+    width: 200px;
+    height: 35px;
+  }
+
+  .logo-slide {
+    width: 200px;
+  }
+
+  /* HOME文字调整 */
+  .home-text {
+    font-size: 100px;
+  }
+
+  /* 导航栏调整 */
+  .nav-mask {
+    top: 45%;
+  }
+
+  .nav-item {
+    font-size: 11px;
+  }
+
+  .nav-cylinder .face {
+    font-size: 11px;
+  }
+
+  .nav-number {
+    font-size: 9px;
+  }
+  
   /* 调整GIF位置到navbar下方 */
   .working-mask {
     top: 58%;
@@ -863,6 +910,54 @@ body {
 }
 
 @media (max-width: 360px) {
+  /* 页面基础设置优化 */
+  body {
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  /* 背景图片进一步缩小 */
+  .name-bg {
+    width: 400px;
+    top: 32%;
+    opacity: 0.08;
+  }
+
+  /* Logo进一步调整 */
+  .logo-mask {
+    top: 4%;
+    width: 180px;
+    height: 32px;
+  }
+
+  .logo-slide {
+    width: 180px;
+  }
+
+  /* HOME文字缩小 */
+  .home-text {
+    font-size: 80px;
+  }
+
+  /* 导航栏微调 */
+  .nav-mask {
+    top: 44%;
+  }
+
+  .nav-item {
+    font-size: 10px;
+  }
+
+  .nav-cylinder .face {
+    font-size: 10px;
+  }
+
+  .nav-number {
+    font-size: 8px;
+  }
+
+  /* GIF和布局调整 */
   .working-mask {
     top: 55%;
     width: clamp(90px, 22vw, 120px);
@@ -889,6 +984,54 @@ body {
 }
 
 @media (max-width: 320px) {
+  /* 页面基础设置 */
+  body {
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  /* 背景图片最小化 */
+  .name-bg {
+    width: 350px;
+    top: 30%;
+    opacity: 0.06;
+  }
+
+  /* Logo最小尺寸 */
+  .logo-mask {
+    top: 3%;
+    width: 160px;
+    height: 30px;
+  }
+
+  .logo-slide {
+    width: 160px;
+  }
+
+  /* HOME文字最小 */
+  .home-text {
+    font-size: 70px;
+  }
+
+  /* 导航栏最小化 */
+  .nav-mask {
+    top: 43%;
+  }
+
+  .nav-item {
+    font-size: 9px;
+  }
+
+  .nav-cylinder .face {
+    font-size: 9px;
+  }
+
+  .nav-number {
+    font-size: 7px;
+  }
+
+  /* GIF和布局最终调整 */
   .working-mask {
     top: 53%;
     width: clamp(80px, 20vw, 100px);
@@ -914,12 +1057,10 @@ body {
   }
 }
 
-
+/* 保持原有的481px隐藏规则 */
 @media (max-width: 481px) {
   .intro-group,
   .intro-group2 {
     display: none;
   }
 }
-
-
