@@ -219,5 +219,10 @@ function animateOverlay(label, targetUrl) {
 }
 
 
+// 动画完成后添加类
+setTimeout(() => {
+  document.querySelector('.intro-group').classList.add('slide-up-complete');
+  document.querySelector('.intro-group2').classList.add('slide-up-complete');
+}, 5000); // 4s动画延迟 + 1s动画时间
 
 

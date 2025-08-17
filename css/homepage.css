@@ -606,7 +606,7 @@ body {
 
 /* === 底部滑入说明文字样式 === */
 .gif-caption-slide {
-  font-size: 14px;
+  font-size: clamp(7px, 1vw, 14px); /* 使用响应式字体大小 */
   font-family: "Roobert", sans-serif;
   color: #444;
   text-align: center;
@@ -682,13 +682,217 @@ body {
   max-width: none;
 }
 
-/* === 响应式优化：小屏幕下隐藏左右介绍内容，避免排版问题 === */
-@media (max-width: 1100px) {
-  .intro-group,
+/* === 使用 clamp() 实现完美等比例缩放 === */
+
+/* Working GIF 响应式缩放 - 极小屏幕更小 */
+.working-mask {
+  width: clamp(80px, 15vw, 250px);
+  height: clamp(80px, 15vw, 250px);
+}
+
+.working-slide {
+  width: clamp(80px, 15vw, 250px);
+}
+
+/* 底部文字响应式缩放 - 极小屏幕更小 */
+.gif-caption-mask {
+  width: clamp(200px, 50vw, 700px);
+}
+
+.gif-caption-slide {
+  font-size: clamp(7px, 1vw, 14px);
+}
+
+/* 介绍组文字响应式缩放 - 极小屏幕更小 */
+.intro-slide p,
+.intro-slide2 p {
+  font-size: clamp(4px, 1vw, 16px); /* 最小值从7px改为4px */
+}
+
+/* 灯泡图标响应式缩放 - 极小屏幕更小 */
+.intro-lightbulb {
+  width: clamp(12px, 2.5vw, 35px);
+}
+
+/* === 针对小屏幕的优化 (≤480px) === */
+@media (max-width: 480px) {
+  /* 调整介绍组布局避免重叠 */
+  .intro-group {
+    bottom: 32%;
+    left: 50%;
+    transform: translateX(-50%) translateY(100%);
+  }
+  
   .intro-group2 {
-    display: none;
+    bottom: 6%;
+    right: 50%;
+    transform: translateX(50%) translateY(100%);
+  }
+  
+  /* 减少文字行距避免重叠 */
+  .intro-slide p,
+  .intro-slide2 p {
+    line-height: 1.2;
+    white-space: normal;
+    max-width: 120px;
+    margin: 0 auto;
+  }
+  
+  /* 调整working gif位置 */
+  .working-mask {
+    top: 45%;
+  }
+  
+  /* 调整底部文字位置 */
+  .gif-caption-mask {
+    top: 75%;
   }
 }
+
+/* === 针对极小屏幕的优化 (≤320px) === */
+@media (max-width: 320px) {
+  /* working gif 大幅缩小 */
+  .working-mask {
+    width: 50px;
+    height: 50px;
+    top: 40%;
+  }
+  
+  .working-slide {
+    width: 50px;
+  }
+  
+  /* 文字大幅缩小 */
+  .gif-caption-slide {
+    font-size: 5px;
+  }
+  
+  .intro-slide p,
+  .intro-slide2 p {
+    font-size: 5px;
+    max-width: 80px;
+    line-height: 1.4;
+  }
+  
+  /* 灯泡大幅缩小 */
+  .intro-lightbulb {
+    width: 8px;
+  }
+  
+  /* 介绍组位置调整 */
+  .intro-group {
+    bottom: 36%;
+  }
+  
+  .intro-group2 {
+    bottom: 2%;
+  }
+  
+  /* 底部文字位置和大小 */
+  .gif-caption-mask {
+    top: 68%;
+    width: 160px;
+  }
+}
+
+/* === 针对超极小屏幕的优化 (≤280px) === */
+@media (max-width: 280px) {
+  /* working gif 再次缩小 */
+  .working-mask {
+    width: 35px;
+    height: 35px;
+    top: 36%;
+  }
+  
+  .working-slide {
+    width: 35px;
+  }
+  
+  /* 文字再次缩小 */
+  .gif-caption-slide {
+    font-size: 3px !important; /* 使用 !important 确保生效 */
+  }
+  
+  .intro-slide p,
+  .intro-slide2 p {
+    font-size: 3px !important; /* 使用 !important 确保生效 */
+    max-width: 50px;
+    line-height: 1.6;
+  }
+  
+  /* 灯泡再次缩小 */
+  .intro-lightbulb {
+    width: 5px;
+  }
+  
+  /* 介绍组位置调整，避免重叠 */
+  .intro-group {
+    bottom: 38%;
+  }
+  
+  .intro-group2 {
+    bottom: 0%;
+  }
+  
+  /* 底部文字 */
+  .gif-caption-mask {
+    top: 62%;
+    width: 120px;
+  }
+}
+
+/* === 针对超超极小屏幕的优化 (≤240px) === */
+@media (max-width: 240px) {
+  .working-mask {
+    width: 30px;
+    height: 30px;
+    top: 34%;
+  }
+  
+  .working-slide {
+    width: 30px;
+  }
+  
+  .gif-caption-slide {
+    font-size: 2px !important;
+  }
+  
+  .intro-slide p,
+  .intro-slide2 p {
+    font-size: 2px !important;
+    max-width: 40px;
+    line-height: 1.8;
+  }
+  
+  .intro-lightbulb {
+    width: 4px;
+  }
+  
+  .intro-group {
+    bottom: 40%;
+  }
+  
+  .intro-group2 {
+    bottom: -2%;
+  }
+  
+  .gif-caption-mask {
+    top: 60%;
+    width: 100px;
+  }
+}
+
+/* === 中等屏幕优化 === */
+@media (max-width: 768px) and (min-width: 481px) {
+  .intro-group {
+    left: 10%;
+  }
+  
+  .intro-group2 {
+    right: 10%;
+  }
+}
+
 
 
 
