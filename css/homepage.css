@@ -12,10 +12,10 @@ body {
 /* === 中心大标题 NAME 图像 === */
 .name-bg {
   position: absolute;
-  top: 51%;
+  top: 50%; /* 改为50%确保垂直居中 */
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 900px;
+  width: min(900px, 80vw); /* 响应式宽度 */
   height: auto;
   z-index: 1;
   pointer-events: none;
@@ -47,7 +47,7 @@ body {
 
 /* 大号文字样式（左右两行） */
 .caption {
-  font-size: 300px;
+  font-size: clamp(80px, 20vw, 300px); /* 响应式字体 */
   font-weight: 1000;
   font-family: "Roobert", sans-serif;
   line-height: 0;
@@ -115,7 +115,7 @@ body {
 
 /* 小屏GIF大小设置 */
 .small-screen-gif img {
-  width: 120px;
+  width: clamp(80px, 20vw, 120px); /* 响应式大小 */
   height: auto;
   display: block;
 }
@@ -131,7 +131,7 @@ body {
   top: 4%;
   left: 50%;
   transform: translateX(-50%);
-  width: 250px;
+  width: min(250px, 60vw); /* 响应式宽度 */
   height: 40px;
   overflow: hidden;
   z-index: 2;
@@ -139,7 +139,7 @@ body {
 
 /* Logo 图片本体 */
 .logo-slide {
-  width: 250px;
+  width: 100%; /* 改为100%适应容器 */
   transform: translateY(200%); /* 初始在底下 */
   animation: slideUpFromLine 1s ease-out 4s forwards;
   opacity: 1;
@@ -243,13 +243,12 @@ body {
   }
 }
 
-
 /* === 导航整体遮罩容器（防止动画时内容溢出） === */
 .nav-mask {
   position: absolute;
-  top: 47.5%;
+  top: 50%; /* 改为50%确保垂直居中 */
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%); /* 双向居中 */
   width: 100vw;
   height: 40px;
   overflow: hidden;
@@ -272,12 +271,12 @@ body {
 /* === 单个导航项通用样式 === */
 .nav-item {
   position: absolute;
-  top: 47.5%;
+  top: 50%; /* 改为50% */
   transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 13px;
+  font-size: clamp(11px, 2vw, 13px); /* 响应式字体 */
   line-height: 1.3;
   cursor: pointer;
 }
@@ -287,12 +286,50 @@ body {
   cursor: default;
 }
 
-/* === 设置导航项左右分布位置（共 5 项）=== */
-.nav-item:nth-child(1) { left: 6%; }
-.nav-item:nth-child(2) { left: 28%; }
-.nav-item:nth-child(3) { left: 50%; }
-.nav-item:nth-child(4) { left: 72%; }
-.nav-item:nth-child(5) { left: 94%; }
+/* === 响应式导航项位置分布 === */
+/* 大屏幕 (>1200px) */
+@media (min-width: 1201px) {
+  .nav-item:nth-child(1) { left: 6%; }
+  .nav-item:nth-child(2) { left: 28%; }
+  .nav-item:nth-child(3) { left: 50%; }
+  .nav-item:nth-child(4) { left: 72%; }
+  .nav-item:nth-child(5) { left: 94%; }
+}
+
+/* 中等屏幕 (801px-1200px) */
+@media (min-width: 801px) and (max-width: 1200px) {
+  .nav-item:nth-child(1) { left: 8%; }
+  .nav-item:nth-child(2) { left: 30%; }
+  .nav-item:nth-child(3) { left: 50%; }
+  .nav-item:nth-child(4) { left: 70%; }
+  .nav-item:nth-child(5) { left: 92%; }
+}
+
+/* 小屏幕 (481px-800px) */
+@media (min-width: 481px) and (max-width: 800px) {
+  .nav-item:nth-child(1) { left: 10%; }
+  .nav-item:nth-child(2) { left: 32%; }
+  .nav-item:nth-child(3) { left: 50%; }
+  .nav-item:nth-child(4) { left: 68%; }
+  .nav-item:nth-child(5) { left: 90%; }
+}
+
+/* 超小屏幕 (≤480px) */
+@media (max-width: 480px) {
+  .nav-item:nth-child(1) { left: 12%; }
+  .nav-item:nth-child(2) { left: 34%; }
+  .nav-item:nth-child(3) { left: 50%; }
+  .nav-item:nth-child(4) { left: 66%; }
+  .nav-item:nth-child(5) { left: 88%; }
+  
+  .nav-number {
+    font-size: 10px;
+  }
+  
+  .nav-cylinder .face {
+    font-size: 12px;
+  }
+}
 
 /* === 导航条滑入关键帧动画 === */
 @keyframes navSlideUp {
@@ -409,6 +446,7 @@ body {
   text-align: center;
   z-index: 2;
   pointer-events: none;
+  width: 95vw; /* 防止超出屏幕 */
 }
 
 /* 默认隐藏主标题和副标题，等待 JS 显示 */
@@ -419,26 +457,28 @@ body {
 
 /* === 主标题样式 === */
 .hero-title {
-  font-size: clamp(45px, 6vw, 95px); 
+  font-size: clamp(40px, 8vw, 95px); /* 响应式字体 */
   font-family: "Roxborough", serif;
   font-weight: 100;
   font-style: italic;
+  letter-spacing: clamp(-0.5px, -0.1vw, -1px); /* 响应式字间距 - 更宽 */
   color: #141414;
   margin: 0;
   line-height: 1.2;
   white-space: nowrap;
-  letter-spacing: clamp(-0.1px, -0.1vw, -1px); /* 响应式字符间距 */
+  padding: 0 0.3em; /* 左右各加一点空隙 */
 }
 
+/* === 副标题样式 === */
 .hero-subtitle {
-  font-size: clamp(45px, 6vw, 95px);
+  font-size: clamp(40px, 8vw, 95px); /* 响应式字体 */
   font-family: "Roobert", serif;
   font-weight: 400;
   color: #141414;
   margin: 0;
   line-height: 1.1;
   white-space: nowrap;
-  letter-spacing: clamp(-3px, -0.5vw, -6px);
+  letter-spacing: clamp(-3px, -0.6vw, -6px); /* 响应式字间距 */
 }
 
 /* 显示字符动画触发类 */
@@ -575,8 +615,8 @@ body {
   top: 58%;
   left: 50%;
   transform: translateX(-50%);
-  width: 250px;
-  height: 250px;
+  width: min(250px, 50vw); /* 响应式宽度 */
+  height: min(250px, 50vw); /* 响应式高度 */
   overflow: hidden;
   z-index: 2;
   opacity: 0;
@@ -585,7 +625,7 @@ body {
 
 /* === working 动图本体：从下方滑入 === */
 .working-slide {
-  width: 250px;
+  width: 100%; /* 改为100%适应容器 */
   transform: translateY(100%);
   animation: slideUpFromLine 1s ease-out 4s forwards;
 }
@@ -596,7 +636,7 @@ body {
   top: 88%;
   left: 50%;
   transform: translateX(-50%);
-  width: 700px;
+  width: min(700px, 90vw); /* 响应式宽度 */
   height: 50px;
   overflow: hidden;
   z-index: 2;
@@ -604,7 +644,7 @@ body {
 
 /* === 底部滑入说明文字样式 === */
 .gif-caption-slide {
-  font-size: 14px;
+  font-size: clamp(12px, 2.5vw, 14px); /* 响应式字体 */
   font-family: "Roobert", sans-serif;
   color: #444;
   text-align: center;
@@ -618,14 +658,14 @@ body {
 .intro-group {
   position: absolute;
   bottom: 19%;
-  left: 13%;
+  left: min(13%, 5vw); /* 响应式左边距 */
   z-index: 2;
   pointer-events: none;
   transform: translateY(100%);
   opacity: 0;
   animation: slideUpFromLine 1s ease-out 4s forwards;
   width: max-content;
-  max-width: none;
+  max-width: 40vw; /* 限制最大宽度 */
   transform-origin: bottom;
 }
 
@@ -633,20 +673,20 @@ body {
 .intro-group2 {
   position: absolute;
   bottom: 19%;
-  right: 13%;
+  right: min(13%, 5vw); /* 响应式右边距 */
   z-index: 2;
   pointer-events: none;
   transform: translateY(100%);
   opacity: 0;
   animation: slideUpFromLine 1s ease-out 4s forwards;
   width: max-content;
-  max-width: none;
+  max-width: 40vw; /* 限制最大宽度 */
   transform-origin: bottom;
 }
 
 /* === 灯泡动图样式（用于 intro 左右）=== */
 .intro-lightbulb {
-  width: 35px;
+  width: clamp(25px, 5vw, 35px); /* 响应式宽度 */
   height: auto;
   display: block;
   margin: 0 auto 8px auto; /* 居中 + 与文字间隔 */
@@ -654,7 +694,7 @@ body {
 
 /* === 左侧介绍文字样式（大写 + 紧凑行距）=== */
 .intro-slide p {
-  font-size: 16px;
+  font-size: clamp(12px, 2.5vw, 16px); /* 响应式字体 */
   font-family: "Roobert", sans-serif;
   color: #444;
   line-height: 0.7;
@@ -668,7 +708,7 @@ body {
 
 /* === 右侧介绍文字样式（与左侧一致）=== */
 .intro-slide2 p {
-  font-size: 16px;
+  font-size: clamp(12px, 2.5vw, 16px); /* 响应式字体 */
   font-family: "Roobert", sans-serif;
   color: #444;
   line-height: 0.7;
@@ -680,454 +720,29 @@ body {
   max-width: none;
 }
 
-/* === 手机端新增样式（只在480px以下生效）=== */
-.mobile-intro-container {
-  display: none;
-  position: absolute;
-  top: 75%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 90vw;
-  max-width: 400px;
-  z-index: 2;
-  text-align: center;
-}
-
-.mobile-intro-item {
-  margin-bottom: 25px;
-  opacity: 0;
-  transform: translateY(30px);
-  animation: mobileSlideUp 0.8s ease-out forwards;
-}
-
-.mobile-intro-item:first-child {
-  animation-delay: 4.5s;
-}
-
-.mobile-intro-item:last-child {
-  animation-delay: 5s;
-  margin-bottom: 0;
-}
-
-.mobile-intro-item p {
-  font-family: "Roobert", sans-serif;
-  color: #444;
-  text-transform: uppercase;
-  margin: 0;
-  line-height: 1.3;
-  font-size: clamp(10px, 2.5vw, 14px);
-  white-space: normal;
-  word-break: break-word;
-}
-
-@keyframes mobileSlideUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* 1200px断点：开始缩小 */
-@media (max-width: 1200px) {
-  .working-mask {
-    width: clamp(150px, 18vw, 220px);
-    height: clamp(150px, 18vw, 220px);
-  }
-  
-  .working-slide {
-    width: clamp(150px, 18vw, 220px);
-  }
-  
-  .intro-slide p,
-  .intro-slide2 p {
-    font-size: clamp(8px, 1vw, 12px);
-  }
-  
-  .intro-lightbulb {
-    width: clamp(22px, 2.5vw, 30px);
-  }
-  
-  .gif-caption-slide {
-    font-size: clamp(8px, 1vw, 12px);
-  }
-}
-
-/* 900px断点：继续缩小 */
-@media (max-width: 900px) {
-  .working-mask {
-    width: clamp(120px, 15vw, 170px);
-    height: clamp(120px, 15vw, 170px);
-  }
-  
-  .working-slide {
-    width: clamp(120px, 15vw, 170px);
-  }
-  
-  .intro-slide p,
-  .intro-slide2 p {
-    font-size: clamp(7px, 0.8vw, 10px);
-  }
-  
-  .intro-lightbulb {
-    width: clamp(18px, 2vw, 25px);
-  }
-  
-  .gif-caption-slide {
-    font-size: clamp(7px, 0.8vw, 10px);
-  }
-}
-
-/* 768px断点：进一步缩小 */
-@media (max-width: 768px) {
-  .working-mask {
-    width: clamp(100px, 13vw, 140px);
-    height: clamp(100px, 13vw, 140px);
-  }
-  
-  .working-slide {
-    width: clamp(100px, 13vw, 140px);
-  }
-  
-  .intro-slide p,
-  .intro-slide2 p {
-    font-size: clamp(6px, 0.7vw, 8px);
-  }
-  
-  .intro-lightbulb {
-    width: clamp(15px, 1.8vw, 22px);
-  }
-  
-  .gif-caption-slide {
-    font-size: clamp(6px, 0.7vw, 9px);
-  }
-}
-
-/* 600px断点：接近手机尺寸 */
-@media (max-width: 600px) {
-  .working-mask {
-    width: clamp(90px, 12vw, 120px);
-    height: clamp(90px, 12vw, 120px);
-  }
-  
-  .working-slide {
-    width: clamp(90px, 12vw, 120px);
-  }
-  
-  .intro-slide p,
-  .intro-slide2 p {
-    font-size: clamp(5px, 0.6vw, 7px);
-  }
-  
-  .intro-lightbulb {
-    width: clamp(12px, 1.5vw, 18px);
-  }
-  
-  .gif-caption-slide {
-    font-size: clamp(5px, 0.6vw, 8px);
-  }
-}
-
-/* === 手机端专用响应式（只修改手机端）=== */
-@media (max-width: 480px) {
-  /* 调整GIF位置到navbar下方 */
-  .working-mask {
-    top: 58%;
-    width: clamp(100px, 25vw, 140px);
-    height: clamp(100px, 25vw, 140px);
-  }
-  
-  .working-slide {
-    width: clamp(100px, 25vw, 140px);
-  }
-  
-  /* 隐藏原来的侧边文字和灯泡 */
-  .intro-group,
-  .intro-group2 {
-    display: none !important;
-  }
-  
-  /* 隐藏gif-caption文字 */
-  .gif-caption-mask {
-    display: none !important;
-  }
-  
-  /* 显示手机版垂直布局 */
-  .mobile-intro-container {
-    display: block;
-    top: 78%;
-  }
-  
-  .mobile-intro-item p {
-    font-size: clamp(9px, 2.2vw, 13px);
-  }
-
-  /* HOME文字调整 */
-  .home-text {
-    font-size: 100px;
-  }
-
-  /* 导航栏调整 */
-  .nav-mask {
-    top: 45%;
-  }
-
-  .nav-item {
-    font-size: 11px;
-  }
-
-  .nav-cylinder .face {
-    font-size: 11px;
-  }
-
-  .nav-number {
-    font-size: 9px;
-  }
-
-  /* 调整页面基础高度，允许滚动 */
-  body {
-    height: 100vh;
-    overflow-y: auto;
-    overflow-x: hidden;
-  }
-
-  /* 背景图片调整 */
-  .name-bg {
-    width: 500px;
-    top: 35%;
-    opacity: 0.1;
-  }
-
-  /* Logo调整 */
-  .logo-mask {
-    top: 5%;
-    width: 200px;
-    height: 35px;
-  }
-
-  .logo-slide {
-    width: 200px;
-  }
-
-  /* 主标题调整 */
-  .hero-text {
-    top: 15%;
-  }
-}
-
-@media (max-width: 360px) {
-  .working-mask {
-    top: 55%;
-    width: clamp(90px, 22vw, 120px);
-    height: clamp(90px, 22vw, 120px);
-  }
-  
-  .working-slide {
-    width: clamp(90px, 22vw, 120px);
-  }
-  
-  .mobile-intro-container {
-    top: 75%;
-    width: 95vw;
-  }
-  
-  .mobile-intro-item {
-    margin-bottom: 20px;
-  }
-  
-  .mobile-intro-item p {
-    font-size: clamp(8px, 2vw, 12px);
-    line-height: 1.4;
-  }
-
-    /* HOME文字调整 */
-  .home-text {
-    font-size: 100px;
-  }
-
-  /* 导航栏调整 */
-  .nav-mask {
-    top: 45%;
-  }
-
-  .nav-item {
-    font-size: 11px;
-  }
-
-  .nav-cylinder .face {
-    font-size: 11px;
-  }
-
-  .nav-number {
-    font-size: 9px;
-  }
-
-  /* 调整页面基础高度，允许滚动 */
-  body {
-    height: 100vh;
-    overflow-y: auto;
-    overflow-x: hidden;
-  }
-
-  /* 背景图片调整 */
-  .name-bg {
-    width: 500px;
-    top: 35%;
-    opacity: 0.1;
-  }
-
-  /* Logo调整 */
-  .logo-mask {
-    top: 5%;
-    width: 200px;
-    height: 35px;
-  }
-
-  .logo-slide {
-    width: 200px;
-  }
-
-  /* 主标题调整 */
-  .hero-text {
-    top: 15%;
-  }
-}
-
-@media (max-width: 320px) {
-  .working-mask {
-    top: 53%;
-    width: clamp(80px, 20vw, 100px);
-    height: clamp(80px, 20vw, 100px);
-  }
-  
-  .working-slide {
-    width: clamp(80px, 20vw, 100px);
-  }
-  
-  .mobile-intro-container {
-    top: 72%;
-    width: 98vw;
-  }
-  
-  .mobile-intro-item {
-    margin-bottom: 18px;
-  }
-  
-  .mobile-intro-item p {
-    font-size: clamp(7px, 1.8vw, 11px);
-    line-height: 1.5;
-  }
-
-  /* HOME文字调整 */
-  .home-text {
-    font-size: 100px;
-  }
-
-  /* 导航栏调整 */
-  .nav-mask {
-    top: 45%;
-  }
-
-  .nav-item {
-    font-size: 11px;
-  }
-
-  .nav-cylinder .face {
-    font-size: 11px;
-  }
-
-  .nav-number {
-    font-size: 9px;
-  }
-
-  /* 调整页面基础高度，允许滚动 */
-  body {
-    height: 100vh;
-    overflow-y: auto;
-    overflow-x: hidden;
-  }
-
-  /* 背景图片调整 */
-  .name-bg {
-    width: 500px;
-    top: 35%;
-    opacity: 0.1;
-  }
-
-  /* Logo调整 */
-  .logo-mask {
-    top: 5%;
-    width: 200px;
-    height: 35px;
-  }
-
-  .logo-slide {
-    width: 200px;
-  }
-
-  /* 主标题调整 */
-  .hero-text {
-    top: 15%;
-  }
-
-    /* HOME文字调整 */
-  .home-text {
-    font-size: 100px;
-  }
-
-  /* 导航栏调整 */
-  .nav-mask {
-    top: 45%;
-  }
-
-  .nav-item {
-    font-size: 11px;
-  }
-
-  .nav-cylinder .face {
-    font-size: 11px;
-  }
-
-  .nav-number {
-    font-size: 9px;
-  }
-
-  /* 调整页面基础高度，允许滚动 */
-  body {
-    height: 100vh;
-    overflow-y: auto;
-    overflow-x: hidden;
-  }
-
-  /* 背景图片调整 */
-  .name-bg {
-    width: 500px;
-    top: 35%;
-    opacity: 0.1;
-  }
-
-  /* Logo调整 */
-  .logo-mask {
-    top: 5%;
-    width: 200px;
-    height: 35px;
-  }
-
-  .logo-slide {
-    width: 200px;
-  }
-
-  /* 主标题调整 */
-  .hero-text {
-    top: 15%;
-  }
-}
-
-
-@media (max-width: 481px) {
+/* === 响应式优化：小屏幕下隐藏左右介绍内容，避免排版问题 === */
+@media (max-width: 1100px) {
   .intro-group,
   .intro-group2 {
     display: none;
   }
 }
 
-
+/* === 超小屏幕特殊处理 === */
+@media (max-width: 600px) {
+  .hero-text {
+    top: 10%; /* 向上移动一些 */
+  }
+  
+  .working-mask {
+    top: 55%; /* 稍微向上移动 */
+  }
+  
+  .gif-caption-mask {
+    top: 85%; /* 向上移动一些 */
+  }
+  
+  .name-bg {
+    width: 85vw; /* 更小的屏幕使用更大比例 */
+  }
+}
