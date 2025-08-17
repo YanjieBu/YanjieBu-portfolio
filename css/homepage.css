@@ -15,7 +15,7 @@ body {
   top: 50%; /* 改为50%确保垂直居中 */
   left: 50%;
   transform: translate(-50%, -50%);
-  width: min(900px, 80vw); /* 改为响应式宽度 */
+  width: min(900px, 80vw); /* 响应式宽度 */
   height: auto;
   z-index: 1;
   pointer-events: none;
@@ -47,7 +47,7 @@ body {
 
 /* 大号文字样式（左右两行） */
 .caption {
-  font-size: clamp(80px, 20vw, 300px); /* 改为响应式 */
+  font-size: clamp(80px, 20vw, 300px); /* 响应式字体 */
   font-weight: 1000;
   font-family: "Roobert", sans-serif;
   line-height: 0;
@@ -115,7 +115,7 @@ body {
 
 /* 小屏GIF大小设置 */
 .small-screen-gif img {
-  width: clamp(80px, 20vw, 120px); /* 改为响应式 */
+  width: clamp(80px, 20vw, 120px); /* 响应式大小 */
   height: auto;
   display: block;
 }
@@ -131,7 +131,7 @@ body {
   top: 4%;
   left: 50%;
   transform: translateX(-50%);
-  width: min(250px, 60vw); /* 改为响应式 */
+  width: min(250px, 60vw); /* 响应式宽度 */
   height: 40px;
   overflow: hidden;
   z-index: 2;
@@ -157,35 +157,33 @@ body {
   overflow: hidden;
   z-index: 1;
   display: flex;
-  align-items: flex-end; /* 初始底部对齐 */
+  align-items: center;
   justify-content: center;
   transition: height 0.3s ease;
 }
 
+/* HOME 文字样式 - 添加baseline对齐 */
 .home-text {
   display: flex;
-  align-items: baseline;
+  align-items: baseline; /* 新增：让所有字符底部基线对齐 */
   color: rgba(219, 219, 219, 0.274);
-  font-size: 200px;
+  font-size: clamp(80px, 15vw, 200px); /* 响应式字体 */
   font-weight: 500;
-  line-height: 0.65;
+  line-height: 0.70;
   padding: 0;
-  transform: translateY(0%);
+  transform: translateY(100%);
   opacity: 0;
   transition: transform 0.5s ease, opacity 0.5s ease;
-  margin: 0;
-  margin-bottom: -5px;
 }
 
 /* 黑色横条展开（点击后） */
 .home-overlay.expand {
   height: 100vh !important;
-  align-items: center !important; /* 展开后改为居中对齐 */
-  transition: height 0.5s ease-in, align-items 0.5s ease-in;
+  transition: height 0.5s ease-in;
   z-index: 1000;
 }
 
-/* 文字变白 + 居中显示 */
+/* 文字变白 + 上移显示 */
 .home-text.show-white {
   color: white !important;
   transform: translateY(0) !important;
@@ -248,7 +246,7 @@ body {
   position: absolute;
   top: 50%; /* 改为50%确保垂直居中 */
   left: 50%;
-  transform: translate(-50%, -50%); /* 改为双向居中 */
+  transform: translate(-50%, -50%); /* 双向居中 */
   width: 100vw;
   height: 40px;
   overflow: hidden;
@@ -276,7 +274,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: clamp(11px, 2vw, 13px); /* 改为响应式 */
+  font-size: clamp(11px, 2vw, 13px); /* 响应式字体 */
   line-height: 1.3;
   cursor: pointer;
 }
@@ -286,12 +284,50 @@ body {
   cursor: default;
 }
 
-/* === 设置导航项左右分布位置（共 5 项）=== */
-.nav-item:nth-child(1) { left: 6%; }
-.nav-item:nth-child(2) { left: 28%; }
-.nav-item:nth-child(3) { left: 50%; }
-.nav-item:nth-child(4) { left: 72%; }
-.nav-item:nth-child(5) { left: 94%; }
+/* === 响应式导航项位置分布 === */
+/* 大屏幕 (>1200px) */
+@media (min-width: 1201px) {
+  .nav-item:nth-child(1) { left: 6%; }
+  .nav-item:nth-child(2) { left: 28%; }
+  .nav-item:nth-child(3) { left: 50%; }
+  .nav-item:nth-child(4) { left: 72%; }
+  .nav-item:nth-child(5) { left: 94%; }
+}
+
+/* 中等屏幕 (801px-1200px) */
+@media (min-width: 801px) and (max-width: 1200px) {
+  .nav-item:nth-child(1) { left: 8%; }
+  .nav-item:nth-child(2) { left: 30%; }
+  .nav-item:nth-child(3) { left: 50%; }
+  .nav-item:nth-child(4) { left: 70%; }
+  .nav-item:nth-child(5) { left: 92%; }
+}
+
+/* 小屏幕 (481px-800px) */
+@media (min-width: 481px) and (max-width: 800px) {
+  .nav-item:nth-child(1) { left: 10%; }
+  .nav-item:nth-child(2) { left: 32%; }
+  .nav-item:nth-child(3) { left: 50%; }
+  .nav-item:nth-child(4) { left: 68%; }
+  .nav-item:nth-child(5) { left: 90%; }
+}
+
+/* 超小屏幕 (≤480px) */
+@media (max-width: 480px) {
+  .nav-item:nth-child(1) { left: 12%; }
+  .nav-item:nth-child(2) { left: 34%; }
+  .nav-item:nth-child(3) { left: 50%; }
+  .nav-item:nth-child(4) { left: 66%; }
+  .nav-item:nth-child(5) { left: 88%; }
+  
+  .nav-number {
+    font-size: 10px;
+  }
+  
+  .nav-cylinder .face {
+    font-size: 12px;
+  }
+}
 
 /* === 导航条滑入关键帧动画 === */
 @keyframes navSlideUp {
@@ -408,10 +444,9 @@ body {
   text-align: center;
   z-index: 2;
   pointer-events: none;
-  width: 90vw; /* 新增：防止超出屏幕 */
-  max-width: 100vw; /* 新增 */
-  box-sizing: border-box; /* 新增 */
-  padding: 0 2vw; /* 新增：左右内边距 */
+  width: 95vw; /* 防止超出屏幕 */
+  max-width: 100vw; /* 确保不会超出 */
+  box-sizing: border-box;
 }
 
 /* 默认隐藏主标题和副标题，等待 JS 显示 */
@@ -422,30 +457,30 @@ body {
 
 /* === 主标题样式 === */
 .hero-title {
-  font-size: clamp(28px, 6vw, 95px); /* 改为响应式 */
+  font-size: clamp(30px, 7vw, 95px); /* 响应式字体 */
   font-family: "Roxborough", serif;
   font-weight: 100;
   font-style: italic;
-  letter-spacing: clamp(0px, 0.15vw, 1px); /* 改为响应式正值 */
+  letter-spacing: clamp(0px, 0.2vw, 2px); /* 改为正值，字符间距更宽 */
   color: #141414;
   margin: 0;
   line-height: 1.2;
   white-space: nowrap;
-  padding: 0 0.2em; /* 从0.3em改为0.2em */
-  overflow: visible; /* 新增 */
+  padding: 0 0.3em; /* 左右各加一点空隙 */
+  overflow: visible; /* 确保字符完全显示 */
 }
 
 /* === 副标题样式 === */
 .hero-subtitle {
-  font-size: clamp(28px, 6vw, 95px); /* 改为响应式 */
+  font-size: clamp(30px, 7vw, 95px); /* 响应式字体 */
   font-family: "Roobert", serif;
   font-weight: 400;
   color: #141414;
   margin: 0;
   line-height: 1.1;
   white-space: nowrap;
-  letter-spacing: clamp(-2px, -0.2vw, -3px); /* 改为响应式负值压缩 */
-  overflow: visible; /* 新增 */
+  letter-spacing: clamp(-1px, -0.1vw, -2px); /* 减少负间距 */
+  overflow: visible; /* 确保字符完全显示 */
 }
 
 /* 显示字符动画触发类 */
@@ -582,8 +617,8 @@ body {
   top: 58%;
   left: 50%;
   transform: translateX(-50%);
-  width: min(250px, 50vw); /* 改为响应式 */
-  height: min(250px, 50vw); /* 改为响应式 */
+  width: min(250px, 50vw); /* 响应式宽度 */
+  height: min(250px, 50vw); /* 响应式高度 */
   overflow: hidden;
   z-index: 2;
   opacity: 0;
@@ -603,7 +638,7 @@ body {
   top: 88%;
   left: 50%;
   transform: translateX(-50%);
-  width: min(700px, 90vw); /* 改为响应式 */
+  width: min(700px, 90vw); /* 响应式宽度 */
   height: 50px;
   overflow: hidden;
   z-index: 2;
@@ -611,7 +646,7 @@ body {
 
 /* === 底部滑入说明文字样式 === */
 .gif-caption-slide {
-  font-size: clamp(12px, 2.5vw, 14px); /* 改为响应式 */
+  font-size: clamp(12px, 2.5vw, 14px); /* 响应式字体 */
   font-family: "Roobert", sans-serif;
   color: #444;
   text-align: center;
@@ -625,14 +660,14 @@ body {
 .intro-group {
   position: absolute;
   bottom: 19%;
-  left: min(13%, 5vw); /* 改为响应式 */
+  left: min(15%, 5vw); /* 响应式左边距 */
   z-index: 2;
   pointer-events: none;
   transform: translateY(100%);
   opacity: 0;
   animation: slideUpFromLine 1s ease-out 4s forwards;
   width: max-content;
-  max-width: 40vw; /* 新增 */
+  max-width: 40vw; /* 限制最大宽度 */
   transform-origin: bottom;
 }
 
@@ -640,20 +675,20 @@ body {
 .intro-group2 {
   position: absolute;
   bottom: 19%;
-  right: min(13%, 5vw); /* 改为响应式 */
+  right: min(15%, 5vw); /* 响应式右边距 */
   z-index: 2;
   pointer-events: none;
   transform: translateY(100%);
   opacity: 0;
   animation: slideUpFromLine 1s ease-out 4s forwards;
   width: max-content;
-  max-width: 40vw; /* 新增 */
+  max-width: 40vw; /* 限制最大宽度 */
   transform-origin: bottom;
 }
 
 /* === 灯泡动图样式（用于 intro 左右）=== */
 .intro-lightbulb {
-  width: clamp(25px, 5vw, 35px); /* 改为响应式 */
+  width: clamp(25px, 5vw, 35px); /* 响应式宽度 */
   height: auto;
   display: block;
   margin: 0 auto 8px auto; /* 居中 + 与文字间隔 */
@@ -661,7 +696,7 @@ body {
 
 /* === 左侧介绍文字样式（大写 + 紧凑行距）=== */
 .intro-slide p {
-  font-size: clamp(12px, 2.5vw, 16px); /* 改为响应式 */
+  font-size: clamp(12px, 2.5vw, 16px); /* 响应式字体 */
   font-family: "Roobert", sans-serif;
   color: #444;
   line-height: 0.7;
@@ -675,7 +710,7 @@ body {
 
 /* === 右侧介绍文字样式（与左侧一致）=== */
 .intro-slide2 p {
-  font-size: clamp(12px, 2.5vw, 16px); /* 改为响应式 */
+  font-size: clamp(12px, 2.5vw, 16px); /* 响应式字体 */
   font-family: "Roobert", sans-serif;
   color: #444;
   line-height: 0.7;
@@ -695,70 +730,7 @@ body {
   }
 }
 
-/* === 响应式导航项位置分布 === */
-/* 大屏幕 (>1200px) */
-@media (min-width: 1201px) {
-  .nav-item:nth-child(1) { left: 6%; }
-  .nav-item:nth-child(2) { left: 28%; }
-  .nav-item:nth-child(3) { left: 50%; }
-  .nav-item:nth-child(4) { left: 72%; }
-  .nav-item:nth-child(5) { left: 94%; }
-}
-
-/* 中等屏幕 (801px-1200px) */
-@media (min-width: 801px) and (max-width: 1200px) {
-  .nav-item:nth-child(1) { left: 8%; }
-  .nav-item:nth-child(2) { left: 30%; }
-  .nav-item:nth-child(3) { left: 50%; }
-  .nav-item:nth-child(4) { left: 70%; }
-  .nav-item:nth-child(5) { left: 92%; }
-}
-
-/* 小屏幕 (481px-800px) */
-@media (min-width: 481px) and (max-width: 800px) {
-  .nav-item:nth-child(1) { left: 10%; }
-  .nav-item:nth-child(2) { left: 32%; }
-  .nav-item:nth-child(3) { left: 50%; }
-  .nav-item:nth-child(4) { left: 68%; }
-  .nav-item:nth-child(5) { left: 90%; }
-}
-
-/* 超小屏幕 (≤480px) */
-@media (max-width: 480px) {
-  .nav-item:nth-child(1) { left: 12%; }
-  .nav-item:nth-child(2) { left: 34%; }
-  .nav-item:nth-child(3) { left: 50%; }
-  .nav-item:nth-child(4) { left: 66%; }
-  .nav-item:nth-child(5) { left: 88%; }
-  
-  .nav-number {
-    font-size: 10px;
-  }
-  
-  .nav-cylinder .face {
-    font-size: 12px;
-  }
-}
-
-/* iPad专用优化 (601px-1200px) - 重点解决副标题贴边问题 */
-@media (min-width: 601px) and (max-width: 1200px) {
-  .hero-text {
-    width: 75vw; /* 进一步缩小到75vw */
-    padding: 0 4vw; /* 增加内边距到4vw */
-  }
-  
-  .hero-title {
-    font-size: clamp(22px, 4vw, 55px); /* 大幅缩小字体 */
-    letter-spacing: clamp(0px, 0.06vw, 0.6px);
-  }
-  
-  .hero-subtitle {
-    font-size: clamp(22px, 4vw, 55px); /* 大幅缩小字体 */
-    letter-spacing: clamp(-2px, -0.2vw, -3.5px); /* 增加负间距压缩 */
-  }
-}
-
-/* 超小屏幕特殊处理 (≤600px) */
+/* === 超小屏幕特殊处理 === */
 @media (max-width: 600px) {
   .hero-text {
     top: 20%;
@@ -775,16 +747,33 @@ body {
     font-size: clamp(25px, 4vw, 45px);
     letter-spacing: clamp(-1px, -0.06vw, -1.2px);
   }
-
+  
   .working-mask {
-    top: 55%;
+    top: 55%; /* 稍微向上移动 */
   }
   
   .gif-caption-mask {
-    top: 85%;
+    top: 85%; /* 向上移动一些 */
   }
   
   .name-bg {
-    width: 85vw;
+    width: 85vw; /* 更小的屏幕使用更大比例 */
+  }
+}
+
+/* iPad 和中等屏幕特殊处理 */
+@media (min-width: 601px) and (max-width: 1200px) {
+  .hero-text {
+    width: 90vw; /* iPad上给更多空间 */
+  }
+  
+  .hero-title {
+    font-size: clamp(35px, 6.5vw, 80px);
+    letter-spacing: clamp(0px, 0.15vw, 1.5px);
+  }
+  
+  .hero-subtitle {
+    font-size: clamp(35px, 6.5vw, 80px);
+    letter-spacing: clamp(-0.8px, -0.08vw, -1.5px);
   }
 }
