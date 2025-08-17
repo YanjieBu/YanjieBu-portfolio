@@ -334,12 +334,11 @@ body {
   font-family: "Roxborough", serif;
   font-weight: 100;
   font-style: italic;
-  letter-spacing: clamp(-2px, -0.4vw, -5px);
+  letter-spacing: clamp(-0.1px, -0.1vw, -1px); /* 响应式字符间距 */
   color: #141414;
   margin: 0;
   line-height: 1.2;
   white-space: nowrap;
-  padding: 0 0.3em;
 }
 
 /* 显示字符动画触发类 */
