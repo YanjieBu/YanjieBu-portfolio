@@ -761,21 +761,21 @@ body {
 /* 超小屏幕特殊处理 (≤600px) */
 @media (max-width: 600px) {
   .hero-text {
-    top: 10%;
+    top: 20%;
     width: 95vw;
     padding: 0 1vw;
   }
   
   .hero-title {
-    font-size: clamp(16px, 3.5vw, 30px);
+    font-size: clamp(25px, 4vw, 45px);
     letter-spacing: clamp(0px, 0.03vw, 0.3px);
   }
   
   .hero-subtitle {
-    font-size: clamp(16px, 3.5vw, 30px);
+    font-size: clamp(25px, 4vw, 45px);
     letter-spacing: clamp(-1px, -0.06vw, -1.2px);
   }
-  
+
   .working-mask {
     top: 55%;
   }
