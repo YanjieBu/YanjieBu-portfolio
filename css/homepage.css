@@ -423,12 +423,11 @@ body {
   font-family: "Roxborough", serif;
   font-weight: 100;
   font-style: italic;
-  letter-spacing: clamp(-2px, -0.4vw, -5px);
   color: #141414;
   margin: 0;
   line-height: 1.2;
   white-space: nowrap;
-  letter-spacing: 0.02em;   /* 微调间距 */
+  letter-spacing: clamp(-3px, -0.5vw, -6px); /* 响应式字符间距 */
 }
 
 .hero-subtitle {
@@ -924,70 +923,3 @@ body {
 }
 
 
-/* 只在移动端调整字符间距 */
-@media (max-width: 768px) {
-  .hero-title {
-    letter-spacing: -3px; /* 移动端减少负间距 */
-  }
-  
-  .hero-subtitle {
-    letter-spacing: -4px; /* 移动端减少负间距 */
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-title {
-    letter-spacing: -2px; /* 手机端进一步减少负间距 */
-  }
-  
-  .hero-subtitle {
-    letter-spacing: -3px; /* 手机端进一步减少负间距 */
-  }
-}
-
-/* 或者使用更精确的方案：根据字体是否加载成功来调整 */
-@supports (font-display: swap) {
-  /* 现代浏览器支持字体显示控制 */
-  .hero-title,
-  .hero-subtitle {
-    font-display: swap;
-  }
-}
-
-/* 字体加载失败时的备用方案 */
-.hero-title {
-  font-family: "Roxborough", "Times New Roman", serif;
-}
-
-.hero-subtitle {
-  font-family: "Roobert", "Helvetica Neue", sans-serif;
-}
-
-/* 针对特定移动浏览器的修复 */
-@media (max-width: 768px) and (-webkit-min-device-pixel-ratio: 2) {
-  /* 高DPI移动设备 */
-  .hero-title {
-    letter-spacing: -2.5px;
-    word-spacing: -0.1em;
-  }
-  
-  .hero-subtitle {
-    letter-spacing: -3.5px;
-    word-spacing: -0.1em;
-  }
-}
-
-/* iOS Safari特殊处理 */
-@supports (-webkit-touch-callout: none) {
-  @media (max-width: 768px) {
-    .hero-title {
-      letter-spacing: -2px;
-      -webkit-font-smoothing: antialiased;
-    }
-    
-    .hero-subtitle {
-      letter-spacing: -3px;
-      -webkit-font-smoothing: antialiased;
-    }
-  }
-}
