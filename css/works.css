@@ -330,28 +330,16 @@ body {
 
 /* === 主标题样式 === */
 .hero-title {
-  font-size: 125px;
+  font-size: clamp(65px, 6vw, 125px); 
   font-family: "Roxborough", serif;
   font-weight: 100;
   font-style: italic;
-  letter-spacing: -5px;
+  letter-spacing: clamp(-2px, -0.4vw, -5px);
   color: #141414;
   margin: 0;
   line-height: 1.2;
   white-space: nowrap;
-  padding: 0 0.3em; /* 左右各加一点空隙 */
-}
-
-/* === 副标题样式 === */
-.hero-subtitle {
-  font-size: 95px;
-  font-family: "Roobert", serif;
-  font-weight: 400;
-  color: #141414;
-  margin: 0;
-  line-height: 1.1;
-  white-space: nowrap;
-  letter-spacing: -6px;
+  padding: 0 0.3em;
 }
 
 /* 显示字符动画触发类 */
