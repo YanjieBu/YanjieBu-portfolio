@@ -157,32 +157,35 @@ body {
   overflow: hidden;
   z-index: 1;
   display: flex;
-  align-items: center;
+  align-items: flex-end; /* 初始底部对齐 */
   justify-content: center;
   transition: height 0.3s ease;
 }
 
-/* HOME 文字样式 */
 .home-text {
   display: flex;
+  align-items: baseline;
   color: rgba(219, 219, 219, 0.274);
   font-size: 200px;
   font-weight: 500;
-  line-height: 0.70;
+  line-height: 0.65;
   padding: 0;
-  transform: translateY(100%);
+  transform: translateY(0%);
   opacity: 0;
   transition: transform 0.5s ease, opacity 0.5s ease;
+  margin: 0;
+  margin-bottom: -5px;
 }
 
 /* 黑色横条展开（点击后） */
 .home-overlay.expand {
   height: 100vh !important;
-  transition: height 0.5s ease-in;
+  align-items: center !important; /* 展开后改为居中对齐 */
+  transition: height 0.5s ease-in, align-items 0.5s ease-in;
   z-index: 1000;
 }
 
-/* 文字变白 + 上移显示 */
+/* 文字变白 + 居中显示 */
 .home-text.show-white {
   color: white !important;
   transform: translateY(0) !important;
@@ -725,50 +728,103 @@ body {
   }
 }
 
-/* === 手机端新增样式（只在480px以下生效）=== */
-.mobile-intro-container {
-  display: none;
-  position: absolute;
-  top: 75%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 90vw;
-  max-width: 400px;
-  z-index: 2;
-  text-align: center;
+/* 1200px断点：开始缩小 */
+@media (max-width: 1200px) {
+  .working-mask {
+    width: clamp(180px, 20vw, 250px);
+    height: clamp(180px, 20vw, 250px);
+  }
+  
+  .working-slide {
+    width: clamp(180px, 20vw, 250px);
+  }
+  
+  .intro-slide p,
+  .intro-slide2 p {
+    font-size: clamp(10px, 1.2vw, 14px);
+  }
+  
+  .intro-lightbulb {
+    width: clamp(25px, 3vw, 35px);
+  }
+  
+  .gif-caption-slide {
+    font-size: clamp(10px, 1.2vw, 14px);
+  }
 }
 
-.mobile-intro-item {
-  margin-bottom: 25px;
-  opacity: 0;
-  transform: translateY(30px);
-  animation: mobileSlideUp 0.8s ease-out forwards;
+/* 900px断点：继续缩小 */
+@media (max-width: 900px) {
+  .working-mask {
+    width: clamp(150px, 18vw, 200px);
+    height: clamp(150px, 18vw, 200px);
+  }
+  
+  .working-slide {
+    width: clamp(150px, 18vw, 200px);
+  }
+  
+  .intro-slide p,
+  .intro-slide2 p {
+    font-size: clamp(8px, 1vw, 12px);
+  }
+  
+  .intro-lightbulb {
+    width: clamp(22px, 2.5vw, 30px);
+  }
+  
+  .gif-caption-slide {
+    font-size: clamp(9px, 1vw, 12px);
+  }
 }
 
-.mobile-intro-item:first-child {
-  animation-delay: 4.5s;
+/* 768px断点：进一步缩小 */
+@media (max-width: 768px) {
+  .working-mask {
+    width: clamp(130px, 16vw, 180px);
+    height: clamp(130px, 16vw, 180px);
+  }
+  
+  .working-slide {
+    width: clamp(130px, 16vw, 180px);
+  }
+  
+  .intro-slide p,
+  .intro-slide2 p {
+    font-size: clamp(7px, 0.9vw, 10px);
+  }
+  
+  .intro-lightbulb {
+    width: clamp(20px, 2.2vw, 28px);
+  }
+  
+  .gif-caption-slide {
+    font-size: clamp(8px, 0.9vw, 11px);
+  }
 }
 
-.mobile-intro-item:last-child {
-  animation-delay: 5s;
-  margin-bottom: 0;
-}
-
-.mobile-intro-item p {
-  font-family: "Roobert", sans-serif;
-  color: #444;
-  text-transform: uppercase;
-  margin: 0;
-  line-height: 1.3;
-  font-size: clamp(10px, 2.5vw, 14px);
-  white-space: normal;
-  word-break: break-word;
-}
-
-@keyframes mobileSlideUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
+/* 600px断点：接近手机尺寸 */
+@media (max-width: 600px) {
+  .working-mask {
+    width: clamp(110px, 15vw, 150px);
+    height: clamp(110px, 15vw, 150px);
+  }
+  
+  .working-slide {
+    width: clamp(110px, 15vw, 150px);
+  }
+  
+  .intro-slide p,
+  .intro-slide2 p {
+    font-size: clamp(6px, 0.8vw, 9px);
+  }
+  
+  .intro-lightbulb {
+    width: clamp(18px, 2vw, 25px);
+  }
+  
+  .gif-caption-slide {
+    font-size: clamp(7px, 0.8vw, 10px);
   }
 }
 
@@ -859,8 +915,8 @@ body {
   }
 }
 
-/* === 保持原有的1100px隐藏规则（不改动） === */
-@media (max-width: 1100px) {
+
+@media (max-width: 481px) {
   .intro-group,
   .intro-group2 {
     display: none;
