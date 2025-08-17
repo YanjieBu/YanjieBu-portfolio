@@ -318,7 +318,7 @@ body {
   font-weight: normal;
   font-size: 1em;         
   display: inline-block;
-  transform: translateY(-0.5px);
+  transform: translateY(0px);
   letter-spacing: 0.05em;   /* 微调间距 */
 }
 
@@ -328,7 +328,7 @@ body {
   font-size: 1em;         
   letter-spacing: 0em;   /* 微调间距 */
   display: inline-block;
-  transform: translateY(10.3px);
+  transform: translateY(0px);
 }
 
 /* 默认隐藏主标题和副标题，等待 JS 显示 */
