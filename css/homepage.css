@@ -387,7 +387,7 @@ body {
   font-weight: normal;
   font-size: 1em;         
   display: inline-block;
-  transform: translateY(0px); /* 向下微调 */
+  transform: translateY(-1px); /* 向下微调 */
   letter-spacing: 0.05em;
   vertical-align: baseline; /* 添加基线对齐 */
 }

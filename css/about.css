@@ -79,32 +79,35 @@ body {
   overflow: hidden;
   z-index: 1;
   display: flex;
-  align-items: center;
+  align-items: flex-end; /* 初始底部对齐 */
   justify-content: center;
   transition: height 0.3s ease;
 }
 
-/* HOME 文字样式 */
 .home-text {
   display: flex;
+  align-items: baseline;
   color: rgba(219, 219, 219, 0.274);
   font-size: 200px;
   font-weight: 500;
-  line-height: 0.70;
+  line-height: 0.65;
   padding: 0;
-  transform: translateY(100%);
+  transform: translateY(0%);
   opacity: 0;
   transition: transform 0.5s ease, opacity 0.5s ease;
+  margin: 0;
+  margin-bottom: -5px;
 }
 
 /* 黑色横条展开（点击后） */
 .home-overlay.expand {
   height: 100vh !important;
-  transition: height 0.5s ease-in;
+  align-items: center !important; /* 展开后改为居中对齐 */
+  transition: height 0.5s ease-in, align-items 0.5s ease-in;
   z-index: 1000;
 }
 
-/* 文字变白 + 上移显示 */
+/* 文字变白 + 居中显示 */
 .home-text.show-white {
   color: white !important;
   transform: translateY(0) !important;
@@ -318,8 +321,9 @@ body {
   font-weight: normal;
   font-size: 1em;         
   display: inline-block;
-  transform: translateY(0px);
-  letter-spacing: 0.05em;   /* 微调间距 */
+  transform: translateY(-1px); /* 向下微调 */
+  letter-spacing: 0.05em;
+  vertical-align: baseline; /* 添加基线对齐 */
 }
 
 .overlay-font {
