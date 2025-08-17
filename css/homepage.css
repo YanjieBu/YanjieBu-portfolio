@@ -394,7 +394,7 @@ body {
   font-size: 1em;         
   letter-spacing: 0em;   /* 微调间距 */
   display: inline-block;
-  transform: translateY(0px);
+  transform: translateY(8px);
 }
 
 /* === hero 段落文字整体容器 === */
