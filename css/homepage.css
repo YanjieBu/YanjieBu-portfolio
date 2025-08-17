@@ -157,35 +157,32 @@ body {
   overflow: hidden;
   z-index: 1;
   display: flex;
-  align-items: flex-end; /* 初始底部对齐 */
+  align-items: center;
   justify-content: center;
   transition: height 0.3s ease;
 }
 
+/* HOME 文字样式 */
 .home-text {
   display: flex;
-  align-items: baseline;
   color: rgba(219, 219, 219, 0.274);
   font-size: 200px;
   font-weight: 500;
-  line-height: 0.65;
+  line-height: 0.70;
   padding: 0;
-  transform: translateY(0%);
+  transform: translateY(100%);
   opacity: 0;
   transition: transform 0.5s ease, opacity 0.5s ease;
-  margin: 0;
-  margin-bottom: -5px;
 }
 
 /* 黑色横条展开（点击后） */
 .home-overlay.expand {
   height: 100vh !important;
-  align-items: center !important; /* 展开后改为居中对齐 */
-  transition: height 0.5s ease-in, align-items 0.5s ease-in;
+  transition: height 0.5s ease-in;
   z-index: 1000;
 }
 
-/* 文字变白 + 居中显示 */
+/* 文字变白 + 上移显示 */
 .home-text.show-white {
   color: white !important;
   transform: translateY(0) !important;
@@ -387,9 +384,8 @@ body {
   font-weight: normal;
   font-size: 1em;         
   display: inline-block;
-  transform: translateY(-1px); /* 向下微调 */
-  letter-spacing: 0.05em;
-  vertical-align: baseline; /* 添加基线对齐 */
+  transform: translateY(0px);
+  letter-spacing: 0.05em;   /* 微调间距 */
 }
 
 .overlay-font {
@@ -420,27 +416,28 @@ body {
 
 /* === 主标题样式 === */
 .hero-title {
-  font-size: clamp(45px, 6vw, 95px); 
+  font-size: 95px;
   font-family: "Roxborough", serif;
   font-weight: 100;
   font-style: italic;
-  letter-spacing: clamp(-2px, -0.4vw, -5px);
+  letter-spacing: -5px;
   color: #141414;
   margin: 0;
   line-height: 1.2;
   white-space: nowrap;
-  padding: 0 0.3em;
+  padding: 0 0.3em; /* 左右各加一点空隙 */
 }
 
+/* === 副标题样式 === */
 .hero-subtitle {
-  font-size: clamp(45px, 6vw, 95px);
+  font-size: 95px;
   font-family: "Roobert", serif;
   font-weight: 400;
   color: #141414;
   margin: 0;
   line-height: 1.1;
   white-space: nowrap;
-  letter-spacing: clamp(-3px, -0.5vw, -6px);
+  letter-spacing: -6px;
 }
 
 /* 显示字符动画触发类 */
@@ -606,7 +603,7 @@ body {
 
 /* === 底部滑入说明文字样式 === */
 .gif-caption-slide {
-  font-size: clamp(7px, 1vw, 14px); /* 使用响应式字体大小 */
+  font-size: 14px;
   font-family: "Roobert", sans-serif;
   color: #444;
   text-align: center;
@@ -682,218 +679,285 @@ body {
   max-width: none;
 }
 
-/* === 使用 clamp() 实现完美等比例缩放 === */
-
-/* Working GIF 响应式缩放 - 极小屏幕更小 */
-.working-mask {
-  width: clamp(80px, 15vw, 250px);
-  height: clamp(80px, 15vw, 250px);
+/* === 手机端新增的垂直布局容器 === */
+.mobile-intro-container {
+  display: none;
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90vw;
+  max-width: 400px;
+  z-index: 2;
+  text-align: center;
 }
 
-.working-slide {
-  width: clamp(80px, 15vw, 250px);
+.mobile-intro-item {
+  margin-bottom: 25px;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: mobileSlideUp 0.8s ease-out forwards;
 }
 
-/* 底部文字响应式缩放 - 极小屏幕更小 */
-.gif-caption-mask {
-  width: clamp(200px, 50vw, 700px);
+.mobile-intro-item:first-child {
+  animation-delay: 4.5s;
 }
 
-.gif-caption-slide {
-  font-size: clamp(7px, 1vw, 14px);
+.mobile-intro-item:last-child {
+  animation-delay: 5s;
+  margin-bottom: 0;
 }
 
-/* 介绍组文字响应式缩放 - 极小屏幕更小 */
-.intro-slide p,
-.intro-slide2 p {
-  font-size: clamp(4px, 1vw, 16px); /* 最小值从7px改为4px */
+.mobile-intro-item p {
+  font-family: "Roobert", sans-serif;
+  color: #444;
+  text-transform: uppercase;
+  margin: 0;
+  line-height: 1.3;
+  font-size: clamp(10px, 2.5vw, 14px);
+  white-space: normal;
+  word-break: break-word;
 }
 
-/* 灯泡图标响应式缩放 - 极小屏幕更小 */
-.intro-lightbulb {
-  width: clamp(12px, 2.5vw, 35px);
+@keyframes mobileSlideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-/* === 针对小屏幕的优化 (≤480px) === */
-@media (max-width: 480px) {
-  /* 调整介绍组布局避免重叠 */
+/* === 响应式适配 === */
+
+/* 平板设备 (769px - 1024px) */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .working-mask {
+    width: 220px;
+    height: 220px;
+  }
+  
+  .working-slide {
+    width: 220px;
+  }
+  
   .intro-group {
-    bottom: 32%;
-    left: 50%;
-    transform: translateX(-50%) translateY(100%);
+    left: 8%;
   }
   
   .intro-group2 {
-    bottom: 6%;
-    right: 50%;
-    transform: translateX(50%) translateY(100%);
+    right: 8%;
+  }
+}
+
+/* 小屏平板 (481px - 768px) */
+@media (max-width: 768px) and (min-width: 481px) {
+  .working-mask {
+    top: 55%;
+    width: 180px;
+    height: 180px;
   }
   
-  /* 减少文字行距避免重叠 */
+  .working-slide {
+    width: 180px;
+  }
+  
+  .gif-caption-mask {
+    top: 85%;
+    width: 90vw;
+  }
+  
+  .intro-group {
+    bottom: 22%;
+    left: 6%;
+  }
+  
+  .intro-group2 {
+    bottom: 22%;
+    right: 6%;
+  }
+  
   .intro-slide p,
   .intro-slide2 p {
-    line-height: 1.2;
-    white-space: normal;
-    max-width: 120px;
-    margin: 0 auto;
+    font-size: 14px;
+    line-height: 0.8;
   }
   
-  /* 调整working gif位置 */
+  .intro-lightbulb {
+    width: 30px;
+  }
+}
+
+/* === 手机屏幕适配：显示垂直布局，隐藏原布局 === */
+@media (max-width: 480px) {
+  /* 缩小GIF */
   .working-mask {
     top: 45%;
-  }
-  
-  /* 调整底部文字位置 */
-  .gif-caption-mask {
-    top: 75%;
-  }
-}
-
-/* === 针对极小屏幕的优化 (≤320px) === */
-@media (max-width: 320px) {
-  /* working gif 大幅缩小 */
-  .working-mask {
-    width: 50px;
-    height: 50px;
-    top: 40%;
+    width: clamp(100px, 25vw, 140px);
+    height: clamp(100px, 25vw, 140px);
   }
   
   .working-slide {
-    width: 50px;
+    width: clamp(100px, 25vw, 140px);
   }
   
-  /* 文字大幅缩小 */
-  .gif-caption-slide {
-    font-size: 5px;
+  /* 隐藏原来的侧边文字和灯泡 */
+  .intro-group,
+  .intro-group2 {
+    display: none !important;
   }
   
-  .intro-slide p,
-  .intro-slide2 p {
-    font-size: 5px;
-    max-width: 80px;
+  /* 隐藏gif-caption文字 */
+  .gif-caption-mask {
+    display: none !important;
+  }
+  
+  /* 显示手机版垂直布局 */
+  .mobile-intro-container {
+    display: block;
+  }
+  
+  .mobile-intro-item p {
+    font-size: clamp(9px, 2.2vw, 13px);
+  }
+}
+
+/* 中等手机屏幕优化 */
+@media (max-width: 360px) {
+  .working-mask {
+    top: 42%;
+    width: clamp(90px, 22vw, 120px);
+    height: clamp(90px, 22vw, 120px);
+  }
+  
+  .working-slide {
+    width: clamp(90px, 22vw, 120px);
+  }
+  
+  .mobile-intro-container {
+    top: 70%;
+    width: 95vw;
+  }
+  
+  .mobile-intro-item {
+    margin-bottom: 20px;
+  }
+  
+  .mobile-intro-item p {
+    font-size: clamp(8px, 2vw, 12px);
     line-height: 1.4;
   }
-  
-  /* 灯泡大幅缩小 */
-  .intro-lightbulb {
-    width: 8px;
-  }
-  
-  /* 介绍组位置调整 */
-  .intro-group {
-    bottom: 36%;
-  }
-  
-  .intro-group2 {
-    bottom: 2%;
-  }
-  
-  /* 底部文字位置和大小 */
-  .gif-caption-mask {
-    top: 68%;
-    width: 160px;
-  }
 }
 
-/* === 针对超极小屏幕的优化 (≤280px) === */
-@media (max-width: 280px) {
-  /* working gif 再次缩小 */
+/* 小屏手机优化 */
+@media (max-width: 320px) {
   .working-mask {
-    width: 35px;
-    height: 35px;
-    top: 36%;
+    top: 40%;
+    width: clamp(80px, 20vw, 100px);
+    height: clamp(80px, 20vw, 100px);
   }
   
   .working-slide {
-    width: 35px;
+    width: clamp(80px, 20vw, 100px);
   }
   
-  /* 文字再次缩小 */
-  .gif-caption-slide {
-    font-size: 3px !important; /* 使用 !important 确保生效 */
+  .mobile-intro-container {
+    top: 68%;
+    width: 98vw;
   }
   
-  .intro-slide p,
-  .intro-slide2 p {
-    font-size: 3px !important; /* 使用 !important 确保生效 */
-    max-width: 50px;
+  .mobile-intro-item {
+    margin-bottom: 18px;
+  }
+  
+  .mobile-intro-item p {
+    font-size: clamp(7px, 1.8vw, 11px);
+    line-height: 1.5;
+  }
+}
+
+/* 超小屏设备 */
+@media (max-width: 280px) {
+  .working-mask {
+    top: 38%;
+    width: clamp(70px, 18vw, 90px);
+    height: clamp(70px, 18vw, 90px);
+  }
+  
+  .working-slide {
+    width: clamp(70px, 18vw, 90px);
+  }
+  
+  .mobile-intro-container {
+    top: 65%;
+  }
+  
+  .mobile-intro-item {
+    margin-bottom: 15px;
+  }
+  
+  .mobile-intro-item p {
+    font-size: clamp(6px, 1.6vw, 10px);
     line-height: 1.6;
   }
-  
-  /* 灯泡再次缩小 */
-  .intro-lightbulb {
-    width: 5px;
-  }
-  
-  /* 介绍组位置调整，避免重叠 */
-  .intro-group {
-    bottom: 38%;
-  }
-  
-  .intro-group2 {
-    bottom: 0%;
-  }
-  
-  /* 底部文字 */
-  .gif-caption-mask {
-    top: 62%;
-    width: 120px;
-  }
 }
 
-/* === 针对超超极小屏幕的优化 (≤240px) === */
-@media (max-width: 240px) {
+/* 横屏模式优化 */
+@media (orientation: landscape) and (max-width: 480px) and (max-height: 500px) {
   .working-mask {
-    width: 30px;
-    height: 30px;
-    top: 34%;
+    top: 25%;
+    width: clamp(60px, 12vh, 100px);
+    height: clamp(60px, 12vh, 100px);
   }
   
   .working-slide {
-    width: 30px;
+    width: clamp(60px, 12vh, 100px);
   }
   
-  .gif-caption-slide {
-    font-size: 2px !important;
+  .mobile-intro-container {
+    top: 55%;
+    width: 80vw;
   }
   
-  .intro-slide p,
-  .intro-slide2 p {
-    font-size: 2px !important;
-    max-width: 40px;
-    line-height: 1.8;
+  .mobile-intro-item {
+    margin-bottom: 12px;
   }
   
-  .intro-lightbulb {
-    width: 4px;
-  }
-  
-  .intro-group {
-    bottom: 40%;
-  }
-  
-  .intro-group2 {
-    bottom: -2%;
-  }
-  
-  .gif-caption-mask {
-    top: 60%;
-    width: 100px;
+  .mobile-intro-item p {
+    font-size: clamp(6px, 1.2vw, 9px);
+    line-height: 1.3;
   }
 }
 
-/* === 中等屏幕优化 === */
-@media (max-width: 768px) and (min-width: 481px) {
-  .intro-group {
-    left: 10%;
-  }
-  
-  .intro-group2 {
-    right: 10%;
+/* iPhone SE 等特殊尺寸 */
+@media (max-width: 375px) and (max-height: 667px) {
+  .mobile-intro-container {
+    top: 72%;
   }
 }
 
-
+/* 超宽横屏 */
+@media (orientation: landscape) and (max-height: 400px) {
+  .working-mask {
+    top: 20%;
+  }
+  
+  .mobile-intro-container {
+    top: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 90vw;
+  }
+  
+  .mobile-intro-item {
+    margin-bottom: 0;
+    margin-right: 20px;
+    flex: 1;
+  }
+  
+  .mobile-intro-item:last-child {
+    margin-right: 0;
+  }
+}
 
 
 
