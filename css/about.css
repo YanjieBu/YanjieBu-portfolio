@@ -79,35 +79,36 @@ body {
   overflow: hidden;
   z-index: 1;
   display: flex;
-  align-items: flex-end; /* 初始底部对齐 */
+  align-items: center;
   justify-content: center;
   transition: height 0.3s ease;
 }
 
+/* HOME文字底部空隙修复 */
 .home-text {
   display: flex;
   align-items: baseline;
   color: rgba(219, 219, 219, 0.274);
-  font-size: 200px;
+  font-size: clamp(80px, 15vw, 200px);
   font-weight: 500;
-  line-height: 0.65;
+  line-height: 0.6; /* 进一步减小行高 */
   padding: 0;
-  transform: translateY(0%);
+  transform: translateY(100%);
   opacity: 0;
   transition: transform 0.5s ease, opacity 0.5s ease;
   margin: 0;
-  margin-bottom: -5px;
+  margin-bottom: -15px; /* 更大的负margin */
+  margin-top: -5px; /* 向上也收紧 */
 }
 
 /* 黑色横条展开（点击后） */
 .home-overlay.expand {
   height: 100vh !important;
-  align-items: center !important; /* 展开后改为居中对齐 */
-  transition: height 0.5s ease-in, align-items 0.5s ease-in;
+  transition: height 0.5s ease-in;
   z-index: 1000;
 }
 
-/* 文字变白 + 居中显示 */
+/* 文字变白 + 上移显示 */
 .home-text.show-white {
   color: white !important;
   transform: translateY(0) !important;
@@ -593,7 +594,7 @@ body {
 
 .about-container {
   position: absolute;
-  top: 58.8%;
+  top: 60.3%;
   left: 55.5%;
   width: 40%;
   animation: fadeUp 0.8s ease-out 1s forwards; /* 延迟4秒，和你已有动画对齐 */
@@ -634,7 +635,7 @@ body {
 
 .education-container {
   position: absolute;
-  top: 124%;
+  top: 126%;
   left: 50%;
   transform: translateX(-50%) translateY(30px);
   width: 85%;
@@ -694,7 +695,7 @@ body {
 
 .experience-container {
   position: absolute;
-  top: 200%;
+  top: 202%;
   left: 50%;
   transform: translateX(-50%) translateY(30px);
   width: 85%;
@@ -754,7 +755,7 @@ body {
 /* ✅ Awards Container - 新增部分 */
 .awards-container {
   position: absolute;
-  top: 245%; /* ✅ Work Experience 后面 */
+  top: 247%; /* ✅ Work Experience 后面 */
   left: 50%;
   transform: translateX(-50%) translateY(30px);
   width: 85%;
@@ -818,7 +819,7 @@ body {
 /* ✅ Music Container - 向下移动位置 */
 .music-container {
   position: absolute;
-  top: 325%; /* ✅ 从 245% 改为 325% */
+  top: 327%; /* ✅ 从 245% 改为 325% */
   left: 50%;
   transform: translateX(-50%) translateY(30px);
   text-align: center;
@@ -924,7 +925,7 @@ body {
 /* ✅ Hobby Container - 继续向下移动 */
 .hobby-container {
   position: absolute;
-  top: 380%; /* ✅ 从 300% 改为 380% */
+  top: 382%; /* ✅ 从 300% 改为 380% */
   left: 50%;
   transform: translateX(-50%) translateY(30px);
   width: 85%;
@@ -1089,7 +1090,7 @@ body {
 .contact-line {
   width: 100%;
   height: 1.5px;
-  background-color: #e7e7e7;
+  background-color: #767676;
   margin: 20px auto;
 }
 
@@ -1110,21 +1111,213 @@ body {
   text-decoration: underline;
 }
 
-/* ✅ 移动端响应式设计 */
+/* === 你现有的所有CSS保持不变，只添加以下移动端适配 === */
+
+/* === 移动端内容重排布局 === */
 @media (max-width: 768px) {
-  .about-container {
+    /* === 首屏占满整页高度（包含 logo、hero、nav、背景）=== */
+  .first-screen {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* === 图片从首屏下方开始显示 === */
+  .photo-container {
+    margin-top: -37vh; /* 关键：从首屏下方开始 */
+    position: static;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 100vw;
+  }
+
+  .my-photo {
     width: 85%;
-    left: 50%;
-    transform: translateX(-50%) translateY(30px);
+    max-width: 380px;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  }
+
+  .about-container,
+  .music-container,
+  .hobby-container,
+  .bottom-contact,
+  .education-container,
+  .experience,
+  .awards {
+    text-align: center !important;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .about-container p,
+  .music-container p,
+  .hobby-container p,
+  .bottom-contact p,
+  .education-container p,
+  .experience p,
+  .awards p,
+  .about-title,
+  .music-title,
+  .hobby-title,
+  .education-title,
+  .experience-title,
+  .awards-title {
+    text-align: center !important;
+  }
+
+  /* === About 段落 === */
+  .about-container {
+    position: static;
+    transform: none;
+    top: auto;
+    left: auto;
+    width: 90%;
+    max-width: 600px;
+    margin: 40px auto 60px;
+    opacity: 1;
+    display: block;
+    text-align: center;
   }
 
   .about-title {
-    font-size: 26px;
-    letter-spacing: 2px;
+    font-size: 24px;
+    color: #ffaa2a;
+    margin-bottom: 12px;
   }
 
   .about-text {
-    font-size: 16px;
+    font-size: 15px;
+    color: #e7e7e7;
+    line-height: 1.6;
+  }
+
+  /* 基础移动端设置 */
+  body {
+    overflow-x: hidden;
+  }
+
+  /* 背景NAME图像适配 */
+  .name-bg {
+    width: 100vw;
+    max-width: 500px;
+    top: 50.5%;
+  }
+
+  /* Logo适配 */
+  .logo-mask {
+    width: 180px;
+    height: 30px;
+    top: 3%;
+  }
+
+  .logo-slide {
+    width: 180px;
+  }
+
+  /* 主标题适配 */
+  .hero-text {
+    top: 10%;
+    width: 95%;
+    padding: 0 10px;
+  }
+
+  .hero-title {
+    font-size: 45px;
+    letter-spacing: -1px;
+    line-height: 1.1;
+    white-space: normal;
+  }
+
+  .hero-subtitle {
+    font-size: 45px;
+    letter-spacing: -2px;
+    line-height: 1.0;
+    white-space: normal;
+  }
+
+  /* 导航栏适配 */
+  .nav-mask {
+    top: 48%;
+    height: 35px;
+    transform: translateX(-50%);
+  }
+
+  .nav-slide {
+    height: 35px;
+    font-size: 11px;
+  }
+
+  .nav-item {
+    font-size: 10px;
+  }
+
+  .nav-number {
+    font-size: 9px;
+    margin-bottom: 1px;
+  }
+
+  .nav-cylinder {
+    height: 14px;
+  }
+
+  .nav-cylinder .face {
+    font-size: 11px;
+    line-height: 14px;
+  }
+
+  /* 导航项位置重新分布 */
+  .nav-item:nth-child(1) { left: 8%; }
+  .nav-item:nth-child(2) { left: 26%; }
+  .nav-item:nth-child(3) { left: 50%; }
+  .nav-item:nth-child(4) { left: 74%; }
+  .nav-item:nth-child(5) { left: 92%; }
+
+  /* HOME覆盖层适配 */
+  .home-text {
+    font-size: 120px;
+  }
+
+  /* 浮动导航栏适配 */
+  .floating-navbar {
+    height: 60px;
+    padding: 0 15px;
+    flex-direction: row;
+    justify-content: space-between;
+
+  }
+
+  .floating-logo {
+    height: 30px;
+  }
+
+  .floating-nav-links {
+    gap: 15px;
+  }
+
+  .floating-link {
+    font-size: 13px;
+    letter-spacing: 1px;
+  }
+
+  /* === 关键：移动端内容区域重新布局 === */
+  .content-section {
+    position: static !important; /* 强制覆盖绝对定位 */
+    transform: none !important; /* 移除所有transform */
+    left: auto !important;
+    top: auto !important;
+    width: 90% !important;
+    margin: 100px auto !important; /* 用margin控制间距 */
+    opacity: 1 !important; /* 移动端直接显示，不需要动画 */
+    display: block !important;
+  }
+
+
+  /* Education 部分 */
+  .education-container {
+    align-items: flex-start !important;
   }
 
   .education-columns,
@@ -1132,6 +1325,7 @@ body {
   .awards-columns {
     grid-template-columns: 1fr;
     gap: 30px;
+    width: 100% !important;
   }
 
   .edu-column,
@@ -1158,6 +1352,11 @@ body {
     font-size: 15px;
   }
 
+  /* Music 部分 */
+  .music-container {
+    text-align: center !important;
+  }
+
   .music-intro {
     font-size: 20px;
   }
@@ -1180,6 +1379,7 @@ body {
     align-items: flex-start;
     gap: 10px;
     padding: 20px;
+    margin: 0 auto;
   }
 
   .song-title {
@@ -1192,6 +1392,11 @@ body {
 
   #audio-player {
     width: 100%;
+  }
+
+  /* Hobby 部分 */
+  .hobby-container {
+    text-align: center !important;
   }
 
   .hobby-title {
@@ -1209,5 +1414,708 @@ body {
   .carousel-subtitle {
     font-size: 16px;
   }
+
+  /* 底部联系信息 */
+  .bottom-contact {
+    text-align: center !important;
+    margin-bottom: 80px !important;
+  }
+
+  .contact-title {
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+
+  .contact-email {
+    flex-direction: column;
+    gap: 8px;
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+
+  .separator {
+    display: none;
+  }
+
+  .contact-line {
+    margin: 15px auto;
+  }
+
+  .contact-top {
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
 }
 
+/* ===== iPad位置配置变量 - 在这里修改间距 ===== */
+:root {
+  /* iPad标准尺寸 (769px - 1024px) 位置设置 */
+  --ipad-education-top: 140%;
+  --ipad-experience-top: 255%;
+  --ipad-awards-top: 330%;
+  --ipad-music-top: 450%;
+  --ipad-hobby-top: 530%;
+  --ipad-contact-top: 580%;
+  
+  /* iPad Pro尺寸 (1025px - 1366px) 位置设置 */
+  --ipad-pro-education-top: 145%;
+  --ipad-pro-experience-top: 260%;
+  --ipad-pro-awards-top: 335%;
+  --ipad-pro-music-top: 475%;
+  --ipad-pro-hobby-top: 535%;
+  --ipad-pro-contact-top: 585%;
+}
+
+/* ===== iPad适配样式 (769px - 1024px) ===== */
+@media (min-width: 769px) and (max-width: 1024px) {
+  
+  /* === 主标题适配 === */
+  .hero-title {
+    font-size: 75px;
+    letter-spacing: -1.5px;
+  }
+  
+  .hero-subtitle {
+    font-size: 75px;
+    letter-spacing: -2px;
+  }
+
+  /* === 背景NAME图片适配 === */
+  .name-bg {
+    width: 700px;
+    opacity: 0.15;
+  }
+
+  /* === 导航栏适配 === */
+  .nav-item {
+    font-size: 12px;
+  }
+  
+  .nav-cylinder .face {
+    font-size: 13px;
+  }
+
+  /* === 照片容器适配 === */
+  .photo-container {
+    top: 60%;
+    left: 3%;
+  }
+  
+  .my-photo {
+    width: 45%;
+  }
+
+  /* === About区域适配 === */
+  .about-container {
+    top: 60%;
+    left: 52%;
+    width: 44%;
+  }
+  
+  .about-title {
+    font-size: 28px;
+    letter-spacing: 3px;
+  }
+  
+  .about-text {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 16px;
+  }
+
+  /* === Education区域适配 === */
+  .education-container {
+    top: var(--ipad-education-top);
+    width: 88%;
+  }
+  
+  .education-columns {
+    grid-template-columns: 1fr 1.1fr 1.1fr;
+    gap: 35px 50px;
+    margin-bottom: 40px;
+  }
+  
+  .edu-school {
+    font-size: 20px;
+  }
+  
+  .edu-date {
+    font-size: 15px;
+  }
+  
+  .edu-major {
+    font-size: 16px;
+  }
+
+  /* === Experience区域适配 === */
+  .experience-container {
+    top: var(--ipad-experience-top);
+    width: 88%;
+  }
+  
+  .experience-columns {
+    grid-template-columns: 1fr 1.1fr 1.1fr;
+    gap: 35px 50px;
+    margin-bottom: 40px;
+  }
+  
+  .exp-organization {
+    font-size: 20px;
+  }
+  
+  .exp-role {
+    font-size: 15px;
+  }
+  
+  .exp-title {
+    font-size: 16px;
+  }
+
+  /* === Awards区域适配 === */
+  .awards-container {
+    top: var(--ipad-awards-top);
+    width: 88%;
+  }
+  
+  .awards-columns {
+    grid-template-columns: 1fr 1.1fr 1.1fr;
+    gap: 35px 50px;
+    margin-bottom: 40px;
+  }
+  
+  .award-organization {
+    font-size: 20px;
+  }
+  
+  .award-date {
+    font-size: 15px;
+  }
+  
+  .award-title {
+    font-size: 16px;
+  }
+
+  /* === Music区域适配 === */
+  .music-container {
+    top: var(--ipad-music-top);
+  }
+  
+  .music-intro {
+    font-size: 26px;
+    margin-bottom: 40px;
+    margin-top: 0;
+  }
+  
+  .music-visuals {
+    gap: 100px;
+    margin-bottom: 35px;
+  }
+  
+  .side-gif {
+    width: 55px;
+  }
+  
+  .main-gif {
+    width: 170px;
+  }
+  
+  .music-info-bar {
+    max-width: 600px;
+    padding: 12px 18px;
+  }
+  
+  .album-cover {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .song-title {
+    font-size: 17px;
+  }
+  
+  .song-meta {
+    font-size: 13px;
+  }
+  
+  #audio-player {
+    width: 350px;
+    height: 32px;
+  }
+
+  /* === Hobby区域适配 === */
+  .hobby-container {
+    top: var(--ipad-hobby-top);
+    width: 88%;
+  }
+  
+  .hobby-title {
+    font-size: 26px;
+    margin-top: 0;
+  }
+  
+  .hobby-description {
+    font-size: 16px;
+    max-width: 700px;
+    margin-bottom: 50px;
+  }
+  
+  .carousel-subtitle {
+    font-size: 17px;
+    margin-bottom: 18px;
+  }
+  
+  .carousel-container img {
+    max-height: 240px;
+  }
+  
+  .carousel-container img:hover {
+    transform: scale(1.04) translateY(3px);
+  }
+
+  /* === Bottom Contact适配 === */
+  .bottom-contact {
+    top: var(--ipad-contact-top);
+    width: 88%;
+  }
+  
+  .contact-title {
+    font-size: 17px;
+    margin-bottom: 16px;
+  }
+  
+  .contact-email {
+    font-size: 17px;
+    gap: 25px;
+    margin-bottom: 18px;
+  }
+  
+  .contact-top {
+    font-size: 17px;
+    margin-bottom: 35px;
+  }
+
+  /* === 浮动导航栏适配 === */
+  .floating-navbar {
+    height: 65px;
+    padding: 0 25px;
+  }
+  
+  .floating-logo {
+    height: 35px;
+  }
+  
+  .floating-nav-links {
+    gap: 25px;
+  }
+  
+  .floating-link {
+    font-size: 15px;
+    letter-spacing: 1.5px;
+  }
+}
+
+/* ===== iPad Pro适配样式 (1025px - 1366px) ===== */
+@media (min-width: 1025px) and (max-width: 1366px) {
+  
+  /* === 主标题适配 === */
+  .hero-title {
+    font-size: 85px;
+    letter-spacing: -1.8px;
+  }
+  
+  .hero-subtitle {
+    font-size: 85px;
+    letter-spacing: -2.5px;
+  }
+
+  /* === 背景NAME图片适配 === */
+  .name-bg {
+    width: 800px;
+    opacity: 0.18;
+  }
+
+  /* === 照片容器适配 === */
+  .photo-container {
+    top: 62%;
+    left: 3.5%;
+  }
+  
+  .my-photo {
+    width: 48%;
+  }
+
+  /* === About区域适配 === */
+  .about-container {
+    top: 62%;
+    left: 54%;
+    width: 42%;
+  }
+  
+  .about-title {
+    font-size: 32px;
+    letter-spacing: 3.5px;
+  }
+  
+  .about-text {
+    font-size: 17px;
+    line-height: 1.55;
+  }
+
+  /* === Education区域适配 === */
+  .education-container {
+    top: var(--ipad-pro-education-top);
+    width: 86%;
+  }
+  
+  .education-columns {
+    gap: 38px 55px;
+    margin-bottom: 40px;
+  }
+
+  /* === Experience区域适配 === */
+  .experience-container {
+    top: var(--ipad-pro-experience-top);
+    width: 86%;
+  }
+  
+  .experience-columns {
+    gap: 38px 55px;
+    margin-bottom: 40px;
+  }
+
+  /* === Awards区域适配 === */
+  .awards-container {
+    top: var(--ipad-pro-awards-top);
+    width: 86%;
+  }
+  
+  .awards-columns {
+    gap: 38px 55px;
+    margin-bottom: 40px;
+  }
+
+  /* === Music区域适配 === */
+  .music-container {
+    top: var(--ipad-pro-music-top);
+  }
+  
+  .music-intro {
+    font-size: 28px;
+    margin-bottom: 45px;
+    margin-top: 0;
+  }
+  
+  .music-visuals {
+    gap: 120px;
+  }
+  
+  .side-gif {
+    width: 58px;
+  }
+  
+  .main-gif {
+    width: 185px;
+  }
+  
+  .music-info-bar {
+    max-width: 650px;
+    padding: 14px 20px;
+  }
+  
+  .album-cover {
+    width: 65px;
+    height: 65px;
+  }
+  
+  #audio-player {
+    width: 380px;
+    height: 34px;
+  }
+
+  /* === Hobby区域适配 === */
+  .hobby-container {
+    top: var(--ipad-pro-hobby-top);
+    width: 86%;
+  }
+  
+  .hobby-title {
+    font-size: 28px;
+    margin-top: 0;
+  }
+  
+  .hobby-description {
+    font-size: 17px;
+    max-width: 750px;
+  }
+  
+  .carousel-container img {
+    max-height: 260px;
+  }
+
+  /* === Bottom Contact适配 === */
+  .bottom-contact {
+    top: var(--ipad-pro-contact-top);
+    width: 86%;
+  }
+}
+
+/* ===== iPad横屏特殊适配 ===== */
+@media (min-width: 769px) and (max-width: 1024px) and (orientation: landscape) {
+  
+  /* === 主标题适配 === */
+  .hero-title {
+    font-size: 70px;
+  }
+  
+  .hero-subtitle {
+    font-size: 70px;
+  }
+
+  /* === 照片和About区域并排优化 === */
+  .photo-container {
+    top: 58%;
+    left: 2.5%;
+  }
+  
+  .my-photo {
+    width: 42%;
+  }
+  
+  .about-container {
+    top: 54%;
+    left: 50%;
+    width: 46%;
+  }
+
+  /* === 音乐区域横屏优化 === */
+  .music-visuals {
+    gap: 80px;
+  }
+  
+  .side-gif {
+    width: 50px;
+  }
+  
+  .main-gif {
+    width: 150px;
+  }
+
+  /* === 爱好区域图片尺寸调整 === */
+  .carousel-container img {
+    max-height: 200px;
+  }
+}
+
+/* ===== iPad Pro横屏特殊适配 ===== */
+@media (min-width: 1025px) and (max-width: 1366px) and (orientation: landscape) {
+  
+  /* === 照片和About区域并排优化 === */
+  .photo-container {
+    top: 60%;
+    left: 3.5%;
+  }
+  
+  .about-container {
+    top: 56%;
+    left: 52%;
+    width: 44%;
+  }
+
+  /* === 音乐区域横屏优化 === */
+  .music-visuals {
+    gap: 100px;
+  }
+}
+
+/* ===== 快速修改指南 ===== */
+/*
+要修改iPad间距，只需要改动顶部 :root 中的变量数值：
+
+当前iPad标准尺寸设置：
+- Education: 140%
+- Experience: 255% (间距115%)
+- Awards: 330% (间距75%)
+- Music: 470% (间距140%)
+- Hobby: 530% (间距60%)
+- Contact: 580% (间距50%)
+
+当前iPad Pro设置：
+- Education: 145%
+- Experience: 260% (间距115%)
+- Awards: 335% (间距75%)
+- Music: 475% (间距140%)
+- Hobby: 535% (间距60%)
+- Contact: 585% (间距50%)
+
+示例：要让Education移到150%，只需修改：
+--ipad-education-top: 150%;
+*/
+
+
+
+/* === 横屏手机适配 === */
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero-text {
+    top: 8%;
+  }
+
+  .hero-title,
+  .hero-subtitle {
+    font-size: 30px;
+  }
+
+  .nav-mask {
+    top: 40%;
+  }
+
+  .photo-container {
+    top: 55%;
+  }
+
+  .floating-navbar {
+    height: 50px;
+  }
+
+  .content-section {
+    margin: 60px auto !important;
+  }
+}
+
+/* === 触摸设备优化 === */
+@media (hover: none) and (pointer: coarse) {
+  .floating-link {
+    padding: 8px 12px;
+    margin: -8px -12px;
+  }
+
+  .nav-item {
+    padding: 6px;
+    margin: -6px;
+  }
+
+  .nav-item:hover .nav-cylinder-inner {
+    transform: none;
+  }
+
+  .nav-item:active .nav-cylinder-inner {
+    transform: rotateX(90deg);
+  }
+
+  .floating-link:hover {
+    color: #cacacae7;
+  }
+
+  .floating-link:active {
+    color: #ffffff;
+  }
+
+  .floating-link:hover::after {
+    transform: translateX(-50%) scaleX(0);
+  }
+
+  .floating-link:active::after {
+    transform: translateX(-50%) scaleX(1);
+  }
+
+  .carousel-container img:hover {
+    transform: none;
+  }
+
+  .carousel-container img:active {
+    transform: scale(0.95);
+  }
+}
+
+
+/* 更小屏幕适配 (480px以下) */
+@media (max-width: 480px) {
+  .content-section {
+    width: 95% !important;
+    margin: 80px auto !important;
+  }
+
+  .hero-title {
+    font-size: 35px;
+  }
+
+  .hero-subtitle {
+    font-size: 35px;
+  }
+
+  .home-text {
+    font-size: 80px;
+  }
+
+  .nav-item {
+    font-size: 9px;
+  }
+
+  .nav-number {
+    font-size: 8px;
+  }
+
+  .nav-cylinder .face {
+    font-size: 10px;
+  }
+
+  .nav-item:nth-child(1) { left: 12%; }
+  .nav-item:nth-child(2) { left: 34%; }
+  .nav-item:nth-child(3) { left: 50%; }
+  .nav-item:nth-child(4) { left: 66%; }
+  .nav-item:nth-child(5) { left: 88%; }
+
+  .floating-navbar {
+    height: 55px;
+    padding: 0 12px;
+  }
+
+  .floating-logo {
+    height: 25px;
+  }
+
+  .floating-link {
+    font-size: 11px;
+  }
+
+  .about-title {
+    font-size: 22px;
+  }
+
+  .about-text {
+    font-size: 14px;
+  }
+}
+
+/* 手机端特殊处理 (≤600px) */
+@media (max-width: 600px) {
+  .hero-text {
+    top: 15%;
+    width: 94vw;
+    padding: 0 3vw;
+    left: 47%;
+    transform: translateX(-50%);
+  }
+  
+  .hero-title {
+    font-size: clamp(35px, 6vw, 48px);
+    letter-spacing: clamp(0px, 0.05vw, 0.5px);
+    line-height: 1.1;
+    text-align: center !important;
+    margin-top: 10px;
+  }
+  
+  .hero-subtitle {
+    font-size: clamp(35px, 6vw, 48px);
+    letter-spacing: clamp(-2px, -0.2vw, -3px);
+    line-height: 1.1;
+    margin-top: 5px;
+    text-align: center !important;
+    margin-left: auto;
+    margin-right: auto;
+    transform: none;
+  }
+  
+  .name-bg {
+    width: 90vw;
+  }
+}
