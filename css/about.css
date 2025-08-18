@@ -1447,27 +1447,18 @@ body {
   }
 }
 
-/* ===== iPad位置配置变量 - 在这里修改间距 ===== */
-:root {
-  /* iPad标准尺寸 (769px - 1024px) 位置设置 */
-  --ipad-education-top: 140%;
-  --ipad-experience-top: 255%;
-  --ipad-awards-top: 330%;
-  --ipad-music-top: 450%;
-  --ipad-hobby-top: 530%;
-  --ipad-contact-top: 580%;
-  
-  /* iPad Pro尺寸 (1025px - 1366px) 位置设置 */
-  --ipad-pro-education-top: 145%;
-  --ipad-pro-experience-top: 260%;
-  --ipad-pro-awards-top: 335%;
-  --ipad-pro-music-top: 475%;
-  --ipad-pro-hobby-top: 535%;
-  --ipad-pro-contact-top: 585%;
-}
-
 /* ===== iPad适配样式 (769px - 1024px) ===== */
 @media (min-width: 769px) and (max-width: 1024px) {
+  
+  /* === 位置控制区域 - 只改这里！ === */
+  .photo-container { top: 63%; }      ← 照片位置
+  .about-container { top: 63%; }      ← About文字位置  
+  .education-container { top: 150%; }
+  .experience-container { top: 235%; }
+  .awards-container { top: 300%; }
+  .music-container { top: 415%; }
+  .hobby-container { top: 473%; }
+  .bottom-contact { top: 600%; }
   
   /* === 主标题适配 === */
   .hero-title {
@@ -1525,7 +1516,6 @@ body {
 
   /* === Education区域适配 === */
   .education-container {
-    top: var(--ipad-education-top);
     width: 88%;
   }
   
@@ -1549,7 +1539,6 @@ body {
 
   /* === Experience区域适配 === */
   .experience-container {
-    top: var(--ipad-experience-top);
     width: 88%;
   }
   
@@ -1573,7 +1562,6 @@ body {
 
   /* === Awards区域适配 === */
   .awards-container {
-    top: var(--ipad-awards-top);
     width: 88%;
   }
   
@@ -1596,10 +1584,6 @@ body {
   }
 
   /* === Music区域适配 === */
-  .music-container {
-    top: var(--ipad-music-top);
-  }
-  
   .music-intro {
     font-size: 26px;
     margin-bottom: 40px;
@@ -1644,7 +1628,6 @@ body {
 
   /* === Hobby区域适配 === */
   .hobby-container {
-    top: var(--ipad-hobby-top);
     width: 88%;
   }
   
@@ -1674,7 +1657,6 @@ body {
 
   /* === Bottom Contact适配 === */
   .bottom-contact {
-    top: var(--ipad-contact-top);
     width: 88%;
   }
   
@@ -1716,6 +1698,16 @@ body {
 
 /* ===== iPad Pro适配样式 (1025px - 1366px) ===== */
 @media (min-width: 1025px) and (max-width: 1366px) {
+  
+  /* === 位置控制区域 - 只改这里！ === */
+  .photo-container { top: 65%; }      ← 照片位置
+  .about-container { top: 65%; }      ← About文字位置
+  .education-container { top: 165%; }
+  .experience-container { top: 220%; }
+  .awards-container { top: 275%; }
+  .music-container { top: 385%; }
+  .hobby-container { top: 450%; }
+  .bottom-contact { top: 585%; }
   
   /* === 主标题适配 === */
   .hero-title {
@@ -1763,7 +1755,6 @@ body {
 
   /* === Education区域适配 === */
   .education-container {
-    top: var(--ipad-pro-education-top);
     width: 86%;
   }
   
@@ -1774,7 +1765,6 @@ body {
 
   /* === Experience区域适配 === */
   .experience-container {
-    top: var(--ipad-pro-experience-top);
     width: 86%;
   }
   
@@ -1785,7 +1775,6 @@ body {
 
   /* === Awards区域适配 === */
   .awards-container {
-    top: var(--ipad-pro-awards-top);
     width: 86%;
   }
   
@@ -1795,10 +1784,6 @@ body {
   }
 
   /* === Music区域适配 === */
-  .music-container {
-    top: var(--ipad-pro-music-top);
-  }
-  
   .music-intro {
     font-size: 28px;
     margin-bottom: 45px;
@@ -1834,7 +1819,6 @@ body {
 
   /* === Hobby区域适配 === */
   .hobby-container {
-    top: var(--ipad-pro-hobby-top);
     width: 86%;
   }
   
@@ -1854,7 +1838,6 @@ body {
 
   /* === Bottom Contact适配 === */
   .bottom-contact {
-    top: var(--ipad-pro-contact-top);
     width: 86%;
   }
 }
@@ -1924,60 +1907,6 @@ body {
   /* === 音乐区域横屏优化 === */
   .music-visuals {
     gap: 100px;
-  }
-}
-
-/* ===== 快速修改指南 ===== */
-/*
-要修改iPad间距，只需要改动顶部 :root 中的变量数值：
-
-当前iPad标准尺寸设置：
-- Education: 140%
-- Experience: 255% (间距115%)
-- Awards: 330% (间距75%)
-- Music: 470% (间距140%)
-- Hobby: 530% (间距60%)
-- Contact: 580% (间距50%)
-
-当前iPad Pro设置：
-- Education: 145%
-- Experience: 260% (间距115%)
-- Awards: 335% (间距75%)
-- Music: 475% (间距140%)
-- Hobby: 535% (间距60%)
-- Contact: 585% (间距50%)
-
-示例：要让Education移到150%，只需修改：
---ipad-education-top: 150%;
-*/
-
-
-
-/* === 横屏手机适配 === */
-@media (max-height: 500px) and (orientation: landscape) {
-  .hero-text {
-    top: 8%;
-  }
-
-  .hero-title,
-  .hero-subtitle {
-    font-size: 30px;
-  }
-
-  .nav-mask {
-    top: 40%;
-  }
-
-  .photo-container {
-    top: 55%;
-  }
-
-  .floating-navbar {
-    height: 50px;
-  }
-
-  .content-section {
-    margin: 60px auto !important;
   }
 }
 
