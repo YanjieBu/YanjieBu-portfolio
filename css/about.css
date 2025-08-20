@@ -1140,14 +1140,14 @@ body {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
   }
 
+  /* === 修改：移除居中对齐，改为左对齐（但排除底部联系信息） === */
   .about-container,
   .music-container,
   .hobby-container,
-  .bottom-contact,
   .education-container,
   .experience,
   .awards {
-    text-align: center !important;
+    text-align: left !important; /* 改为左对齐 */
     margin-left: auto;
     margin-right: auto;
   }
@@ -1155,7 +1155,6 @@ body {
   .about-container p,
   .music-container p,
   .hobby-container p,
-  .bottom-contact p,
   .education-container p,
   .experience p,
   .awards p,
@@ -1165,7 +1164,7 @@ body {
   .education-title,
   .experience-title,
   .awards-title {
-    text-align: center !important;
+    text-align: left !important; /* 改为左对齐 */
   }
 
   /* === About 段落 === */
@@ -1179,19 +1178,21 @@ body {
     margin: 40px auto 60px;
     opacity: 1;
     display: block;
-    text-align: center;
+    text-align: left; /* 改为左对齐 */
   }
 
   .about-title {
     font-size: 24px;
     color: #ffaa2a;
     margin-bottom: 12px;
+    text-align: left; /* 确保标题左对齐 */
   }
 
   .about-text {
     font-size: 15px;
     color: #e7e7e7;
     line-height: 1.6;
+    text-align: left; /* 确保内容左对齐 */
   }
 
   /* 基础移动端设置 */
@@ -1318,6 +1319,7 @@ body {
   /* Education 部分 */
   .education-container {
     align-items: flex-start !important;
+    text-align: left !important; /* 确保Education部分左对齐 */
   }
 
   .education-columns,
@@ -1332,33 +1334,38 @@ body {
   .exp-column,
   .award-column {
     min-width: auto;
+    text-align: left; /* 确保每个列都左对齐 */
   }
 
   .edu-school,
   .exp-organization,
   .award-organization {
     font-size: 18px;
+    text-align: left; /* 学校/组织名称左对齐 */
   }
 
   .edu-date,
   .exp-role,
   .award-date {
     font-size: 14px;
+    text-align: left; /* 日期/角色左对齐 */
   }
 
   .edu-major,
   .exp-title,
   .award-title {
     font-size: 15px;
+    text-align: left; /* 专业/职位/奖项标题左对齐 */
   }
 
   /* Music 部分 */
   .music-container {
-    text-align: center !important;
+    text-align: left !important; /* 改为左对齐 */
   }
 
   .music-intro {
     font-size: 20px;
+    text-align: left; /* 音乐介绍左对齐 */
   }
 
   .music-visuals {
@@ -1380,14 +1387,17 @@ body {
     gap: 10px;
     padding: 20px;
     margin: 0 auto;
+    text-align: left; /* 音乐信息栏左对齐 */
   }
 
   .song-title {
     font-size: 16px;
+    text-align: left; /* 歌曲标题左对齐 */
   }
 
   .song-meta {
     font-size: 13px;
+    text-align: left; /* 歌曲信息左对齐 */
   }
 
   #audio-player {
@@ -1396,15 +1406,17 @@ body {
 
   /* Hobby 部分 */
   .hobby-container {
-    text-align: center !important;
+    text-align: left !important; /* 改为左对齐 */
   }
 
   .hobby-title {
     font-size: 24px;
+    text-align: left; /* 爱好标题左对齐 */
   }
 
   .hobby-description {
     font-size: 15px;
+    text-align: left; /* 爱好描述左对齐 */
   }
 
   .carousel-container img {
@@ -1413,17 +1425,19 @@ body {
 
   .carousel-subtitle {
     font-size: 16px;
+    text-align: left; /* 轮播副标题左对齐 */
   }
 
-  /* 底部联系信息 */
+  /* 底部联系信息 - 保持居中对齐 */
   .bottom-contact {
-    text-align: center !important;
+    text-align: center !important; /* 保持居中对齐 */
     margin-bottom: 80px !important;
   }
 
   .contact-title {
     font-size: 16px;
     margin-bottom: 15px;
+    text-align: center !important; /* 联系标题居中 */
   }
 
   .contact-email {
@@ -1431,6 +1445,7 @@ body {
     gap: 8px;
     font-size: 16px;
     margin-bottom: 15px;
+    text-align: center !important; /* 邮箱信息居中 */
   }
 
   .separator {
@@ -1444,6 +1459,14 @@ body {
   .contact-top {
     font-size: 16px;
     margin-bottom: 30px;
+    text-align: center !important; /* 顶部联系信息居中 */
+  }
+
+  /* === "Back to top" 保持居中对齐 === */
+  .back-to-top,
+  .back-to-top a,
+  .back-to-top p {
+    text-align: center !important;
   }
 }
 
