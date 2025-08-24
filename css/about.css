@@ -1048,7 +1048,7 @@ body {
 /* ✅ Bottom Contact - 最终调整位置 */
 .bottom-contact {
   position: absolute;
-  top: 515%; /* ✅ 从 433% 改为 515% */
+  top: 530%; /* ✅ 从 433% 改为 515% */
   left: 50%;
   transform: translateX(-50%);
   width: 86%;
