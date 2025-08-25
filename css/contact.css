@@ -330,7 +330,7 @@ body {
 /* === hero 段落文字整体容器 === */
 .hero-text {
   position: absolute;
-  top: 13%;
+  top: 11.5%;
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
