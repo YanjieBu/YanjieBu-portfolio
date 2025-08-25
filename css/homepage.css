@@ -584,7 +584,7 @@ body {
 /* === 中间 working.gif 的遮罩容器（限制动图区域）=== */
 .working-mask {
   position: absolute;
-  top: 58%;
+  top: 60%;
   left: 50%;
   transform: translateX(-50%);
   width: min(200px, 40vw); /* 从250px和50vw缩小 */
